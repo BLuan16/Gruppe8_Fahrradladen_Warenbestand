@@ -1,0 +1,1 @@
+Kurzbeschreibung: Das System erlaubt es den Warenbestand in einem Fahrradladen (Fahrräder, Ersatzteile, Zubehör) zu verwalten (hinzufügen, entfernen) und Bestellungen an Lieferanden aufzugeben und diese zu verbuchen.
