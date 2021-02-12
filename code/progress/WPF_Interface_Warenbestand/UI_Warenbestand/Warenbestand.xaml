@@ -301,14 +301,14 @@
                 </StackPanel>
             </StackPanel>
             <Image Height="137"
-                       Source="Images/bike2.png" RenderTransformOrigin="0.512,0.536" Margin="409,190,400,453"
+                       Source="Images/bike2.png" RenderTransformOrigin="0.895,0.528" Margin="408,152,401,491"
                        RenderOptions.BitmapScalingMode="Fant">
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
-                        <RotateTransform Angle="0.191"/>
-                        <TranslateTransform X="-0.019" Y="0.002"/>
+                        <RotateTransform Angle="-0.802"/>
+                        <TranslateTransform X="-0.018" Y="0.119"/>
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>

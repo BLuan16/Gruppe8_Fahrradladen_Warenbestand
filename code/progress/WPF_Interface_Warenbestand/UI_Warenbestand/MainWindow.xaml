@@ -225,7 +225,7 @@
                 </StackPanel>
             </StackPanel>
             <Image Height="137"
-                       Source="Images/bike2.png" RenderTransformOrigin="0.512,0.536" Margin="409,190,400,453"
+                       Source="Images/bike2.png" RenderTransformOrigin="0.512,0.536" Margin="403,155,406,488"
                        RenderOptions.BitmapScalingMode="Fant">
                 <Image.RenderTransform>
                     <TransformGroup>
