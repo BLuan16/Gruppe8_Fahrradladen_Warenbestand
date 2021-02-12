@@ -42,27 +42,93 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Text="Home"
-                       Foreground="White"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis"
-                       FontWeight="Normal" Grid.ColumnSpan="3" Margin="45,5,53,5" Width="75"
-                       />
 
-            <TextBlock Text="Warenbestand"
-                       Foreground="LightBlue"
-                       Grid.Column="1"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis" Grid.ColumnSpan="3" Margin="34,5,53,5" Width="86"                      
-                       />
+
+
+
+            <Button Content="Warenbestand"
+                        Foreground="LightBlue"
+                        Background="#181735"
+                        FontSize="10"
+                        FontWeight="Medium" 
+                         Margin="0,0,0,0"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="3" RenderTransformOrigin="0,0">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="1.032"/>
+                        <RotateTransform Angle="-0.848"/>
+                        <TranslateTransform Y="1.874"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
+                        <Setter Property="Background" Value="LightBlue"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="CadetBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="75" Height="15"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+            <Button Content="Home"
+                        Foreground="LightBlue"
+                        Background="#181735"
+                        FontSize="10"
+                        FontWeight="Medium" 
+                         Margin="0,0,20,0"
+                    Grid.ColumnSpan="2">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
+                        <Setter Property="Background" Value="LightBlue"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="CadetBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="75" Height="15"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
 
             <Button Content="Anmelden"
                         Foreground="#181735"
                         FontSize="10"
                         FontWeight="Medium" 
-                        Margin="0,0,10,0"
+                       Margin="0,0,10,0"
                     Grid.Column="11"
                     Grid.ColumnSpan="2">
 
@@ -92,14 +158,50 @@
                 </Button.Template>
             </Button>
 
-            <TextBlock Text="Bestellungen"
-                       Foreground="LightBlue"
-                       Grid.Column="3"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis" Margin="3,5,52,5" Width="74" Grid.ColumnSpan="2"
-                       
-                       />
+
+
+            <Button Content="Bestellungen"
+                        Foreground="LightBlue"
+                        Background="#181735"
+                        FontSize="10"
+                        FontWeight="Medium" 
+                         Margin="0,0,10,0"
+                    Grid.ColumnSpan="2" Grid.Column="3" RenderTransformOrigin="0,0">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.528"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
+                        <Setter Property="Background" Value="LightBlue"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="CadetBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="75" Height="15"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
 
 
             <TextBlock Text="Kontakt"
@@ -160,8 +262,8 @@
                            FontWeight="Normal"
                            FontFamily="Fonts/#Dosis" Margin="65,0,0,0"/>
 
-                
-                
+
+
                 <TextBlock Text="Goldene Bremsscheiben - Carbon Sattel - oder lieber lilane Bremsbänder aus echtem Leder.                                                                                                                           'Bikes n' Vibes' deutschlands Nummer Eins im Fahrrad Waren Handel. Was nicht auf Lager ist, kann im Handumdrehen über unser Weltweit ausgearbeitetes Lieferanten Netzwerk organisiert werden."
                            Foreground="White"
                            FontSize="12"
@@ -240,3 +342,27 @@
 
     </Grid>
 </Window>
+<!--<TextBlock Text="Home"
+                       Foreground="White"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontFamily="Fonts/#Dosis"
+                       FontWeight="Normal" Grid.ColumnSpan="3" Margin="45,5,53,5" Width="75"
+                       />
+
+<TextBlock Text="Warenbestand"
+                       Foreground="LightBlue"
+                       Grid.Column="1"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontFamily="Fonts/#Dosis" Grid.ColumnSpan="3" Margin="34,5,53,5" Width="86"                      
+                       />-->
+
+<!--<TextBlock Text="Bestellungen"-->
+<!--Foreground="LightBlue"
+                       Grid.Column="3"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontFamily="Fonts/#Dosis" Margin="3,5,52,5" Width="74" Grid.ColumnSpan="2"
+                       
+                       />-->
