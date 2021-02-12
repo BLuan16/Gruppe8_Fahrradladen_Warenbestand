@@ -43,7 +43,7 @@ namespace UI_Warenbestand
         }
 
       
-        private void beenden_Click(object sender, MouseButtonEventArgs e)
+        private void Tg_btn_Click(object sender, MouseButtonEventArgs e)
         {
             try
             {

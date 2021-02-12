@@ -11,7 +11,52 @@
         Background="#181735"
         WindowStartupLocation="CenterScreen"
         >
-    <Grid>
+    <Window.Resources>
+       <!--// Design der Toggle Buttons //-->
+        <ImageBrush x:Key="tb_mouse_over"
+                    ImageSource="icons/close.png"/>
+        <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="border"
+                           BorderThickness="{TemplateBinding BorderThickness}"
+                           Background="{TemplateBinding Background}"
+                                SnapsToDevicePixels="True">
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+
+                            </Trigger>
+
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+
+                            </Trigger>          
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+              
+            </Setter>
+        </Style>
+    </Window.Resources>
+   
+        
+        <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition/>
@@ -70,7 +115,7 @@
 
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="DarkBlue"/>
+                                <Setter Property="Background" Value="#383660"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -107,7 +152,7 @@
 
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="DarkBlue"/>
+                                <Setter Property="Background" Value="#383660"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -144,7 +189,7 @@
 
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="DarkBlue"/>
+                                <Setter Property="Background" Value="#383660"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -198,7 +243,54 @@
                 </Button.Template>
             </Button>
             
-            <Button Content="Beenden"
+            <ToggleButton
+                x:Name="Tg_btn"
+                
+                Grid.Column="13"
+                Margin="0,0,22,-0.2"
+                BorderThickness="0"
+                Style="{StaticResource tb_style}">
+
+                <ToggleButton.Background>
+                    <ImageBrush ImageSource="Icons/icons8-close-window-80.png"
+                                Stretch="None"/>
+                </ToggleButton.Background>
+                <ToggleButton.Triggers>
+                    <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                        <BeginStoryboard>
+
+                            <Storyboard x:Name="HideStackPanel">
+                                <DoubleAnimation
+                                    Storyboard.TargetName="nav_pnl"
+                                    Storyboard.TargetProperty="Width"
+                                    BeginTime="0:0:0"
+                                    From="230" To="65"
+                                    Duration="0:0:0.2">
+                                    
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="ToggleButton.Checked">
+
+                        <BeginStoryboard>
+                            <Storyboard x:Name="ShowStackPanel">
+                                <DoubleAnimation
+                                    Storyboard.TargetName="nav_pnl"
+                                    Storyboard.TargetProperty="Width"
+                                    BeginTime="0:0:0"
+                                    From="65" To="230"
+                                    Duration="0:0:0.3">
+                                    
+                                </DoubleAnimation>
+                                
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </ToggleButton.Triggers>
+            </ToggleButton>
+            
+            <!--<Button Content="Beenden"
                         Foreground="#181735"
                         FontSize="10"
                         FontWeight="Medium" 
@@ -232,7 +324,7 @@
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
-            </Button>
+            </Button>-->
         </Grid>
 
         <StackPanel Grid.Row="1"
@@ -268,8 +360,17 @@
                            Foreground="White"
                            FontSize="25"
                            FontWeight="Normal"
-                           FontFamily="Fonts/#Dosis" Height="37"
-                           />
+                           FontFamily="Fonts/#Dosis" Height="37" HorizontalAlignment="Left" Width="378" RenderTransformOrigin="0.5,0.5"
+                           >
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-0.544"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
 
                 <TextBlock Text="Your"
                            Foreground="White"
@@ -360,6 +461,8 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
+
+
         </Grid>
 
     </Grid>

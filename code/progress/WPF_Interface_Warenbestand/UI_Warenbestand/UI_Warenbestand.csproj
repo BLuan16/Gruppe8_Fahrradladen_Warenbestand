@@ -103,6 +103,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Resource Include="Fonts\Dosis.ttf" />
+    <None Include="Icons\icons8-home.aep" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -122,6 +123,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\bike3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\5040007_1_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\home.png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\icons8-close-window-80.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
