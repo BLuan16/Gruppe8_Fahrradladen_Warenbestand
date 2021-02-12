@@ -23,5 +23,26 @@ namespace UI_Warenbestand
         {
             InitializeComponent();
         }
+
+        private void home_Click(object sender, RoutedEventArgs e)
+        {
+            Window home = new MainWindow();
+            home.Show();
+            this.Close();
+        }
+
+        private void warenbestand_Click(object sender, RoutedEventArgs e)
+        {
+            Window warenbestand = new UI_Warenbestand.Window1();
+            warenbestand.Show();
+            this.Close();
+        }
+
+        private void bestellungen_Click(object sender, RoutedEventArgs e)
+        {
+            Window bestellungen = new UI_Warenbestand.Bestellungen();
+            bestellungen.Show();
+            this.Close();
+        }
     }
 }

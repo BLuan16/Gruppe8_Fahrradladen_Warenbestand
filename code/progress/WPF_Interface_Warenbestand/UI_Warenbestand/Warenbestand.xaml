@@ -4,11 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI_Warenbestand"
-     mc:Ignorable="d"
+        mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="900"
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="#181735"
+        WindowStartupLocation="CenterScreen"
         >
     <Grid>
         <Grid.RowDefinitions>
@@ -47,8 +48,10 @@
                         Foreground="LightBlue"
                         FontSize="10"
                         FontWeight="Medium" 
-                         Margin="0,0,5,0"
-                    Grid.ColumnSpan="2">
+                        Margin="0,0,5,0"
+                        x:Name="home"
+                        Click="home_Click"  
+                        Grid.ColumnSpan="2">
 
 
                 <Button.Style>
@@ -80,10 +83,11 @@
 
             <Button Content="Warenbestand"
                         Foreground="LightBlue"
-             
+                        x:Name="warenbestand"
+                        Click="warenbestand_Click"
                         FontSize="10"
                         FontWeight="Medium"
-                    Grid.ColumnSpan="2" Grid.Column="2" Margin="0,0,50,0">
+                        Grid.ColumnSpan="2" Grid.Column="2" Margin="0,0,50,0">
 
 
 
@@ -116,10 +120,11 @@
 
             <Button Content="Bestellungen"
                         Foreground="LightBlue"
-                        
+                        x:Name="bestellungen"
+                        Click="bestellungen_Click"
                         FontSize="10"
                         FontWeight="Medium" 
-                         Margin="14,0,38,0"
+                        Margin="14,0,38,0"
                         Grid.ColumnSpan="2" 
                         Grid.Column="3" >
 

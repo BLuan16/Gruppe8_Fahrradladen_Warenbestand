@@ -16,19 +16,30 @@ namespace UI_Warenbestand
             InitializeComponent();
         }
 
-        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        private void home_Click(object sender, RoutedEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                DragMove();
-            }
+            Window home = new MainWindow();
+            home.Show();
+            this.Close();
         }
 
-
-
-        private void InitializeComponent()
+        private void warenbestand_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            Window warenbestand = new UI_Warenbestand.Window1();
+            warenbestand.Show();
+            this.Close();
+        }
+
+        private void bestellungen_Click(object sender, RoutedEventArgs e)
+        {
+            Window bestellungen = new UI_Warenbestand.Bestellungen();
+            bestellungen.Show();
+            this.Close();
+        }
+
+        private void top_panel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }
