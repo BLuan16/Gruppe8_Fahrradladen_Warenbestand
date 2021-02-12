@@ -46,67 +46,25 @@
 
 
 
-            <Button Content="Warenbestand"
-                        Foreground="LightBlue"
-                        Background="#181735"
-                        FontSize="10"
-                        FontWeight="Medium" 
-                         Margin="0,0,0,0"
-                    Grid.Column="1"
-                    Grid.ColumnSpan="3" RenderTransformOrigin="0,0">
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleY="1.032"/>
-                        <RotateTransform Angle="-0.848"/>
-                        <TranslateTransform Y="1.874"/>
-                    </TransformGroup>
-                </Button.RenderTransform>
-
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                        <Setter Property="Background" Value="LightBlue"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="CadetBlue"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Width="75" Height="15"
-                                    CornerRadius="8"
-                                    Background="{TemplateBinding Background}">
-
-                            <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
 
 
             <Button Content="Home"
                         Foreground="LightBlue"
-                        Background="#181735"
                         FontSize="10"
                         FontWeight="Medium" 
-                         Margin="0,0,20,0"
+                         Margin="0,0,5,0"
                     Grid.ColumnSpan="2">
+
 
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                        <Setter Property="Background" Value="LightBlue"/>
+                        <Setter Property="Background" Value="#181735"/>
                         <Setter Property="Cursor" Value="Hand"/>
 
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="CadetBlue"/>
+                                <Setter Property="Background" Value="DarkBlue"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -123,13 +81,121 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+
+
+            <Button Content="Warenbestand"
+                        Foreground="LightBlue"
+             
+                        FontSize="10"
+                        FontWeight="Medium"
+                    Grid.ColumnSpan="2" Grid.Column="2" Margin="0,0,50,0">
+
+
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
+                        <Setter Property="Background" Value="#181735"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="75" Height="15"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+            <Button Content="Bestellungen"
+                        Foreground="LightBlue"
+                        
+                        FontSize="10"
+                        FontWeight="Medium" 
+                         Margin="14,0,38,0"
+                        Grid.ColumnSpan="2" 
+                        Grid.Column="3" >
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
+                        <Setter Property="Background" Value="#181735"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="DarkBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="75" Height="15"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
 
             <Button Content="Anmelden"
                         Foreground="#181735"
                         FontSize="10"
                         FontWeight="Medium" 
-                       Margin="0,0,10,0"
+                       Margin="10,0,55,0"
                     Grid.Column="11"
+                    Grid.ColumnSpan="3">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
+                        <Setter Property="Background" Value="LightBlue"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="CadetBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="75" Height="15"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Content="Kontakt"
+                        Foreground="#181735"
+                        FontSize="10"
+                        FontWeight="Medium" 
+                       Margin="40,0,-8,0"
+                    Grid.Column="12"
                     Grid.ColumnSpan="2">
 
                 <Button.Style>
@@ -157,61 +223,6 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-
-
-
-            <Button Content="Bestellungen"
-                        Foreground="LightBlue"
-                        Background="#181735"
-                        FontSize="10"
-                        FontWeight="Medium" 
-                         Margin="0,0,10,0"
-                    Grid.ColumnSpan="2" Grid.Column="3" RenderTransformOrigin="0,0">
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-0.528"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Button.RenderTransform>
-
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                        <Setter Property="Background" Value="LightBlue"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="CadetBlue"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Width="75" Height="15"
-                                    CornerRadius="8"
-                                    Background="{TemplateBinding Background}">
-
-                            <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-
-
-
-            <TextBlock Text="Kontakt"
-                       Foreground="MediumPurple"
-                       Grid.Column="13"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis"
-                       FontWeight="Medium"
-                       />
         </Grid>
 
         <StackPanel Grid.Row="1"
@@ -286,6 +297,7 @@
 
             <StackPanel Orientation="Horizontal"
                         Margin="-350,250,-255,-250">
+
                 <StackPanel>
                     <Border Width="700"
                             Height="35"
