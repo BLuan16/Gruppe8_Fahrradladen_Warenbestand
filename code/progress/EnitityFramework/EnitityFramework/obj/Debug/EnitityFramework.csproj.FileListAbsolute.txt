@@ -1,0 +1,12 @@
+C:\Users\Daniel Tönnies\Gruppe8_Fahrradladen_Warenbestand\code\progress\EnitityFramework\EnitityFramework\bin\Debug\EnitityFramework.exe.config
+C:\Users\Daniel Tönnies\Gruppe8_Fahrradladen_Warenbestand\code\progress\EnitityFramework\EnitityFramework\bin\Debug\EnitityFramework.exe
+C:\Users\Daniel Tönnies\Gruppe8_Fahrradladen_Warenbestand\code\progress\EnitityFramework\EnitityFramework\bin\Debug\EnitityFramework.pdb
+C:\Users\Daniel Tönnies\Gruppe8_Fahrradladen_Warenbestand\code\progress\EnitityFramework\EnitityFramework\bin\Debug\EntityFramework.dll
+C:\Users\Daniel Tönnies\Gruppe8_Fahrradladen_Warenbestand\code\progress\EnitityFramework\EnitityFramework\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Daniel Tönnies\Gruppe8_Fahrradladen_Warenbestand\code\progress\EnitityFramework\EnitityFramework\bin\Debug\EntityFramework.xml
+C:\Users\Daniel Tönnies\Gruppe8_Fahrradladen_Warenbestand\code\progress\EnitityFramework\EnitityFramework\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Daniel Tönnies\Gruppe8_Fahrradladen_Warenbestand\code\progress\EnitityFramework\EnitityFramework\bin\Debug\de\EntityFramework.resources.dll
+C:\Users\Daniel Tönnies\Gruppe8_Fahrradladen_Warenbestand\code\progress\EnitityFramework\EnitityFramework\obj\Debug\EnitityFramework.csprojAssemblyReference.cache
+C:\Users\Daniel Tönnies\Gruppe8_Fahrradladen_Warenbestand\code\progress\EnitityFramework\EnitityFramework\obj\Debug\EnitityFramework.csproj.CopyComplete
+C:\Users\Daniel Tönnies\Gruppe8_Fahrradladen_Warenbestand\code\progress\EnitityFramework\EnitityFramework\obj\Debug\EnitityFramework.exe
+C:\Users\Daniel Tönnies\Gruppe8_Fahrradladen_Warenbestand\code\progress\EnitityFramework\EnitityFramework\obj\Debug\EnitityFramework.pdb
