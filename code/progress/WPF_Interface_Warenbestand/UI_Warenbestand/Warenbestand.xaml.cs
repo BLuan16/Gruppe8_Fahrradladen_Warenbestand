@@ -44,5 +44,19 @@ namespace UI_Warenbestand
             bestellungen.Show();
             this.Close();
         }
+        private void beenden_Click(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
     }
 }

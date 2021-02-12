@@ -190,10 +190,13 @@
                 </Button.Template>
             </Button>
 
-            <Button Content="Kontakt"
+            <Button Content="Beenden"
+                    Command="ApplicationCommands.Close"
                         Foreground="#181735"
                         FontSize="10"
                         FontWeight="Medium" 
+                        x:Name="beenden"
+                        Click="bestellungen_Click"
                        Margin="40,0,-8,0"
                     Grid.Column="12"
                     Grid.ColumnSpan="2">
@@ -201,12 +204,12 @@
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                        <Setter Property="Background" Value="LightBlue"/>
+                        <Setter Property="Background" Value="IndianRed"/>
                         <Setter Property="Cursor" Value="Hand"/>
 
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="CadetBlue"/>
+                                <Setter Property="Background" Value="PaleVioletRed"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>

@@ -59,7 +59,7 @@
                 Grid.ColumnSpan="2"
                 x:Name="home"
                 Click="home_Click">
-                
+
 
 
                 <Button.Style>
@@ -197,11 +197,13 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-
-            <Button Content="Kontakt"
+            
+            <Button Content="Beenden"
                         Foreground="#181735"
                         FontSize="10"
                         FontWeight="Medium" 
+                        x:Name="beenden"
+                        Click="bestellungen_Click"
                        Margin="40,0,-8,0"
                     Grid.Column="12"
                     Grid.ColumnSpan="2">
@@ -209,12 +211,12 @@
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                        <Setter Property="Background" Value="LightBlue"/>
+                        <Setter Property="Background" Value="IndianRed"/>
                         <Setter Property="Cursor" Value="Hand"/>
 
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="CadetBlue"/>
+                                <Setter Property="Background" Value="PaleVioletRed"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -283,7 +285,7 @@
 
 
 
-                <TextBlock Text="Goldene Bremsscheiben - Carbon Sattel - oder lieber lilane Bremsbänder aus echtem Leder.                                                                                                                           'Bikes n' Vibes' deutschlands Nummer Eins im Fahrrad Waren Handel. Was nicht auf Lager ist, kann im Handumdrehen über unser Weltweit ausgearbeitetes Lieferanten Netzwerk organisiert werden."
+                <TextBlock Text="Goldene Bremsscheiben - Carbon Sattel - oder lieber lilane Bremsbänder aus echtem Leder.                                                                                                                           'Bikes n' Vibes' Deutschlands Nummer Eins im Fahrrad Waren Handel. Was nicht auf Lager ist, kann im Handumdrehen über unser Weltweit ausgearbeitetes Lieferanten Netzwerk organisiert werden."
                            Foreground="White"
                            FontSize="12"
                            FontWeight="Normal"
@@ -347,8 +349,8 @@
                 </StackPanel>
             </StackPanel>
             <Image Height="137"
-                       Source="Images/bike2.png" RenderTransformOrigin="0.512,0.536" Margin="403,155,406,488"
-                       RenderOptions.BitmapScalingMode="Fant">
+                       Source="Images/bike2.png" RenderTransformOrigin="0.512,0.536" Margin="403,0,406.6,488"
+                       RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Bottom">
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>

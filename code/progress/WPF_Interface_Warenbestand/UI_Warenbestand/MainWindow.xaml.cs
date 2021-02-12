@@ -41,5 +41,31 @@ namespace UI_Warenbestand
         {
             DragMove();
         }
+
+      
+        private void beenden_Click(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        //void beenden_Click(object sender, RoutedEventArgs e)
+        //{
+
+        //    //   Environment.Exit(0);
+        //    // Application.Current.Shutdown();
+            
+        //    this.Close();
+
+        //}
+
     }
 }
