@@ -42,30 +42,34 @@ namespace UI_Warenbestand
             DragMove();
         }
 
-      
-        private void Tg_btn_Click(object sender, MouseButtonEventArgs e)
+ 
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                Close();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+            this.Close();
         }
+
+
+
 
         //void beenden_Click(object sender, RoutedEventArgs e)
         //{
 
         //    //   Environment.Exit(0);
         //    // Application.Current.Shutdown();
-            
+
         //    this.Close();
 
         //}
+        //               try
+        //        {
+        //            Close();
+        //}
+
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.Message);
+        //        }
 
     }
 }

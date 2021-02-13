@@ -49,20 +49,12 @@ namespace UI_Warenbestand
             warenbestand.Show();
             this.Close();
         }
-
-        private void beenden_Click(object sender, MouseButtonEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                Close();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+            this.Close();
         }
+
+
 
     }
 }

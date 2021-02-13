@@ -24,6 +24,7 @@ namespace UI_Warenbestand
             InitializeComponent();
         }
 
+        
         private void home_Click(object sender, RoutedEventArgs e)
         {
             Window home = new MainWindow();
@@ -31,6 +32,7 @@ namespace UI_Warenbestand
             this.Close();
         }
 
+        
         private void warenbestand_Click(object sender, RoutedEventArgs e)
         {
             Window warenbestand = new UI_Warenbestand.Window1();
@@ -38,25 +40,18 @@ namespace UI_Warenbestand
             this.Close();
         }
 
+
         private void bestellungen_Click(object sender, RoutedEventArgs e)
         {
             Window bestellungen = new UI_Warenbestand.Bestellungen();
             bestellungen.Show();
             this.Close();
         }
-        private void beenden_Click(object sender, MouseButtonEventArgs e)
+     
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                Close();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+            this.Close();
         }
-
     }
 }
+

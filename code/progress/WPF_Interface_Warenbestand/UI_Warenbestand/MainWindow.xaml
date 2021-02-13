@@ -12,7 +12,7 @@
         WindowStartupLocation="CenterScreen"
         >
     <Window.Resources>
-       <!--// Design der Toggle Buttons //-->
+        <!--// Design der Toggle Buttons //-->
         <ImageBrush x:Key="tb_mouse_over"
                     ImageSource="icons/close.png"/>
         <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
@@ -26,7 +26,7 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                
+
                                 <Setter Property="Background"
                                         TargetName="border"
                                         Value="{StaticResource tb_mouse_over}"/>
@@ -46,17 +46,17 @@
                                         TargetName="border"
                                         Value="{StaticResource tb_mouse_over}"/>
 
-                            </Trigger>          
+                            </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
-              
+
             </Setter>
         </Style>
     </Window.Resources>
-   
-        
-        <Grid>
+
+
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition/>
@@ -209,23 +209,24 @@
 
 
 
-            <Button Content="Anmelden"
-                        Foreground="#181735"
+            <Button Content="Beenden"
+                    Click="Button_Click"
+                        Foreground="DarkRed"
                         FontSize="10"
                         FontWeight="Medium" 
-                       Margin="10,0,55,0"
-                    Grid.Column="11"
-                    Grid.ColumnSpan="3">
+                       Margin="19,0,0,0"
+                    Grid.Column="12"
+                    Grid.ColumnSpan="2" RenderTransformOrigin="-0.094,0.44">
 
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                        <Setter Property="Background" Value="LightBlue"/>
+                        <Setter Property="Background" Value="IndianRed"/>
                         <Setter Property="Cursor" Value="Hand"/>
 
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="CadetBlue"/>
+                                <Setter Property="Background" Value="PaleVioletRed"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -242,13 +243,12 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            
+
             <ToggleButton
-                x:Name="Tg_btn"
-                
-                Grid.Column="13"
-                Margin="0,0,22,-0.2"
+                x:Name="Tg_btn"                
+                Grid.Column="11"
                 BorderThickness="0"
+                IsEnabled="False"
                 Style="{StaticResource tb_style}">
 
                 <ToggleButton.Background>
@@ -266,7 +266,6 @@
                                     BeginTime="0:0:0"
                                     From="230" To="65"
                                     Duration="0:0:0.2">
-                                    
                                 </DoubleAnimation>
                             </Storyboard>
                         </BeginStoryboard>
@@ -281,15 +280,15 @@
                                     BeginTime="0:0:0"
                                     From="65" To="230"
                                     Duration="0:0:0.3">
-                                    
+
                                 </DoubleAnimation>
-                                
+
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
                 </ToggleButton.Triggers>
             </ToggleButton>
-            
+
             <!--<Button Content="Beenden"
                         Foreground="#181735"
                         FontSize="10"
