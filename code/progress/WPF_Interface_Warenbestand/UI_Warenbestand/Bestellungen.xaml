@@ -11,8 +11,11 @@
         Background="#181735"
         WindowStartupLocation="CenterScreen"
         >
+
+    <!--// Gruppe 8 , WI19z1a //-->
+
+    <!--// Design der Toggle Buttons //-->
     <Window.Resources>
-        <!--// Design der Toggle Buttons //-->
         <ImageBrush x:Key="tb_mouse_over"
                     ImageSource="icons/close.png"/>
         <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
@@ -55,6 +58,7 @@
         </Style>
     </Window.Resources>
 
+    <!--// Maingrid der Bestellungen //-->
     <Grid>
 
 
@@ -68,7 +72,37 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        
+        <!--// Stackpanel der Bestellungen //-->
+        <StackPanel x:Name="stkpnl_Warenbestand" 
+                    Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Background="#181735" >
+            <DataGrid x:Name="dtg_Warenbestand"   AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True"
+                      FontFamily="Dosis" RowBackground="CadetBlue" AlternatingRowBackground="LightBlue" AlternationCount="2">
 
+                <DataGrid.Resources>
+                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
+                        <Setter Property="Background" Value="LightBlue" />
+                        <Setter Property="Foreground" Value="#181735" />
+                        <Setter Property="BorderBrush" Value="#181735"/>
+                        <Setter Property="BorderThickness" Value="0 1 1 1"/>
+                        <Setter Property="Margin" Value="0,0,0,0" />
+                        <Setter Property="Height" Value="20" />
+                        <Setter Property="Width" Value="auto"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    </Style>
+                </DataGrid.Resources>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding}" Width="0.2*"/>
+                    <DataGridTextColumn Header="Name"  Binding="{Binding}" Width="*"/>
+                    <DataGridTextColumn Header="Preis"  Binding="{Binding}" Width="*" />
+                </DataGrid.Columns>
+
+
+            </DataGrid>
+        </StackPanel>
+
+        <!--// Grid der oberen Leiste inklusive der Buttons //-->
         <Grid Background="#0F0F2D"
               Grid.ColumnSpan="2"
              >
@@ -285,7 +319,8 @@
             </ToggleButton>
 
         </Grid>
-
+        
+        <!--// Zwei Stackpanels zur Anordnung der linken Seite //-->
         <StackPanel Grid.Row="1"
                     VerticalAlignment="Center"
                     Margin="60,237,60,212"/>
@@ -314,6 +349,7 @@
                            TextWrapping="Wrap" Height="79"/>
             </StackPanel>
 
+            <!--// Stackpanel fuer den Text der Linken Seite //-->
             <StackPanel Height="34">
                 <TextBlock Text="Bestellen bei :   "
                            Foreground="White"
@@ -326,6 +362,8 @@
             </StackPanel>
 
         </StackPanel>
+        
+        <!--// Grid und Stackpanels der Hintergrundelemente //-->
         <Grid Grid.Column="1"
               Grid.RowSpan="2"
               Margin="160,-365,-610,59"

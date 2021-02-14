@@ -48,10 +48,41 @@ namespace UI_Warenbestand
             this.Close();
         }
      
+        // Exit Button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+        // Die Click Events fuer die Warenbestand Buttons
+        // Wuerde gerne Rueckmeldung zur Implementierung haben
+        // Sie zu clicken fuert zumindest zu keinem Crash daher vorerst kein Auskommentieren noetig
+
+        private void btn_WarenHinzufuegen_Click(object sender, RoutedEventArgs e)
+        {
+            // Der Button Soll es NUR erlauben das Hinzuzufuegen da im Default die "CanUser" statements zu "false" gesetzt sind damit man nicht ausversehen aenderungen vornimmt
+            dtg_Warenbestand.CanUserAddRows = true;
+            dtg_Warenbestand.CanUserDeleteRows = false;
+
+            // Offline row hinzufuegen zum DataGrid fuer Testzwecke (und da die Datenbank nicht so recht klappt)
+            // Da es nur offline ist werden diese beim wechseln der Ansichten nicht gespeichert!!!
+            //dtg_Warenbestand.Items.Add(new { ID = "Test1", Name = "Test2", Preis = "Test3" });
+        }
+
+        private void btn_WarenLoeschen_Click(object sender, RoutedEventArgs e)
+        {
+            // Der Button Soll es NUR erlauben das Loeschen da im Default die "CanUser" statements zu "false" gesetzt sind damit man nicht ausversehen aenderungen vornimmt
+            dtg_Warenbestand.CanUserDeleteRows = true;
+            dtg_Warenbestand.CanUserAddRows = false;
+
+        }
+
+        private void btn_WarenAendern_Click(object sender, RoutedEventArgs e)
+        {
+            // Hier muss noch rumgewerkelt werden !!
+            //dtg_Warenbestand.BeginEdit   ?
+        }
     }
+
 }
 

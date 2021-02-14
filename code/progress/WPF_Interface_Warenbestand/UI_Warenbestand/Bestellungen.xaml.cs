@@ -49,12 +49,15 @@ namespace UI_Warenbestand
             warenbestand.Show();
             this.Close();
         }
+
+        // Exit Button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
 
-
+        // Buttons um die Bestellungen zu verwalten noch benoetigt, bin mir nicht sicher was wir alles definitiv brauchen
+        // Desweiteren belasse ich den Datagrid mit den normalen 3 Eintraegen also ID, Name und Preis vorerst nur fuer Testzwecke
     }
 }

@@ -11,8 +11,11 @@
         Background="#181735"
         WindowStartupLocation="CenterScreen"
         >
+
+    <!--// Gruppe 8 , WI19z1a //-->
+
+    <!--// Design der Toggle Buttons //-->
     <Window.Resources>
-        <!--// Design der Toggle Buttons //-->
         <ImageBrush x:Key="tb_mouse_over"
                     ImageSource="icons/close.png"/>
         <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
@@ -55,7 +58,7 @@
         </Style>
     </Window.Resources>
 
-
+    <!--// Maingrid des MainWindows //-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
@@ -67,6 +70,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
+        <!--// Grid der oberen Leiste inklusive der Buttons //-->
         <Grid Background="#0F0F2D"
               Grid.ColumnSpan="2"  
               x:Name="top_panel"
@@ -326,6 +330,7 @@
             </Button>-->
         </Grid>
 
+        <!--// Zwei Stackpanels zur Anordnung der linken Seite //-->
         <StackPanel Grid.Row="1"
                     VerticalAlignment="Center"
                     Margin="60"/>
@@ -353,6 +358,7 @@
                            FontFamily="Fonts/#Dosis" Margin="10,50" Width="161"/>
             </StackPanel>
 
+            <!--// Stackpanel fuer den Text der Linken Seite //-->
             <StackPanel Height="263">
 
                 <TextBlock Text="Customize"
@@ -396,6 +402,8 @@
             </StackPanel>
 
         </StackPanel>
+        
+        <!--// Grid und Stackpanels der Hintergrundelemente //-->
         <Grid Grid.Column="1"
               Grid.RowSpan="2"
               Margin="160, -365, -610, 85"
@@ -466,6 +474,10 @@
 
     </Grid>
 </Window>
+    
+    
+<!--//                             Testbed und Code-Snippits                               //-->    
+    
 <!--<TextBlock Text="Home"
                        Foreground="White"
                        VerticalAlignment="Center"
