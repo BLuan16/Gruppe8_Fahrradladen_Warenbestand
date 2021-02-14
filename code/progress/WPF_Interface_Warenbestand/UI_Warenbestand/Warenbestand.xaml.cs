@@ -88,6 +88,9 @@ namespace UI_Warenbestand
             dtg_Warenbestand.CanUserDeleteRows = true;
             dtg_Warenbestand.CanUserAddRows = false;
 
+            Produkt produkt = (Produkt)collectionView.CurrentItem;
+            entities.Produkt.Remove(produkt);
+            entities.SaveChanges();
         }
 
         private void btn_WarenAendern_Click(object sender, RoutedEventArgs e)

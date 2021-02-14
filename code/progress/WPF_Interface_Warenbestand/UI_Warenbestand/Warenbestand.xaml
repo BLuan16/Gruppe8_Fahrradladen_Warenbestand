@@ -75,7 +75,7 @@
                     Grid.Row="2" Grid.Column="2" Background="#181735" >
             <DataGrid x:Name="dtg_Warenbestand"   
                       ItemsSource="{Binding }"
-                      AutoGenerateColumns="False" 
+                      AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True"
                       FontFamily="Dosis" RowBackground="CadetBlue" AlternatingRowBackground="LightBlue" AlternationCount="2"
                       CanUserAddRows="False" CanUserDeleteRows="False">
                 
