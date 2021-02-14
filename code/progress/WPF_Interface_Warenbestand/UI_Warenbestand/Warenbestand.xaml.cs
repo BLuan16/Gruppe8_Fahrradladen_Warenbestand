@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,12 +21,23 @@ namespace UI_Warenbestand
     /// </summary>
     public partial class Window1 : Window
     {
+        private ICollectionView collectionView;
+
+        private FahrradladenEntities entities = new FahrradladenEntities();
+
         public Window1()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
-        
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            entities.Produkt.Load();
+            entities.ProduktKategorie.Load();
+            collectionView = CollectionViewSource.GetDefaultView(entities.Produkt.Local);
+            stkpnl_Warenbestand.DataContext = collectionView;
+        }
+
         private void home_Click(object sender, RoutedEventArgs e)
         {
             Window home = new MainWindow();
@@ -82,6 +95,8 @@ namespace UI_Warenbestand
             // Hier muss noch rumgewerkelt werden !!
             //dtg_Warenbestand.BeginEdit   ?
         }
+
+
     }
 
 }

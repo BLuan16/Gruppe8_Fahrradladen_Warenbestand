@@ -72,3 +72,10 @@ H:\school\Gruppe8_Fahrradladen_Warenbestand\WPF_Interface_Warenbestand\UI_Warenb
 H:\school\Gruppe8_Fahrradladen_Warenbestand\WPF_Interface_Warenbestand\UI_Warenbestand\obj\Debug\UI_Warenbestand.Properties.Resources.resources
 H:\school\Gruppe8_Fahrradladen_Warenbestand\WPF_Interface_Warenbestand\UI_Warenbestand\obj\Debug\UI_Warenbestand.csproj.GenerateResource.cache
 H:\school\Gruppe8_Fahrradladen_Warenbestand\WPF_Interface_Warenbestand\UI_Warenbestand\obj\Debug\UI_Warenbestand.exe
+H:\school\Gruppe8_Fahrradladen_Warenbestand\code\progress\WPF_Interface_Warenbestand\UI_Warenbestand\bin\Debug\EntityFramework.dll
+H:\school\Gruppe8_Fahrradladen_Warenbestand\code\progress\WPF_Interface_Warenbestand\UI_Warenbestand\bin\Debug\EntityFramework.SqlServer.dll
+H:\school\Gruppe8_Fahrradladen_Warenbestand\code\progress\WPF_Interface_Warenbestand\UI_Warenbestand\bin\Debug\EntityFramework.xml
+H:\school\Gruppe8_Fahrradladen_Warenbestand\code\progress\WPF_Interface_Warenbestand\UI_Warenbestand\bin\Debug\EntityFramework.SqlServer.xml
+H:\school\Gruppe8_Fahrradladen_Warenbestand\code\progress\WPF_Interface_Warenbestand\UI_Warenbestand\bin\Debug\de\EntityFramework.resources.dll
+H:\school\Gruppe8_Fahrradladen_Warenbestand\code\progress\WPF_Interface_Warenbestand\UI_Warenbestand\obj\Debug\UI_Warenbestand_Content.g.cs
+H:\school\Gruppe8_Fahrradladen_Warenbestand\code\progress\WPF_Interface_Warenbestand\UI_Warenbestand\obj\Debug\UI_Warenbestand.csproj.CopyComplete

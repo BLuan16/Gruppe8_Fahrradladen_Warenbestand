@@ -10,6 +10,7 @@
         ResizeMode="NoResize"
         Background="#181735"
         WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
         >
     <Window.Resources>
         <!--// Design der Toggle Buttons //-->
@@ -73,6 +74,7 @@
         <StackPanel x:Name="stkpnl_Warenbestand" 
                     Grid.Row="2" Grid.Column="2" Background="#181735" >
             <DataGrid x:Name="dtg_Warenbestand"   
+                      ItemsSource="{Binding }"
                       AutoGenerateColumns="False" 
                       FontFamily="Dosis" RowBackground="CadetBlue" AlternatingRowBackground="LightBlue" AlternationCount="2"
                       CanUserAddRows="False" CanUserDeleteRows="False">
@@ -89,15 +91,15 @@
                         <Setter Property="HorizontalContentAlignment" Value="Center"/>
                     </Style>
                 </DataGrid.Resources>
-                
-                <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding}" Width="0.2*"/>
-                <DataGridTextColumn Header="Name"  Binding="{Binding}" Width="*"/>
-                <DataGridTextColumn Header="Preis"  Binding="{Binding}" Width="*" />
-                </DataGrid.Columns>
-                
 
-        </DataGrid>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Bezeichnung}" />
+                    <DataGridTextColumn Header="Preis"  Binding="{Binding Preis}" />
+                    <DataGridTextColumn Header="Kategorie"  Binding="{Binding ProduktKategorie.Bezeichnung}" />
+                </DataGrid.Columns>
+
+
+            </DataGrid>
         </StackPanel>
 
         <!--// Grid der oberen Leiste inklusive der Buttons //-->
