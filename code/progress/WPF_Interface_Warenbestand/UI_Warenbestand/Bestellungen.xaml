@@ -10,6 +10,7 @@
         ResizeMode="NoResize"
         Background="#181735"
         WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
         >
 
     <!--// Gruppe 8 , WI19z1a //-->
@@ -74,9 +75,10 @@
         </Grid.ColumnDefinitions>
         
         <!--// Stackpanel der Bestellungen //-->
-        <StackPanel x:Name="stkpnl_Warenbestand" 
+        <StackPanel x:Name="stkpnl_Bestellungen" 
                     Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Background="#181735" >
-            <DataGrid x:Name="dtg_Warenbestand"   AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True"
+            <DataGrid x:Name="dtg_Bestellungen"   AutoGenerateColumns="false" IsSynchronizedWithCurrentItem="True"
+                      ItemsSource="{Binding }"
                       FontFamily="Dosis" RowBackground="CadetBlue" AlternatingRowBackground="LightBlue" AlternationCount="2">
 
                 <DataGrid.Resources>
@@ -93,9 +95,9 @@
                 </DataGrid.Resources>
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding}" Width="0.2*"/>
-                    <DataGridTextColumn Header="Name"  Binding="{Binding}" Width="*"/>
-                    <DataGridTextColumn Header="Preis"  Binding="{Binding}" Width="*" />
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID_Bestellung}"/>
+                    <DataGridTextColumn Header="Summe"  Binding="{Binding Summe}"/>
+                    <DataGridTextColumn Header="Datum"  Binding="{Binding Datum}"/>
                 </DataGrid.Columns>
 
 

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +21,10 @@ namespace UI_Warenbestand
     /// </summary>
     public partial class Bestellungen : Window
     {
+        private ICollectionView collectionView;
+
+        private FahrradladenEntities entities = new FahrradladenEntities();
+
         public Bestellungen()
         {
             InitializeComponent();
@@ -26,7 +32,9 @@ namespace UI_Warenbestand
 
         private void warenbestand_Click(object sender, RoutedEventArgs e)
         {
-
+            Window warenbestand = new UI_Warenbestand.Window1();
+            warenbestand.Show();
+            this.Close();
         }
 
         private void home_Click(object sender, RoutedEventArgs e)
@@ -54,6 +62,15 @@ namespace UI_Warenbestand
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            entities.Bestellung.Load();
+            entities.Produkt.Load();
+            entities.Posten.Load();
+            collectionView = CollectionViewSource.GetDefaultView(entities.Bestellung.Local);
+            stkpnl_Bestellungen.DataContext = collectionView;
         }
 
 
