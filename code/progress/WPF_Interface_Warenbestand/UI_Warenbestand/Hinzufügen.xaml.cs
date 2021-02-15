@@ -22,11 +22,35 @@ namespace UI_Warenbestand
     /// </summary>
     public partial class Hinzufügen : Window
     {
+        private FahrradladenEntities entities = new FahrradladenEntities();
+
         public Hinzufügen()
         {
             InitializeComponent();
         }
 
+
+        private void btn_absenden_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Produkt produkt = new Produkt
+                {
+                    Bezeichnung = Name.Text,
+                    Preis = Convert.ToDecimal(Preis.Text),
+                    ID_ProduktKategorie = Convert.ToInt32(Kategorie.Text)
+                };
+                entities.Produkt.Add(produkt);
+                entities.SaveChanges();
+            }
+
+            catch (Exception)
+            {
+
+            }
+
+            this.Close();
+        }
 
     }
 }

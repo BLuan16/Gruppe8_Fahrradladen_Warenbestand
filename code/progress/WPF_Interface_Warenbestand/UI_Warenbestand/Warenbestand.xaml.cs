@@ -88,27 +88,28 @@ namespace UI_Warenbestand
 
         private void btn_WarenLoeschen_Click(object sender, RoutedEventArgs e)
         {
-            // Der Button Soll es NUR erlauben das Loeschen da im Default die "CanUser" statements zu "false" gesetzt sind damit man nicht ausversehen aenderungen vornimmt
-            dtg_Warenbestand.CanUserDeleteRows = true;
-            dtg_Warenbestand.CanUserAddRows = false;
+            try
+            {
+                Produkt produkt = (Produkt)collectionView.CurrentItem;
+                entities.Produkt.Remove(produkt);
+                entities.SaveChanges();
+            }
+            catch (Exception)
+            {
 
-            Produkt produkt = (Produkt)collectionView.CurrentItem;
-            entities.Produkt.Remove(produkt);
-            entities.SaveChanges();
+            }
+            
         }
 
         private void btn_WarenAendern_Click(object sender, RoutedEventArgs e)
         {
-            // Hier muss noch rumgewerkelt werden !!
-            //dtg_Warenbestand.BeginEdit   ?
+            entities.SaveChanges();
         }
 
         private void top_panel_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
-
-
     }
 
 }
