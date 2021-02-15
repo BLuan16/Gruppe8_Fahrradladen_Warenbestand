@@ -5,12 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI_Warenbestand"
         mc:Ignorable="d"
-        Title="Hinzufügen" Height="250" Width="271.562"
-        
+        Title="Hinzufügen" Height="250" Width="271.562"   
         ResizeMode="NoResize"
-        Background="RosyBrown"
-        
+        Background="IndianRed"       
         WindowStartupLocation="CenterScreen">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -21,36 +20,36 @@
                            Foreground="Black"
                            FontSize="20"
                            FontWeight="Medium"
-                           FontFamily="Fonts/#Dosis" Margin="0,10,42,181" Height="30" RenderTransformOrigin="-0.009,-0.41"/>
+                           FontFamily="Fonts/#Dosis" Margin="7,10,35,181" Height="30" RenderTransformOrigin="-0.009,-0.41"/>
         <TextBox x:Name="Name" Grid.ColumnSpan="2" Margin="112,10,10,181"></TextBox>
 
         <TextBlock Text="Preis :"
                            Foreground="Black"
                            FontSize="20"
                            FontWeight="Medium"
-                           FontFamily="Fonts/#Dosis" Margin="0,49,42,142" Height="30" RenderTransformOrigin="-0.009,-0.41"/>
-        <TextBox x:Name="Preis" Margin="112,49,10,146" Grid.ColumnSpan="2"></TextBox>
+                           FontFamily="Fonts/#Dosis" Margin="7,54,35,137" Height="30" RenderTransformOrigin="-0.009,-0.41"/>
+        <TextBox x:Name="Preis" Margin="112,54,10,137" Grid.ColumnSpan="2"></TextBox>
 
         <TextBlock Text="Kategorie :"
                            Foreground="Black"
                            FontSize="20"
                            FontWeight="Medium"
-                           FontFamily="Fonts/#Dosis" Margin="0,88,33,103" Height="30" RenderTransformOrigin="-0.009,-0.41"/>
-        <TextBox x:Name="Kategorie" Margin="112,88,10,103" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5"></TextBox>
+                           FontFamily="Fonts/#Dosis" Margin="7,93,26,98" Height="30" RenderTransformOrigin="-0.009,-0.41"/>
+        <TextBox x:Name="Kategorie" Margin="112,101,10,93" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5"></TextBox>
 
         <Button Content="Absenden"
                 Foreground="LightBlue"
                 FontSize="10"
-                FontWeight="Medium" 
-                Margin="84,123,0,10"
-                 Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="75">
+                FontWeight="Medium"
+                Margin="62,160,0,10"
+                 Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="145">
 
 
 
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                    <Setter Property="Background" Value="DimGray"/>
+                    <Setter Property="Background" Value="PaleVioletRed"/>
                     <Setter Property="Cursor" Value="Hand"/>
 
                     <Style.Triggers>
@@ -87,7 +86,7 @@
 
                 <StackPanel>
                 </StackPanel>
-                <StackPanel Margin="0,118,0,194" Width="428" RenderTransformOrigin="0.5,0.5">
+                <StackPanel Margin="0,108,0,196" Width="450" RenderTransformOrigin="0.5,0.5">
                     <StackPanel.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -96,27 +95,26 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </StackPanel.RenderTransform>
-                    <Border Width="1500"
-                            Height="35"
-                            Background="#3DDDC2"
-                            Margin="150,0,0,0"
+
+                    <Border
+                            Height="40"
+                            Background="FloralWhite"
+                            Margin="154,0,-1222,0"
                             CornerRadius="10"/>
 
                     <Border Width="120"
                             Height="35"
-                            Background="#FC6586"
+                            Background="PaleVioletRed"
                             Margin="0,5,0,0"
                             CornerRadius="10"/>
 
                     <Border Width="180"
                             Height="35"
-                            Background="#383660"
+                            Background="AntiqueWhite"
                             Margin="75,5,0,0"
                             CornerRadius="10"/>
                 </StackPanel>
             </StackPanel>
-      
-
         </Grid>
     </Grid>
 </Window>
