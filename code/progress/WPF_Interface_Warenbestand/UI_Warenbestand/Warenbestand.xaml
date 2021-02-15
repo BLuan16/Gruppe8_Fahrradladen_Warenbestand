@@ -55,9 +55,9 @@
             </Setter>
         </Style>
     </Window.Resources>
-    
+
     <!--// Gruppe 8 , WI19z1a //-->
-    
+
     <!--// Maingrid des Warenbestandes //-->
     <Grid>
         <Grid.RowDefinitions>
@@ -72,18 +72,19 @@
 
         <!--// Datagrid des Warenbestandes //-->
         <StackPanel x:Name="stkpnl_Warenbestand" 
-                    Grid.Row="2" Grid.Column="2" Background="#181735" >
+                    Grid.Row="1" Background="Transparent" Margin="60,148,195,60" >
             <DataGrid x:Name="dtg_Warenbestand"   
-                      ItemsSource="{Binding }"
+                      ItemsSource="{Binding ''}"
                       AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True"
-                      FontFamily="Dosis" RowBackground="CadetBlue" AlternatingRowBackground="LightBlue" AlternationCount="2"
+                      FontFamily="Dosis" RowBackground="#181735" AlternatingRowBackground="#181735" AlternationCount="2"
                       CanUserAddRows="False" CanUserDeleteRows="False">
-                
+
                 <DataGrid.Resources>
                     <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
-                        <Setter Property="Background" Value="LightBlue" />
-                        <Setter Property="Foreground" Value="#181735" />
-                        <Setter Property="BorderBrush" Value="#181735"/>
+                        <Setter Property="Background" Value="#181735" />
+                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="BorderBrush" Value="White"/>
                         <Setter Property="BorderThickness" Value="0 1 1 1"/>
                         <Setter Property="Margin" Value="0,0,0,0" />
                         <Setter Property="Height" Value="20" />
@@ -93,8 +94,10 @@
                 </DataGrid.Resources>
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Name" Binding="{Binding Bezeichnung}" />
+                    <DataGridTextColumn Header="Name" FontStyle="Normal"  Binding="{Binding Bezeichnung}" />
+
                     <DataGridTextColumn Header="Preis"  Binding="{Binding Preis}" />
+
                     <DataGridTextColumn Header="Kategorie"  Binding="{Binding ProduktKategorie.Bezeichnung}" />
                 </DataGrid.Columns>
 
@@ -325,7 +328,7 @@
                     VerticalAlignment="Center"
                     Margin="60"/>
 
-        <StackPanel Grid.Row="1" Margin="43,0,29,0">
+        <StackPanel Grid.Row="1" Margin="43,5,29,0">
             <StackPanel Orientation="Horizontal"
                         Margin="0,0,0,20" Height="126">
                 <Image Width="98" Height="137"
@@ -345,25 +348,14 @@
                            FontSize="20"
                            FontWeight="Medium"
                            VerticalAlignment="Center"
+                          
                            FontFamily="Fonts/#Dosis" Margin="10,38,10,0" Width="161"
                            TextWrapping="Wrap" Height="88"/>
             </StackPanel>
-            
-            <!--// Stackpanel fuer den Text der Linken Seite //-->
-            <StackPanel Height="164">
-                <TextBlock Text="Warenbestand aktualisieren :                          Wählen Sie eine der folgenden Optionen aus und fahren Sie fort.                                                 Bitte beachten Sie die geltenden Regelungen zu 'löschen'"
-                           Foreground="White"
-                           FontSize="20"
-                           FontWeight="Medium"
-                           VerticalAlignment="Center"
-                           FontFamily="Fonts/#Dosis" Margin="4,5,3,90"
-                           TextWrapping="Wrap" Height="159"/>
-
-            </StackPanel>
-            
-            <!--// Stackpanel fuer die Buttons welche mit dem Datagrid interagieren sollen //-->
             <StackPanel Orientation="Horizontal"
-                        Margin="0,15,0,0">
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Margin="10,15,0,0" Height="563" Width="348">
                 <Button x:Name="btn_WarenAendern" 
                         Content="Ändern"
                         Foreground="#181735"
@@ -373,7 +365,7 @@
                         Click="btn_WarenAendern_Click">
 
                     <Button.Style>
-                        <Style TargetType="Button">
+                        <Style TargetType="{x:Type Button}">
                             <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
                             <Setter Property="Background" Value="LightBlue"/>
                             <Setter Property="Cursor" Value="Hand"/>
@@ -386,7 +378,7 @@
                         </Style>
                     </Button.Style>
                     <Button.Template>
-                        <ControlTemplate TargetType="Button">
+                        <ControlTemplate TargetType="{x:Type Button}">
                             <Border Width="100" Height="25"
                                     CornerRadius="12"
                                     Background="{TemplateBinding Background}">
@@ -405,7 +397,7 @@
                         FontWeight="Medium" 
                         Click="btn_WarenHinzufuegen_Click">
                     <Button.Style>
-                        <Style TargetType="Button">
+                        <Style TargetType="{x:Type Button}">
                             <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
                             <Setter Property="Background" Value="#3A3952"/>
                             <Setter Property="Cursor" Value="Hand"/>
@@ -418,7 +410,7 @@
                         </Style>
                     </Button.Style>
                     <Button.Template>
-                        <ControlTemplate TargetType="Button">
+                        <ControlTemplate TargetType="{x:Type Button}">
                             <Border Width="100" Height="25"
                                     CornerRadius="12"
                                     Background="{TemplateBinding Background}">
@@ -439,7 +431,7 @@
                         Click="btn_WarenLoeschen_Click">
 
                     <Button.Style>
-                        <Style TargetType="Button">
+                        <Style TargetType="{x:Type Button}">
                             <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
                             <Setter Property="Background" Value="LightBlue"/>
                             <Setter Property="Cursor" Value="Hand"/>
@@ -452,7 +444,7 @@
                         </Style>
                     </Button.Style>
                     <Button.Template>
-                        <ControlTemplate TargetType="Button">
+                        <ControlTemplate TargetType="{x:Type Button}">
                             <Border Width="100" Height="25"
                                     CornerRadius="12"
                                     Background="{TemplateBinding Background}">
@@ -465,6 +457,10 @@
                 </Button>
 
             </StackPanel>
+
+
+
+            <!--// Stackpanel fuer Datagrid Buttons //-->
         </StackPanel>
 
         <!--// Grid und Stackpanels der Hintergrundelemente //-->

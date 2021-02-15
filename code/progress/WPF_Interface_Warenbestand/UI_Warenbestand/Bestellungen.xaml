@@ -73,19 +73,19 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
+
         <!--// Stackpanel der Bestellungen //-->
         <StackPanel x:Name="stkpnl_Bestellungen" 
-                    Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Background="#181735" >
+                    Grid.Row="1" Background="#181735" Margin="43,202,212,50" >
             <DataGrid x:Name="dtg_Bestellungen"   AutoGenerateColumns="false" IsSynchronizedWithCurrentItem="True"
                       ItemsSource="{Binding }"
-                      FontFamily="Dosis" RowBackground="CadetBlue" AlternatingRowBackground="LightBlue" AlternationCount="2">
+                      FontFamily="Dosis" RowBackground="#181735" AlternatingRowBackground="#181735" AlternationCount="2">
 
                 <DataGrid.Resources>
                     <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
-                        <Setter Property="Background" Value="LightBlue" />
-                        <Setter Property="Foreground" Value="#181735" />
-                        <Setter Property="BorderBrush" Value="#181735"/>
+                        <Setter Property="Background" Value="#181735" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="BorderBrush" Value="White"/>
                         <Setter Property="BorderThickness" Value="0 1 1 1"/>
                         <Setter Property="Margin" Value="0,0,0,0" />
                         <Setter Property="Height" Value="20" />
@@ -323,7 +323,7 @@
             </ToggleButton>
 
         </Grid>
-        
+
         <!--// Zwei Stackpanels zur Anordnung der linken Seite //-->
         <StackPanel Grid.Row="1"
                     VerticalAlignment="Center"
@@ -339,7 +339,7 @@
                         <TransformGroup>
                             <ScaleTransform/>
                             <SkewTransform/>
-                            <RotateTransform Angle="0.191"/>
+                            <RotateTransform Angle="0.409"/>
                             <TranslateTransform X="-0.019" Y="0.002"/>
                         </TransformGroup>
                     </Image.RenderTransform>
@@ -355,18 +355,18 @@
 
             <!--// Stackpanel fuer den Text der Linken Seite //-->
             <StackPanel Height="34">
-                <TextBlock Text="Bestellen bei :   "
+                <TextBlock Text="Overview Bestellungen :   "
                            Foreground="White"
                            FontSize="20"
                            FontWeight="Medium"
                            VerticalAlignment="Center"
-                           FontFamily="Fonts/#Dosis" Margin="4,5,3,90"
+                           FontFamily="Fonts/#Dosis" Margin="0,5,3,90"
                            TextWrapping="Wrap" Height="24"/>
 
             </StackPanel>
 
         </StackPanel>
-        
+
         <!--// Grid und Stackpanels der Hintergrundelemente //-->
         <Grid Grid.Column="1"
               Grid.RowSpan="2"

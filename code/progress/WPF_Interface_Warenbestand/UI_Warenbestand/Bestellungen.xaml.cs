@@ -19,6 +19,7 @@ namespace UI_Warenbestand
     /// <summary>
     /// Interaktionslogik für Bestellungen.xaml
     /// </summary>
+    /// 
     public partial class Bestellungen : Window
     {
         private ICollectionView collectionView;
