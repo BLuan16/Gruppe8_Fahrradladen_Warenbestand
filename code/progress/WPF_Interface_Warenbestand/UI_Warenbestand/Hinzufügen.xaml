@@ -40,6 +40,8 @@
         <Button Content="Absenden"
                 Foreground="LightBlue"
                 FontSize="10"
+                x:Name="btn_absenden"
+                Click="btn_absenden_Click"
                 FontWeight="Medium"
                 Margin="62,160,0,10"
                  Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="145">
