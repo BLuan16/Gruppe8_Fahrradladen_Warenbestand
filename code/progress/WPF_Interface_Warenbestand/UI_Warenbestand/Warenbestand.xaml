@@ -94,11 +94,11 @@
                 </DataGrid.Resources>
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Name" FontStyle="Normal"  Binding="{Binding Bezeichnung}" />
+                    <DataGridTextColumn Foreground="#3DDDC2" Header="Name" FontStyle="Normal"  Binding="{Binding Bezeichnung}" />
 
-                    <DataGridTextColumn Header="Preis"  Binding="{Binding Preis}" />
+                    <DataGridTextColumn Foreground="#3DDDC2" Header="Preis"  Binding="{Binding Preis}" />
 
-                    <DataGridTextColumn Header="Kategorie"  Binding="{Binding ProduktKategorie.Bezeichnung}" />
+                    <DataGridTextColumn Foreground="#3DDDC2" Header="Kategorie"  Binding="{Binding ProduktKategorie.Bezeichnung}" />
                 </DataGrid.Columns>
 
 

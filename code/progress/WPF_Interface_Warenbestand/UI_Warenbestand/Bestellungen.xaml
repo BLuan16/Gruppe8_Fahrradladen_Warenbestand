@@ -95,9 +95,9 @@
                 </DataGrid.Resources>
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding ID_Bestellung}"/>
-                    <DataGridTextColumn Header="Summe"  Binding="{Binding Summe}"/>
-                    <DataGridTextColumn Header="Datum"  Binding="{Binding Datum}"/>
+                    <DataGridTextColumn Foreground="#3DDDC2" Header="ID" Binding="{Binding ID_Bestellung}"/>
+                    <DataGridTextColumn Foreground="#3DDDC2" Header="Summe"  Binding="{Binding Summe}"/>
+                    <DataGridTextColumn Foreground="#3DDDC2" Header="Datum"  Binding="{Binding Datum}"/>
                 </DataGrid.Columns>
 
 
