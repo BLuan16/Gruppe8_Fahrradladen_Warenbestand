@@ -419,15 +419,15 @@
                             CornerRadius="20"/>
                 </StackPanel>
             </StackPanel>
-            <Image
-                       Source="Images/bike2.png" RenderTransformOrigin="-0.313,0.556" Margin="407,159,404,486"
+            <Image Height="137"
+                       Source="Images/bike2.png" RenderTransformOrigin="0.895,0.528" Margin="408,152,401,491"
                        RenderOptions.BitmapScalingMode="Fant">
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
-                        <RotateTransform Angle="1.609"/>
-                        <TranslateTransform X="-0.04" Y="-4.869"/>
+                        <RotateTransform Angle="-0.802"/>
+                        <TranslateTransform X="-0.018" Y="0.119"/>
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>

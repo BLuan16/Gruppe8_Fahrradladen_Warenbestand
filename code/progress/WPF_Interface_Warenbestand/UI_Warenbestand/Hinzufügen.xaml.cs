@@ -26,5 +26,7 @@ namespace UI_Warenbestand
         {
             InitializeComponent();
         }
+
+
     }
 }
