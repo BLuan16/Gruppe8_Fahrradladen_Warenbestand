@@ -72,6 +72,9 @@
     <Compile Include="Bestellungen.xaml.cs">
       <DependentUpon>Bestellungen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Hinzufügen.xaml.cs">
+      <DependentUpon>Hinzufügen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,6 +103,10 @@
       <DependentUpon>Warenbestand.xaml</DependentUpon>
     </Compile>
     <Page Include="Bestellungen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Hinzufügen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

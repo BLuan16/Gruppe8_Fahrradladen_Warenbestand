@@ -355,7 +355,15 @@
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Bottom"
-                        Margin="10,15,0,0" Height="563" Width="348">
+                        Margin="10,15,0,0" Height="569" Width="348" RenderTransformOrigin="0.5,0.5">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="0.068"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0.332"/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
                 <Button x:Name="btn_WarenAendern" 
                         Content="Ändern"
                         Foreground="#181735"
@@ -401,7 +409,6 @@
                             <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
                             <Setter Property="Background" Value="#3A3952"/>
                             <Setter Property="Cursor" Value="Hand"/>
-
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter Property="Background" Value="CadetBlue"/>
@@ -414,12 +421,11 @@
                             <Border Width="100" Height="25"
                                     CornerRadius="12"
                                     Background="{TemplateBinding Background}">
-
-                                <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
+                                <ContentPresenter VerticalAlignment="Center"  HorizontalAlignment="Center"/>
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
+
                 </Button>
 
                 <Button x:Name="btn_WarenLoeschen" 
@@ -455,14 +461,11 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-
             </StackPanel>
-
-
-
-            <!--// Stackpanel fuer Datagrid Buttons //-->
         </StackPanel>
 
+
+        <!--// Stackpanel fuer Datagrid Buttons //-->
         <!--// Grid und Stackpanels der Hintergrundelemente //-->
         <Grid Grid.Column="1"
               Grid.RowSpan="2"
@@ -494,7 +497,6 @@
                             Margin="75,15,0,0"
                             CornerRadius="20"/>
                 </StackPanel>
-
                 <StackPanel>
                     <Border Width="700"
                             Height="35"

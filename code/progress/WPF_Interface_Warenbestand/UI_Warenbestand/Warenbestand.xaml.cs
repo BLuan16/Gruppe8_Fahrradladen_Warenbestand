@@ -71,12 +71,16 @@ namespace UI_Warenbestand
         // Wuerde gerne Rueckmeldung zur Implementierung haben
         // Sie zu clicken fuert zumindest zu keinem Crash daher vorerst kein Auskommentieren noetig
 
+        //Aufruf Methode mit WPF Element als Parameter (PopUp)
+
+
         private void btn_WarenHinzufuegen_Click(object sender, RoutedEventArgs e)
         {
             // Der Button Soll es NUR erlauben das Hinzuzufuegen da im Default die "CanUser" statements zu "false" gesetzt sind damit man nicht ausversehen aenderungen vornimmt
-            dtg_Warenbestand.CanUserAddRows = true;
-            dtg_Warenbestand.CanUserDeleteRows = false;
 
+            Window Hinzufügen = new UI_Warenbestand.Hinzufügen();
+            Hinzufügen.Show();
+           
             // Offline row hinzufuegen zum DataGrid fuer Testzwecke (und da die Datenbank nicht so recht klappt)
             // Da es nur offline ist werden diese beim wechseln der Ansichten nicht gespeichert!!!
             //dtg_Warenbestand.Items.Add(new { ID = "Test1", Name = "Test2", Preis = "Test3" });
@@ -103,6 +107,7 @@ namespace UI_Warenbestand
         {
             DragMove();
         }
+
     }
 
 }
