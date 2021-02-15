@@ -107,6 +107,8 @@
         <!--// Grid der oberen Leiste inklusive der Buttons //-->
         <Grid Background="#0F0F2D"
               Grid.ColumnSpan="2"
+              x:Name="top_panel"
+              MouseDown="top_panel_MouseDown"
              >
 
             <Grid.ColumnDefinitions>

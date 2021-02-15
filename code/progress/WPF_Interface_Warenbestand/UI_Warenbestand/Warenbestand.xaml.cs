@@ -99,7 +99,10 @@ namespace UI_Warenbestand
             //dtg_Warenbestand.BeginEdit   ?
         }
 
-
+        private void top_panel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 
 }

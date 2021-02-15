@@ -73,6 +73,11 @@ namespace UI_Warenbestand
             stkpnl_Bestellungen.DataContext = collectionView;
         }
 
+        private void top_panel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
 
         // Buttons um die Bestellungen zu verwalten noch benoetigt, bin mir nicht sicher was wir alles definitiv brauchen
         // Desweiteren belasse ich den Datagrid mit den normalen 3 Eintraegen also ID, Name und Preis vorerst nur fuer Testzwecke
