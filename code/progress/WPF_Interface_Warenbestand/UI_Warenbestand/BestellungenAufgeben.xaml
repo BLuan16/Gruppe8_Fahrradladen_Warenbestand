@@ -13,6 +13,33 @@
         WindowStartupLocation="CenterScreen">
 
     <Grid>
+        <ListView Margin="23,34,264,118" ItemsSource="{Binding }"
+                  x:Name="lv_produkte" 
+                  MouseDoubleClick="lv_produkte_MouseDoubleClick">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+            <Run Text="{Binding Bezeichnung}"/>
+            <Run Text=" - "/>
+            <Run Text="{Binding Preis}"/>
+            <Run Text=" €" />
+                    </TextBlock>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListBox Margin="259,34,23,173" Name="lb_korb">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+            <Run Text="{Binding Bezeichnung}"/>
+            <Run Text=" - "/>
+            <Run Text="{Binding Preis}"/>
+            <Run Text=" €" />
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock TextAlignment="Right" Text="-,--" FontSize="20" Margin="259,240,23,118" Foreground="White" Name="tb_preis"/>
         <Grid>
             <Button x:Name="Abbruch" 
                         Content="Bestellung verwerfen"
