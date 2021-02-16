@@ -10,51 +10,15 @@
         ResizeMode="NoResize"
         Background="#181735"
         WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
         >
-    <Window.Resources>
-        <!--// Design der Toggle Buttons //-->
-        <ImageBrush x:Key="tb_mouse_over"
-                    ImageSource="icons/close.png"/>
-        <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ToggleButton}">
-                        <Border x:Name="border"
-                           BorderThickness="{TemplateBinding BorderThickness}"
-                           Background="{TemplateBinding Background}"
-                                SnapsToDevicePixels="True">
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
+    <!--// Gruppe 8 , WI19z1a //-->
 
-                                <Setter Property="Background"
-                                        TargetName="border"
-                                        Value="{StaticResource tb_mouse_over}"/>
-
-                                <Setter Property="BorderBrush"
-                                        TargetName="border"
-                                        Value="{StaticResource tb_mouse_over}"/>
-
-                            </Trigger>
-
-                            <Trigger Property="IsChecked" Value="True">
-                                <Setter Property="Background"
-                                        TargetName="border"
-                                        Value="{StaticResource tb_mouse_over}"/>
-
-                                <Setter Property="BorderBrush"
-                                        TargetName="border"
-                                        Value="{StaticResource tb_mouse_over}"/>
-
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-
-            </Setter>
-        </Style>
-    </Window.Resources>
+    <!--// Maingrid des Warenbestandes //-->
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/tour.png" Opacity="0.9"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition/>
@@ -65,8 +29,47 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Grid Background="#0F0F2D"
-              Grid.ColumnSpan="2"
+        <!--// Datagrid des Warenbestandes //-->
+        <StackPanel x:Name="stkpnl_Warenbestand" 
+                    Grid.Row="1" Background="Transparent" Margin="60,148,195,60" >
+            <DataGrid x:Name="dtg_Warenbestand"   
+                      ItemsSource="{Binding ''}"
+                      AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True"
+                      FontFamily="Dosis" RowBackground="Black" AlternatingRowBackground="Black" Opacity="0.9" AlternationCount="2"
+                      CanUserAddRows="False" CanUserDeleteRows="False">
+
+                <DataGrid.Resources>
+                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
+                        <Setter Property="Background" Value="Black" />
+                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0 1 1 1"/>
+                        <Setter Property="Margin" Value="0,0,0,0" />
+                        <Setter Property="Height" Value="20" />
+                        <Setter Property="Width" Value="auto"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    </Style>
+                </DataGrid.Resources>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Foreground="White" Header="Name" FontStyle="Normal"  Binding="{Binding Bezeichnung}" />
+
+                    <DataGridTextColumn Foreground="AliceBlue" Header="Preis"  Binding="{Binding Preis}" />
+
+                    <DataGridTextColumn Foreground="White" Header="Kategorie"  Binding="{Binding ProduktKategorie.Bezeichnung}" />
+                </DataGrid.Columns>
+
+
+            </DataGrid>
+        </StackPanel>
+
+        <!--// Grid der oberen Leiste inklusive der Buttons //-->
+        <Grid Background="Black"
+              Opacity="0.9"
+              Grid.ColumnSpan="2"  
+              x:Name="top_panel"
+              MouseDown="top_panel_MouseDown"
              >
 
             <Grid.ColumnDefinitions>
@@ -105,7 +108,7 @@
 
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="DarkBlue"/>
+                                <Setter Property="Background" Value="Black"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -142,7 +145,7 @@
 
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="DarkBlue"/>
+                                <Setter Property="Background" Value="Black"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -179,7 +182,7 @@
 
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="DarkBlue"/>
+                                <Setter Property="Background" Value="Black"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -233,58 +236,14 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-
-            <ToggleButton
-                x:Name="Tg_btn"                
-                Grid.Column="11"
-                BorderThickness="0"
-                IsEnabled="False"
-                Style="{StaticResource tb_style}">
-
-                <ToggleButton.Background>
-                    <ImageBrush ImageSource="Icons/icons8-close-window-80.png"
-                                Stretch="None"/>
-                </ToggleButton.Background>
-                <ToggleButton.Triggers>
-                    <EventTrigger RoutedEvent="ToggleButton.Unchecked">
-                        <BeginStoryboard>
-
-                            <Storyboard x:Name="HideStackPanel">
-                                <DoubleAnimation
-                                    Storyboard.TargetName="nav_pnl"
-                                    Storyboard.TargetProperty="Width"
-                                    BeginTime="0:0:0"
-                                    From="230" To="65"
-                                    Duration="0:0:0.2">
-                                </DoubleAnimation>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                    <EventTrigger RoutedEvent="ToggleButton.Checked">
-
-                        <BeginStoryboard>
-                            <Storyboard x:Name="ShowStackPanel">
-                                <DoubleAnimation
-                                    Storyboard.TargetName="nav_pnl"
-                                    Storyboard.TargetProperty="Width"
-                                    BeginTime="0:0:0"
-                                    From="65" To="230"
-                                    Duration="0:0:0.3">
-
-                                </DoubleAnimation>
-
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </ToggleButton.Triggers>
-            </ToggleButton>
         </Grid>
 
+        <!--// Zwei Stackpanels zur Anordnung der linken Seite //-->
         <StackPanel Grid.Row="1"
                     VerticalAlignment="Center"
                     Margin="60"/>
 
-        <StackPanel Grid.Row="1" Margin="43,0,29,0">
+        <StackPanel Grid.Row="1" Margin="43,5,29,0">
             <StackPanel Orientation="Horizontal"
                         Margin="0,0,0,20" Height="126">
                 <Image Width="98" Height="137"
@@ -304,31 +263,32 @@
                            FontSize="20"
                            FontWeight="Medium"
                            VerticalAlignment="Center"
+                          
                            FontFamily="Fonts/#Dosis" Margin="10,38,10,0" Width="161"
                            TextWrapping="Wrap" Height="88"/>
             </StackPanel>
-
-            <StackPanel Height="164">
-                <TextBlock Text="Warenbestand aktualisieren :                          Wählen Sie eine der folgenden Optionen aus und fahren Sie fort.                                                 Bitte beachten Sie die geltenden Regelungen zu 'löschen'"
-                           Foreground="White"
-                           FontSize="20"
-                           FontWeight="Medium"
-                           VerticalAlignment="Center"
-                           FontFamily="Fonts/#Dosis" Margin="4,5,3,90"
-                           TextWrapping="Wrap" Height="159"/>
-
-            </StackPanel>
-
             <StackPanel Orientation="Horizontal"
-                        Margin="0,15,0,0">
-                <Button Content="Ändern"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Margin="10,15,0,0" Height="569" Width="348" RenderTransformOrigin="0.5,0.5">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="0.068"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0.332"/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+                <Button x:Name="btn_WarenAendern" 
+                        Content="Ändern"
                         Foreground="#181735"
                         FontSize="14"
                         FontWeight="Medium" 
-                        Margin="0,0,10,0">
+                        Margin="0,0,10,0"
+                        Click="btn_WarenAendern_Click">
 
                     <Button.Style>
-                        <Style TargetType="Button">
+                        <Style TargetType="{x:Type Button}">
                             <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
                             <Setter Property="Background" Value="LightBlue"/>
                             <Setter Property="Cursor" Value="Hand"/>
@@ -341,7 +301,7 @@
                         </Style>
                     </Button.Style>
                     <Button.Template>
-                        <ControlTemplate TargetType="Button">
+                        <ControlTemplate TargetType="{x:Type Button}">
                             <Border Width="100" Height="25"
                                     CornerRadius="12"
                                     Background="{TemplateBinding Background}">
@@ -353,16 +313,17 @@
                     </Button.Template>
                 </Button>
 
-                <Button Content="Hinzufügen"
+                <Button x:Name="btn_WarenHinzufuegen" 
+                        Content="Hinzufügen"
                         Foreground="White"
                         FontSize="14"
-                        FontWeight="Medium" >
+                        FontWeight="Medium" 
+                        Click="btn_WarenHinzufuegen_Click">
                     <Button.Style>
-                        <Style TargetType="Button">
+                        <Style TargetType="{x:Type Button}">
                             <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                            <Setter Property="Background" Value="#3A3952"/>
+                            <Setter Property="Background" Value="Transparent"/>
                             <Setter Property="Cursor" Value="Hand"/>
-
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter Property="Background" Value="CadetBlue"/>
@@ -371,26 +332,27 @@
                         </Style>
                     </Button.Style>
                     <Button.Template>
-                        <ControlTemplate TargetType="Button">
+                        <ControlTemplate TargetType="{x:Type Button}">
                             <Border Width="100" Height="25"
                                     CornerRadius="12"
                                     Background="{TemplateBinding Background}">
-
-                                <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
+                                <ContentPresenter VerticalAlignment="Center"  HorizontalAlignment="Center"/>
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
+
                 </Button>
 
-                <Button Content="Löschen"
+                <Button x:Name="btn_WarenLoeschen" 
+                        Content="Löschen"
                         Foreground="DarkRed"
                         FontSize="14"
                         FontWeight="Medium" 
-                        Margin="0,0,10,0" Width="119">
+                        Margin="0,0,10,0" Width="119"
+                        Click="btn_WarenLoeschen_Click">
 
                     <Button.Style>
-                        <Style TargetType="Button">
+                        <Style TargetType="{x:Type Button}">
                             <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
                             <Setter Property="Background" Value="LightBlue"/>
                             <Setter Property="Cursor" Value="Hand"/>
@@ -403,7 +365,7 @@
                         </Style>
                     </Button.Style>
                     <Button.Template>
-                        <ControlTemplate TargetType="Button">
+                        <ControlTemplate TargetType="{x:Type Button}">
                             <Border Width="100" Height="25"
                                     CornerRadius="12"
                                     Background="{TemplateBinding Background}">
@@ -414,9 +376,12 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-
             </StackPanel>
         </StackPanel>
+
+
+        <!--// Stackpanel fuer Datagrid Buttons //-->
+        <!--// Grid und Stackpanels der Hintergrundelemente //-->
         <Grid Grid.Column="1"
               Grid.RowSpan="2"
               Margin="160, -365, -610, 85"
@@ -431,39 +396,39 @@
                 <StackPanel>
                     <Border Width="700"
                             Height="35"
-                            Background="#3DDDC2"
+                            Background="	#DEB887"
                             Margin="150,0,0,0"
                             CornerRadius="20"/>
 
                     <Border Width="700"
                             Height="35"
-                            Background="#FC6586"
+                            Background="#5F9EA0"
                             Margin="0,15,0,0"
                             CornerRadius="20"/>
 
                     <Border Width="700"
                             Height="35"
-                            Background="#383660"
+                            Background="#FF7F50"
                             Margin="75,15,0,0"
                             CornerRadius="20"/>
                 </StackPanel>
-
                 <StackPanel>
                     <Border Width="700"
                             Height="35"
-                            Background="#3DDDC2"
+                            
+                            Background="	#DEB887"
                             Margin="150,0,0,0"
                             CornerRadius="20"/>
 
                     <Border Width="700"
                             Height="35"
-                            Background="#FC6586"
+                            Background="#5F9EA0"
                             Margin="0,15,0,0"
                             CornerRadius="20"/>
 
                     <Border Width="700"
                             Height="35"
-                            Background="#383660"
+                            Background="#FF7F50"
                             Margin="75,15,0,0"
                             CornerRadius="20"/>
                 </StackPanel>

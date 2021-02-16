@@ -1,0 +1,105 @@
+﻿<Window x:Class="UI_Warenbestand.Hinzufügen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI_Warenbestand"
+        mc:Ignorable="d"
+        Height="250" Width="271.562"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="IndianRed"       
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="136*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/berge.png" Opacity="0.9"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Name :"
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis" Margin="0,24,42,60" Height="30" RenderTransformOrigin="-0.009,-0.41" Grid.RowSpan="2"/>
+        <TextBox x:Name="Name" Margin="0,24,10,60" Grid.RowSpan="2" FontWeight="Black"  Background="Transparent" Grid.Column="1"/>
+
+        <TextBlock Text="Preis :"
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis" Margin="0,15,42,114" RenderTransformOrigin="-0.009,-0.41"  Grid.RowSpan="2" Grid.Row="1"/>
+        <TextBox x:Name="Preis" Margin="0,25,10,10" Background="Transparent" FontWeight="Black"   Grid.Row="1" Grid.Column="1"/>
+
+        <TextBlock Text="Kategorie :"
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis" Margin="0,4,33,58" RenderTransformOrigin="-0.009,-0.41" Grid.Row="2"/>
+        <TextBox x:Name="Kategorie" Margin="0,8,10,100" Background="Transparent" FontWeight="Black" RenderTransformOrigin="0.5,0.5" Grid.Row="2" Grid.Column="1"/>
+
+        <Button Content="Absenden"
+                Foreground="LightBlue"
+
+                FontSize="15"
+                x:Name="btn_absenden"
+                Click="btn_absenden_Click"
+                FontWeight="Medium"
+                Margin="62,56,0,20"
+                Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="145" Height="60" Grid.Row="2">
+
+
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
+                    <Setter Property="Background" Value="PaleVioletRed"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#383660"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="95" Height="25"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+
+                        <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+
+
+
+        <Image
+                       Source="Images/bike2.png" RenderTransformOrigin="0.895,0.528" Margin="120,67,67,-12"
+                       RenderOptions.BitmapScalingMode="Fant" Grid.ColumnSpan="2" Grid.Row="2">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.802"/>
+                    <TranslateTransform X="-0.018" Y="0.119"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+    </Grid>
+</Window>
