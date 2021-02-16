@@ -14,52 +14,12 @@
 
     <!--// Gruppe 8 , WI19z1a //-->
 
-    <!--// Design der Toggle Buttons //-->
-    <Window.Resources>
-        <ImageBrush x:Key="tb_mouse_over"
-                    ImageSource="icons/close.png"/>
-        <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ToggleButton}">
-                        <Border x:Name="border"
-                           BorderThickness="{TemplateBinding BorderThickness}"
-                           Background="{TemplateBinding Background}"
-                                SnapsToDevicePixels="True">
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-
-                                <Setter Property="Background"
-                                        TargetName="border"
-                                        Value="{StaticResource tb_mouse_over}"/>
-
-                                <Setter Property="BorderBrush"
-                                        TargetName="border"
-                                        Value="{StaticResource tb_mouse_over}"/>
-
-                            </Trigger>
-
-                            <Trigger Property="IsChecked" Value="True">
-                                <Setter Property="Background"
-                                        TargetName="border"
-                                        Value="{StaticResource tb_mouse_over}"/>
-
-                                <Setter Property="BorderBrush"
-                                        TargetName="border"
-                                        Value="{StaticResource tb_mouse_over}"/>
-
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-
-            </Setter>
-        </Style>
-    </Window.Resources>
 
     <!--// Maingrid des MainWindows //-->
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/tour.png" Opacity="0.9"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition/>
@@ -71,7 +31,8 @@
         </Grid.ColumnDefinitions>
 
         <!--// Grid der oberen Leiste inklusive der Buttons //-->
-        <Grid Background="#0F0F2D"
+        <Grid Background="Black"
+              Opacity="0.9"
               Grid.ColumnSpan="2"  
               x:Name="top_panel"
               MouseDown="top_panel_MouseDown"
@@ -247,87 +208,6 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-
-            <ToggleButton
-                x:Name="Tg_btn"                
-                Grid.Column="11"
-                BorderThickness="0"
-                IsEnabled="False"
-                Style="{StaticResource tb_style}">
-
-                <ToggleButton.Background>
-                    <ImageBrush ImageSource="Icons/icons8-close-window-80.png"
-                                Stretch="None"/>
-                </ToggleButton.Background>
-                <ToggleButton.Triggers>
-                    <EventTrigger RoutedEvent="ToggleButton.Unchecked">
-                        <BeginStoryboard>
-
-                            <Storyboard x:Name="HideStackPanel">
-                                <DoubleAnimation
-                                    Storyboard.TargetName="nav_pnl"
-                                    Storyboard.TargetProperty="Width"
-                                    BeginTime="0:0:0"
-                                    From="230" To="65"
-                                    Duration="0:0:0.2">
-                                </DoubleAnimation>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                    <EventTrigger RoutedEvent="ToggleButton.Checked">
-
-                        <BeginStoryboard>
-                            <Storyboard x:Name="ShowStackPanel">
-                                <DoubleAnimation
-                                    Storyboard.TargetName="nav_pnl"
-                                    Storyboard.TargetProperty="Width"
-                                    BeginTime="0:0:0"
-                                    From="65" To="230"
-                                    Duration="0:0:0.3">
-
-                                </DoubleAnimation>
-
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </ToggleButton.Triggers>
-            </ToggleButton>
-
-            <!--<Button Content="Beenden"
-                        Foreground="#181735"
-                        FontSize="10"
-                        FontWeight="Medium" 
-                        x:Name="beenden"
-                        Click="bestellungen_Click"
-                       Margin="40,0,-8,0"
-                    Grid.Column="12"
-                    Grid.ColumnSpan="2">
-
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                        <Setter Property="Background" Value="IndianRed"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="PaleVioletRed"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Width="75" Height="15"
-                                    CornerRadius="8"
-                                    Background="{TemplateBinding Background}">
-
-                            <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>-->
         </Grid>
 
         <!--// Zwei Stackpanels zur Anordnung der linken Seite //-->
@@ -359,7 +239,7 @@
             </StackPanel>
 
             <!--// Stackpanel fuer den Text der Linken Seite //-->
-            <StackPanel Height="263">
+            <StackPanel Height="312">
 
                 <TextBlock Text="Customize"
                            Foreground="White"
@@ -388,21 +268,18 @@
                            FontSize="25"
                            FontWeight="Normal"
                            FontFamily="Fonts/#Dosis" Margin="65,0,0,0"/>
-
-
-
                 <TextBlock Text="Goldene Bremsscheiben - Carbon Sattel - oder lieber lilane Bremsbänder aus echtem Leder.                                                                                                                           'Bikes n' Vibes' Deutschlands Nummer Eins im Fahrrad Waren Handel. Was nicht auf Lager ist, kann im Handumdrehen über unser Weltweit ausgearbeitetes Lieferanten Netzwerk organisiert werden."
                            Foreground="White"
                            FontSize="12"
                            FontWeight="Normal"
                            FontFamily="Fonts/#Dosis"
                            TextWrapping="Wrap"
-                           Margin="0,50,0,0" Height="148"/>
+                           Margin="0,90,0,0" Height="158"/>
 
             </StackPanel>
 
         </StackPanel>
-        
+
         <!--// Grid und Stackpanels der Hintergrundelemente //-->
         <Grid Grid.Column="1"
               Grid.RowSpan="2"
@@ -419,19 +296,19 @@
                 <StackPanel>
                     <Border Width="700"
                             Height="35"
-                            Background="#3DDDC2"
+                            Background="Black"
                             Margin="150,0,0,0"
                             CornerRadius="20"/>
 
                     <Border Width="700"
                             Height="35"
-                            Background="#FC6586"
+                            Background="White"
                             Margin="0,15,0,0"
                             CornerRadius="20"/>
 
                     <Border Width="700"
                             Height="35"
-                            Background="#383660"
+                            Background="Black"
                             Margin="75,15,0,0"
                             CornerRadius="20"/>
                 </StackPanel>
@@ -439,19 +316,19 @@
                 <StackPanel>
                     <Border Width="700"
                             Height="35"
-                            Background="#3DDDC2"
+                            Background="White"
                             Margin="150,0,0,0"
                             CornerRadius="20"/>
 
                     <Border Width="700"
                             Height="35"
-                            Background="#FC6586"
+                            Background="Black"
                             Margin="0,15,0,0"
                             CornerRadius="20"/>
 
                     <Border Width="700"
                             Height="35"
-                            Background="#383660"
+                            Background="white"
                             Margin="75,15,0,0"
                             CornerRadius="20"/>
                 </StackPanel>
@@ -474,31 +351,3 @@
 
     </Grid>
 </Window>
-    
-    
-<!--//                             Testbed und Code-Snippits                               //-->    
-    
-<!--<TextBlock Text="Home"
-                       Foreground="White"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis"
-                       FontWeight="Normal" Grid.ColumnSpan="3" Margin="45,5,53,5" Width="75"
-                       />
-
-<TextBlock Text="Warenbestand"
-                       Foreground="LightBlue"
-                       Grid.Column="1"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis" Grid.ColumnSpan="3" Margin="34,5,53,5" Width="86"                      
-                       />-->
-
-<!--<TextBlock Text="Bestellungen"-->
-<!--Foreground="LightBlue"
-                       Grid.Column="3"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontFamily="Fonts/#Dosis" Margin="3,5,52,5" Width="74" Grid.ColumnSpan="2"
-                       
-                       />-->

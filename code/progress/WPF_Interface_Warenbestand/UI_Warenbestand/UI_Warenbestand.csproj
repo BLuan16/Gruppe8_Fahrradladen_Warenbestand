@@ -188,6 +188,11 @@
     <Resource Include="Icons\icons8-close-window-80.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\sunrise.png" />
+    <Resource Include="Images\tour.png" />
+    <Resource Include="Images\bremsscheibe.png" />
+    <Resource Include="Images\berge2.png" />
+    <Resource Include="Images\berge.png" />
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model.Context.cs</LastGenOutput>
