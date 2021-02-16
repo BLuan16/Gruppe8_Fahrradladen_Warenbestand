@@ -31,10 +31,11 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock>
-            <Run Text="{Binding Bezeichnung}"/>
-            <Run Text=" - "/>
-            <Run Text="{Binding Preis}"/>
-            <Run Text=" €" />
+                        <Run Text="{Binding Produkt.Bezeichnung}"/>
+                        <Run Text=" - "/>
+                        <Run Text="{Binding Produkt.Preis}"/>
+                        <Run Text=" €   x" />
+                        <Run Text="{Binding Anzahl}"/>
                     </TextBlock>
                 </DataTemplate>
             </ListBox.ItemTemplate>
