@@ -23,6 +23,7 @@ namespace UI_Warenbestand
     public partial class Bestellungen : Window
     {
         private ICollectionView collectionView;
+        private ICollectionView collectionView2;
 
         private FahrradladenEntities entities = new FahrradladenEntities();
 
@@ -72,6 +73,8 @@ namespace UI_Warenbestand
             entities.Posten.Load();
             collectionView = CollectionViewSource.GetDefaultView(entities.Bestellung.Local);
             stkpnl_Bestellungen.DataContext = collectionView;
+            collectionView2 = CollectionViewSource.GetDefaultView(entities.Posten.Local);
+            stkpnl_BestDetails.DataContext = collectionView2;
         }
 
         private void top_panel_MouseDown(object sender, MouseButtonEventArgs e)
@@ -85,6 +88,21 @@ namespace UI_Warenbestand
             BestellungAufgeben.Show();
         }
 
+        private void dtg_Bestellungen_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            lb_details.Items.Clear();
+            string detail = "";
+            if (dtg_Bestellungen.SelectedItem != null)
+            {
+                Bestellung Bestellung = (Bestellung)dtg_Bestellungen.SelectedItem;
+                foreach (var posten in Bestellung.Posten)
+                {
+                    detail += posten.Produkt.Bezeichnung+"("+posten.Anzahl+"): "+posten.Produkt.Preis*posten.Anzahl+"\n";
+                }
+                lb_details.Items.Add(detail);
+            }
+
+        }
 
         // Buttons um die Bestellungen zu verwalten noch benoetigt, bin mir nicht sicher was wir alles definitiv brauchen
         // Desweiteren belasse ich den Datagrid mit den normalen 3 Eintraegen also ID, Name und Preis vorerst nur fuer Testzwecke
