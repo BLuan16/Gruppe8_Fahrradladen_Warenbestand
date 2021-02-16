@@ -6,14 +6,13 @@
         xmlns:local="clr-namespace:UI_Warenbestand"
         mc:Ignorable="d"
         Title="BestellungenAufgeben"
-        Height="250" Width="400"
-        WindowStyle="None">
+        Height="400" Width="500"
+        WindowStyle="None"
+        Background="Black">
 
     <Grid>
         <Grid>
-            <Grid.Background>
-                <ImageBrush ImageSource="Images/bremsscheibe.png" Opacity="0.9"/>
-            </Grid.Background>
+           
             <Grid.RowDefinitions>
                 <RowDefinition Height="25"/>
                 <RowDefinition/>

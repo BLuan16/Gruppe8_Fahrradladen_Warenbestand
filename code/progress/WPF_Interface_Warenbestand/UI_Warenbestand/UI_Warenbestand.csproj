@@ -200,6 +200,7 @@
     <Resource Include="Images\bremsscheibe.png" />
     <Resource Include="Images\berge2.png" />
     <Resource Include="Images\berge.png" />
+    <Resource Include="Images\wand.jpg" />
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model.Context.cs</LastGenOutput>
