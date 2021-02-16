@@ -79,6 +79,12 @@ namespace UI_Warenbestand
             DragMove();
         }
 
+        private void btn_BestellungHinzufuegen_Click(object sender, RoutedEventArgs e)
+        {
+            Window BestellungAufgeben = new UI_Warenbestand.BestellungenAufgeben();
+            BestellungAufgeben.Show();
+        }
+
 
         // Buttons um die Bestellungen zu verwalten noch benoetigt, bin mir nicht sicher was wir alles definitiv brauchen
         // Desweiteren belasse ich den Datagrid mit den normalen 3 Eintraegen also ID, Name und Preis vorerst nur fuer Testzwecke
