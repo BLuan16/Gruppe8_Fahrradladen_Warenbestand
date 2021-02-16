@@ -72,6 +72,9 @@
     <Compile Include="Bestellungen.xaml.cs">
       <DependentUpon>Bestellungen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BestellungenAufgeben.xaml.cs">
+      <DependentUpon>BestellungenAufgeben.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Hinzufügen.xaml.cs">
       <DependentUpon>Hinzufügen.xaml</DependentUpon>
     </Compile>
@@ -103,6 +106,10 @@
       <DependentUpon>Warenbestand.xaml</DependentUpon>
     </Compile>
     <Page Include="Bestellungen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BestellungenAufgeben.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

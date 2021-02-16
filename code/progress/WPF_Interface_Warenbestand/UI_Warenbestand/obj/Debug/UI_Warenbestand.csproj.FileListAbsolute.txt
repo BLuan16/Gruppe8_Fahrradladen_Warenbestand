@@ -90,3 +90,5 @@ C:\Users\luanb\OneDrive\Desktop\Oberstufe\Projekt_Prog\Gruppe8_Fahrradladen_Ware
 C:\Users\luanb\OneDrive\Desktop\Oberstufe\Projekt_Prog\Gruppe8_Fahrradladen_Warenbestand\code\progress\WPF_Interface_Warenbestand\UI_Warenbestand\obj\Debug\Hinzufügen.baml
 H:\school\Gruppe8_Fahrradladen_Warenbestand\code\progress\WPF_Interface_Warenbestand\UI_Warenbestand\obj\Debug\Hinzufügen.g.cs
 H:\school\Gruppe8_Fahrradladen_Warenbestand\code\progress\WPF_Interface_Warenbestand\UI_Warenbestand\obj\Debug\Hinzufügen.baml
+C:\Users\luanb\OneDrive\Desktop\Oberstufe\Projekt_Prog\Gruppe8_Fahrradladen_Warenbestand\code\progress\WPF_Interface_Warenbestand\UI_Warenbestand\obj\Debug\BestellungenAufgeben.g.cs
+C:\Users\luanb\OneDrive\Desktop\Oberstufe\Projekt_Prog\Gruppe8_Fahrradladen_Warenbestand\code\progress\WPF_Interface_Warenbestand\UI_Warenbestand\obj\Debug\BestellungenAufgeben.baml

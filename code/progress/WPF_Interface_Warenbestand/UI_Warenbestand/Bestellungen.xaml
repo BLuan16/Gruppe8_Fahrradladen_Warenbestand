@@ -12,7 +12,6 @@
         WindowStartupLocation="CenterScreen"
         Loaded="Window_Loaded"
         >
-
     <!--// Gruppe 8 , WI19z1a //-->
 
 
@@ -24,18 +23,20 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
-            <RowDefinition Height="449*"/>
+            <RowDefinition Height="377*"/>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="9*"/>
             <RowDefinition Height="26*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <!--// Stackpanel der Bestellungen //-->
         <StackPanel x:Name="stkpnl_Bestellungen" 
-                    Grid.Row="1" Background="Transparent" Margin="43,202,212,50" >
+                    Grid.Row="1" Background="Transparent" Margin="43,202,212,41" Grid.RowSpan="2" >
             <DataGrid x:Name="dtg_Bestellungen"   AutoGenerateColumns="false" IsSynchronizedWithCurrentItem="True"
                       ItemsSource="{Binding }"
                       FontFamily="Dosis" RowBackground="Black" AlternatingRowBackground="Black" Opacity="0.8" AlternationCount="2">
@@ -61,7 +62,10 @@
 
 
             </DataGrid>
+
         </StackPanel>
+
+
 
         <!--// Grid der oberen Leiste inklusive der Buttons //-->
         <Grid Background="Black"
@@ -237,15 +241,14 @@
                 </Button.Template>
             </Button>
 
-
         </Grid>
 
         <!--// Zwei Stackpanels zur Anordnung der linken Seite //-->
         <StackPanel Grid.Row="1"
                     VerticalAlignment="Center"
-                    Margin="60,237,60,212"/>
+                    Margin="60,237,60,140"/>
 
-        <StackPanel Grid.Row="1" Margin="43,0,29,0" Grid.RowSpan="2">
+        <StackPanel Grid.Row="1" Margin="43,0,0,0" Grid.RowSpan="4" HorizontalAlignment="Left" Width="235">
             <StackPanel Orientation="Horizontal"
                         Margin="0,0,0,20" Height="126">
                 <Image Width="98" Height="137"
@@ -267,6 +270,9 @@
                            VerticalAlignment="Center"
                            FontFamily="Fonts/#Dosis" Margin="10,37,10,10" Width="161"
                            TextWrapping="Wrap" Height="79"/>
+
+
+
             </StackPanel>
 
             <!--// Stackpanel fuer den Text der Linken Seite //-->
@@ -282,73 +288,42 @@
             </StackPanel>
 
         </StackPanel>
+        <StackPanel Grid.Column="1" Margin="10,354,10,10" Grid.Row="1" Grid.RowSpan="2">
+            <StackPanel Margin="113,0,10,0">
+                <Button x:Name="btn_BestellungHinzufuegen" 
+                        Content="Bestellen"
+                        Foreground="White"
+                        Background="Black"
+                        Opacity="0.9"
+                        FontSize="14"
+                        FontWeight="Medium" 
+                        Click="btn_BestellungHinzufuegen_Click" Margin="0,0,106,0" Height="40" HorizontalAlignment="Right" Width="244">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
+                            <Setter Property="Background" Value="Black"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="CadetBlue"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="100" Height="25"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
 
-        <!--// Grid und Stackpanels der Hintergrundelemente //-->
-        <Grid Grid.Column="1"
-              Grid.RowSpan="2"
-              Margin="160, -365, -610, 85"
-              Panel.ZIndex="-1">
-
-            <Grid.RenderTransform>
-                <RotateTransform Angle="50"/>
-            </Grid.RenderTransform>
-
-            <StackPanel Orientation="Horizontal"
-                        Margin="-350,250,-255,-250">
-
-                <StackPanel>
-                    <Border Width="700"
-                            Height="35"
-                            Background="Black"
-                            Margin="150,0,0,0"
-                            CornerRadius="20"/>
-
-                    <Border Width="700"
-                            Height="35"
-                            Background="White"
-                            Margin="0,15,0,0"
-                            CornerRadius="20"/>
-
-                    <Border Width="700"
-                            Height="35"
-                            Background="Black"
-                            Margin="75,15,0,0"
-                            CornerRadius="20"/>
-                </StackPanel>
-
-                <StackPanel>
-                    <Border Width="700"
-                            Height="35"
-                            Background="White"
-                            Margin="150,0,0,0"
-                            CornerRadius="20"/>
-
-                    <Border Width="700"
-                            Height="35"
-                            Background="Black"
-                            Margin="0,15,0,0"
-                            CornerRadius="20"/>
-
-                    <Border Width="700"
-                            Height="35"
-                            Background="white"
-                            Margin="75,15,0,0"
-                            CornerRadius="20"/>
-                </StackPanel>
+                </Button>
             </StackPanel>
-            <Image
-                       Source="Images/bike2.png" RenderTransformOrigin="0.895,0.528" Margin="408,152,401,460"
-                       RenderOptions.BitmapScalingMode="Fant">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-0.802"/>
-                        <TranslateTransform X="-0.018" Y="0.119"/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
-        </Grid>
+
+        </StackPanel>
 
     </Grid>
 </Window>
