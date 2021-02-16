@@ -8,33 +8,89 @@
         Title="BestellungenAufgeben"
         Height="400" Width="500"
         WindowStyle="None"
-        Background="Black">
+        Background="Black"
+        Opacity="0.9"
+        WindowStartupLocation="CenterScreen">
 
     <Grid>
         <Grid>
-           
-            <Grid.RowDefinitions>
-                <RowDefinition Height="25"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+            <Button x:Name="Abbruch" 
+                        Content="Bestellung verwerfen"
+                        Foreground="IndianRed"
+                        FontSize="14"
+                    Opacity="0.8"
+                        FontWeight="Medium" 
+                        Margin="41,282,224,0"
+                        Click="Abbruch_Click" Grid.ColumnSpan="2">
 
-            <StackPanel Margin="10">
-                <ComboBox IsEditable="True">
-                    <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
-                    <ComboBoxItem>ComboBox Item #2</ComboBoxItem>
-                    <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Cursor" Value="Hand"/>
 
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="CadetBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="200" Height="25"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="Absenden" 
+                        Content="Absenden"
+                        Foreground="#181735"
+                        FontSize="14"
+                        FontWeight="Medium" 
+                        Opacity="0.8"
+                        Margin="10,282,50,0"
+                        Click="Absenden_Click" Grid.Column="1">
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="CadetBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="100" Height="25"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+
+
         </Grid>
     </Grid>
 </Window>

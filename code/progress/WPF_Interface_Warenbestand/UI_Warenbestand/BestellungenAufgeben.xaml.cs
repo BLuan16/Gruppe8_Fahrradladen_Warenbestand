@@ -23,5 +23,15 @@ namespace UI_Warenbestand
         {
             InitializeComponent();
         }
+
+        private void Absenden_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Abbruch_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -31,7 +31,7 @@
 
         <!--// Datagrid des Warenbestandes //-->
         <StackPanel x:Name="stkpnl_Warenbestand" 
-                    Grid.Row="1" Background="Transparent" Margin="60,148,195,60" >
+                    Grid.Row="1" Background="Transparent" Margin="60,148,168,60" >
             <DataGrid x:Name="dtg_Warenbestand"   
                       ItemsSource="{Binding ''}"
                       AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True"
@@ -243,7 +243,7 @@
                     VerticalAlignment="Center"
                     Margin="60"/>
 
-        <StackPanel Grid.Row="1" Margin="43,5,29,0">
+        <StackPanel Grid.Row="1" Margin="43,5,28,0">
             <StackPanel Orientation="Horizontal"
                         Margin="0,0,0,20" Height="126">
                 <Image Width="98" Height="137"
@@ -268,29 +268,30 @@
                            TextWrapping="Wrap" Height="88"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Bottom"
-                        Margin="10,15,0,0" Height="569" Width="348" RenderTransformOrigin="0.5,0.5">
+                        
+                        Margin="4,50,75,0" Height="272" Width="299">
                 <StackPanel.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
-                        <SkewTransform AngleX="0.068"/>
+                        <SkewTransform AngleX="-0.047"/>
                         <RotateTransform/>
-                        <TranslateTransform X="0.332"/>
+                        <TranslateTransform X="-0.166"/>
                     </TransformGroup>
                 </StackPanel.RenderTransform>
+
                 <Button x:Name="btn_WarenAendern" 
                         Content="Ändern"
-                        Foreground="#181735"
+                        Foreground="white"
                         FontSize="14"
                         FontWeight="Medium" 
-                        Margin="0,0,10,0"
-                        Click="btn_WarenAendern_Click">
+                        Margin="0,224,10,0"
+                        Opacity="0.9"
+                        Click="btn_WarenAendern_Click" Width="101">
 
                     <Button.Style>
                         <Style TargetType="{x:Type Button}">
                             <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                            <Setter Property="Background" Value="LightBlue"/>
+                            <Setter Property="Background" Value="Black"/>
                             <Setter Property="Cursor" Value="Hand"/>
 
                             <Style.Triggers>
@@ -302,7 +303,7 @@
                     </Button.Style>
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border Width="100" Height="25"
+                            <Border Width="85" Height="25"
                                     CornerRadius="12"
                                     Background="{TemplateBinding Background}">
 
@@ -318,11 +319,12 @@
                         Foreground="White"
                         FontSize="14"
                         FontWeight="Medium" 
-                        Click="btn_WarenHinzufuegen_Click">
+                        Opacity="0.9"
+                        Click="btn_WarenHinzufuegen_Click" Margin="0,224,0,0">
                     <Button.Style>
                         <Style TargetType="{x:Type Button}">
                             <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Background" Value="Black"/>
                             <Setter Property="Cursor" Value="Hand"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
@@ -333,7 +335,7 @@
                     </Button.Style>
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border Width="100" Height="25"
+                            <Border Width="85" Height="25"
                                     CornerRadius="12"
                                     Background="{TemplateBinding Background}">
                                 <ContentPresenter VerticalAlignment="Center"  HorizontalAlignment="Center"/>
@@ -348,13 +350,14 @@
                         Foreground="DarkRed"
                         FontSize="14"
                         FontWeight="Medium" 
-                        Margin="0,0,10,0" Width="119"
+                        Margin="0,224,10,0" Width="119"
+                        Opacity="0.9"
                         Click="btn_WarenLoeschen_Click">
 
                     <Button.Style>
                         <Style TargetType="{x:Type Button}">
                             <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                            <Setter Property="Background" Value="LightBlue"/>
+                            <Setter Property="Background" Value="Black" />
                             <Setter Property="Cursor" Value="Hand"/>
 
                             <Style.Triggers>
@@ -366,7 +369,7 @@
                     </Button.Style>
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
-                            <Border Width="100" Height="25"
+                            <Border Width="85" Height="25"
                                     CornerRadius="12"
                                     Background="{TemplateBinding Background}">
 
