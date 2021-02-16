@@ -64,7 +64,8 @@
             </DataGrid>
         </StackPanel>
 
-        <!--// Grid der oberen Leiste inklusive der Buttons //-->
+      
+        <!--// Grid der oberen Leiste sowie alle Buttons //-->
         <Grid Background="Black"
               Opacity="0.9"
               Grid.ColumnSpan="2"  
@@ -72,6 +73,8 @@
               MouseDown="top_panel_MouseDown"
              >
 
+
+            <!--// Spalten //-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -89,7 +92,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-
+            <!--// Button Fenster Home  öffnen (aktuelles Fenster) //-->
             <Button Content="Home"
                         Foreground="LightBlue"
                         FontSize="10"
@@ -126,7 +129,7 @@
                 </Button.Template>
             </Button>
 
-
+            <!--// Button Fenster Warenbestand öffnen //-->
             <Button Content="Warenbestand"
                         Foreground="LightBlue"
                         x:Name="warenbestand"
@@ -163,7 +166,7 @@
                 </Button.Template>
             </Button>
 
-
+            <!--// Button Fenster Bestellungen öffnen //-->
             <Button Content="Bestellungen"
                         Foreground="LightBlue"
                         x:Name="bestellungen"
@@ -201,7 +204,7 @@
             </Button>
 
 
-
+            <!--// Button Beenden / Fenster schließen //-->
             <Button Content="Beenden"
                     Click="Button_Click"
                         Foreground="DarkRed"
@@ -278,7 +281,8 @@
                         <TranslateTransform X="-0.166"/>
                     </TransformGroup>
                 </StackPanel.RenderTransform>
-
+                
+                <!--// Button Ändern von Ware //-->
                 <Button x:Name="btn_WarenAendern" 
                         Content="Ändern"
                         Foreground="white"
@@ -313,7 +317,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-
+                <!--// Button Hinzufügen von Ware //-->
                 <Button x:Name="btn_WarenHinzufuegen" 
                         Content="Hinzufügen"
                         Foreground="White"
@@ -344,7 +348,7 @@
                     </Button.Template>
 
                 </Button>
-
+                <!--// Button Löschen von Ware //-->
                 <Button x:Name="btn_WarenLoeschen" 
                         Content="Löschen"
                         Foreground="DarkRed"
@@ -384,7 +388,7 @@
 
 
         <!--// Stackpanel fuer Datagrid Buttons //-->
-        <!--// Grid und Stackpanels der Hintergrundelemente //-->
+        <!--// Grid und Stackpanels // Hintergrundelemente //-->
         <Grid Grid.Column="1"
               Grid.RowSpan="2"
               Margin="160, -365, -610, 85"

@@ -39,15 +39,32 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <TextBlock TextAlignment="Right" Text="-,--" FontSize="20" Margin="259,240,23,118" Foreground="White" Name="tb_preis"/>
+
+        <TextBlock TextAlignment="Left" Text="S u m m e : " Foreground="White" Margin="259,240,111,118"></TextBlock>
+        <TextBlock TextAlignment="Right" Text="-,--" FontSize="20" Margin="259,240,28,118" Foreground="White" Name="tb_preis"/>
+        <TextBlock TextAlignment="Right" Text="€" FontSize="20" Margin="471,240,0,126" Foreground="White" HorizontalAlignment="Left" Width="13"/>
+
+
         <Grid>
+            <TextBlock Text="H i n w e i s : 
+                       
+                       
+                           Zum Hinzufügen bitte Doppelklick auf das gewünschte Produkt!"
+                           Foreground="White"
+                           FontSize="12"
+                           FontWeight="Normal"
+                           FontFamily="Fonts/#Dosis"
+                           TextWrapping="Wrap"
+                           Margin="23,285,30,57"/>
+
+            <!--// Abbruch / Verwurf Button//-->
             <Button x:Name="Abbruch" 
                         Content="Bestellung verwerfen"
                         Foreground="IndianRed"
                         FontSize="14"
                     Opacity="0.8"
                         FontWeight="Medium" 
-                        Margin="41,282,224,0"
+                        Margin="41,326,224,0"
                         Click="Abbruch_Click" Grid.ColumnSpan="2">
 
                 <Button.Style>
@@ -76,13 +93,14 @@
                 </Button.Template>
             </Button>
 
+            <!--// Absenden Button//-->
             <Button x:Name="Absenden" 
                         Content="Absenden"
                         Foreground="#181735"
                         FontSize="14"
                         FontWeight="Medium" 
                         Opacity="0.8"
-                        Margin="10,282,50,0"
+                        Margin="10,326,50,0"
                         Click="Absenden_Click" Grid.Column="1">
 
                 <Button.Style>
