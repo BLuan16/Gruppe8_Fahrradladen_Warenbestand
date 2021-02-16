@@ -55,9 +55,41 @@
                 </DataGrid.Resources>
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Foreground="White" Header="ID" Binding="{Binding ID_Bestellung}"/>
-                    <DataGridTextColumn Foreground="White" Header="Summe"  Binding="{Binding Summe}"/>
-                    <DataGridTextColumn Foreground="White" Header="Datum"  Binding="{Binding Datum}"/>
+                    <DataGridTextColumn Foreground="White" Header="ID" Width="0.25*" Binding="{Binding ID_Bestellung}"/>
+                    <DataGridTextColumn Foreground="White" Header="Summe" Width="*"  Binding="{Binding Summe}"/>
+                    <DataGridTextColumn Foreground="White" Header="Datum" Width="*"  Binding="{Binding Datum, StringFormat=d,ConverterCulture=de-DE}"/>
+                </DataGrid.Columns>
+
+
+            </DataGrid>
+        </StackPanel>
+
+        <!--// Stackpanel der Rechten Seite der Bestellungen //-->
+        <StackPanel x:Name="stkpnl_BestDetails"
+                    Grid.Row="1" Grid.Column="1" Background="Transparent">
+
+            <!--// Datagrid der Bestellungs-Details //-->
+            <DataGrid x:Name="dtg_BestDetails"   AutoGenerateColumns="false" IsSynchronizedWithCurrentItem="True"
+                      ItemsSource="{Binding }"
+                      FontFamily="Dosis" RowBackground="Black" AlternatingRowBackground="Black" AlternationCount="2">
+
+                <DataGrid.Resources>
+                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
+                        <Setter Property="Background" Value="Black" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="BorderBrush" Value="White"/>
+                        <Setter Property="BorderThickness" Value="0 1 1 1"/>
+                        <Setter Property="Margin" Value="0,0,0,0" />
+                        <Setter Property="Height" Value="20" />
+                        <Setter Property="Width" Value="auto"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    </Style>
+                </DataGrid.Resources>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Foreground="#3DDDC2" Header="ID" Width="0.25*" Binding="{Binding ID_Produkt}"/>
+                    <DataGridTextColumn Foreground="#3DDDC2" Header="Anzahl" Width="*"  Binding="{Binding Anzahl}"/>
+                    <DataGridTextColumn Foreground="#3DDDC2" Header="Preis" Width="*"  Binding="{Binding Preis}"/>
                 </DataGrid.Columns>
 
 
