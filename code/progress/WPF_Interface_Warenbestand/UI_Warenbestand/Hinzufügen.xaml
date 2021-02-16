@@ -5,46 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI_Warenbestand"
         mc:Ignorable="d"
-        Title="Hinzufügen" Height="250" Width="271.562"   
+        Height="250" Width="271.562"
+        WindowStyle="None"
         ResizeMode="NoResize"
         Background="IndianRed"       
         WindowStartupLocation="CenterScreen">
 
     <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="136*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/berge.png" Opacity="0.9"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <TextBlock Text="Name :"
-                           Foreground="Black"
+                           Foreground="White"
                            FontSize="20"
                            FontWeight="Medium"
-                           FontFamily="Fonts/#Dosis" Margin="7,10,35,181" Height="30" RenderTransformOrigin="-0.009,-0.41"/>
-        <TextBox x:Name="Name" Grid.ColumnSpan="2" Margin="112,10,10,181"></TextBox>
+                           FontFamily="Fonts/#Dosis" Margin="0,24,42,60" Height="30" RenderTransformOrigin="-0.009,-0.41" Grid.RowSpan="2"/>
+        <TextBox x:Name="Name" Margin="0,24,10,60" Grid.RowSpan="2" FontWeight="Black"  Background="Transparent" Grid.Column="1"/>
 
         <TextBlock Text="Preis :"
-                           Foreground="Black"
+                           Foreground="White"
                            FontSize="20"
                            FontWeight="Medium"
-                           FontFamily="Fonts/#Dosis" Margin="7,54,35,137" Height="30" RenderTransformOrigin="-0.009,-0.41"/>
-        <TextBox x:Name="Preis" Margin="112,54,10,137" Grid.ColumnSpan="2"></TextBox>
+                           FontFamily="Fonts/#Dosis" Margin="0,15,42,114" RenderTransformOrigin="-0.009,-0.41"  Grid.RowSpan="2" Grid.Row="1"/>
+        <TextBox x:Name="Preis" Margin="0,25,10,10" Background="Transparent" FontWeight="Black"   Grid.Row="1" Grid.Column="1"/>
 
         <TextBlock Text="Kategorie :"
-                           Foreground="Black"
+                           Foreground="White"
                            FontSize="20"
                            FontWeight="Medium"
-                           FontFamily="Fonts/#Dosis" Margin="7,93,26,98" Height="30" RenderTransformOrigin="-0.009,-0.41"/>
-        <TextBox x:Name="Kategorie" Margin="112,101,10,93" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5"></TextBox>
+                           FontFamily="Fonts/#Dosis" Margin="0,4,33,58" RenderTransformOrigin="-0.009,-0.41" Grid.Row="2"/>
+        <TextBox x:Name="Kategorie" Margin="0,8,10,100" Background="Transparent" FontWeight="Black" RenderTransformOrigin="0.5,0.5" Grid.Row="2" Grid.Column="1"/>
 
         <Button Content="Absenden"
                 Foreground="LightBlue"
-                FontSize="10"
+
+                FontSize="15"
                 x:Name="btn_absenden"
                 Click="btn_absenden_Click"
                 FontWeight="Medium"
-                Margin="62,160,0,10"
-                 Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="145">
+                Margin="62,56,0,20"
+                Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="145" Height="60" Grid.Row="2">
 
 
 
@@ -63,7 +74,7 @@
             </Button.Style>
             <Button.Template>
                 <ControlTemplate TargetType="Button">
-                    <Border Width="75" Height="15"
+                    <Border Width="95" Height="25"
                                     CornerRadius="8"
                                     Background="{TemplateBinding Background}">
 
@@ -74,49 +85,21 @@
             </Button.Template>
         </Button>
 
-        <Grid Grid.Column="1"
-              Grid.RowSpan="2"
-              Margin="160, -365, -610, 85"
-              Panel.ZIndex="-1">
 
-            <Grid.RenderTransform>
-                <RotateTransform Angle="50"/>
-            </Grid.RenderTransform>
 
-            <StackPanel Orientation="Horizontal"
-                        Margin="-99,215,-274,-250">
 
-                <StackPanel>
-                </StackPanel>
-                <StackPanel Margin="0,108,0,196" Width="450" RenderTransformOrigin="0.5,0.5">
-                    <StackPanel.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="-229.685"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </StackPanel.RenderTransform>
 
-                    <Border
-                            Height="40"
-                            Background="FloralWhite"
-                            Margin="154,0,-1222,0"
-                            CornerRadius="10"/>
-
-                    <Border Width="120"
-                            Height="35"
-                            Background="PaleVioletRed"
-                            Margin="0,5,0,0"
-                            CornerRadius="10"/>
-
-                    <Border Width="180"
-                            Height="35"
-                            Background="AntiqueWhite"
-                            Margin="75,5,0,0"
-                            CornerRadius="10"/>
-                </StackPanel>
-            </StackPanel>
-        </Grid>
+        <Image
+                       Source="Images/bike2.png" RenderTransformOrigin="0.895,0.528" Margin="120,67,67,-12"
+                       RenderOptions.BitmapScalingMode="Fant" Grid.ColumnSpan="2" Grid.Row="2">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.802"/>
+                    <TranslateTransform X="-0.018" Y="0.119"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
     </Grid>
 </Window>

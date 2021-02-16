@@ -29,6 +29,7 @@ namespace UI_Warenbestand
             InitializeComponent();
         }
 
+
         private void btn_absenden_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -42,10 +43,14 @@ namespace UI_Warenbestand
                 entities.Produkt.Add(produkt);
                 entities.SaveChanges();
             }
+
             catch (Exception)
             {
 
             }
+
+            this.Close();
         }
+
     }
 }
