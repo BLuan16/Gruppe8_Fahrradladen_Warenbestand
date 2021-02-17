@@ -38,41 +38,41 @@
         <StackPanel x:Name="stkpnl_Bestellungen" 
                     Grid.Row="1" Background="Transparent" Margin="43,202,172,41" Grid.RowSpan="2" >
             <ScrollViewer>
-            <DataGrid x:Name="dtg_Bestellungen"   AutoGenerateColumns="false" IsSynchronizedWithCurrentItem="True"
+                <DataGrid x:Name="dtg_Bestellungen"   AutoGenerateColumns="false" IsSynchronizedWithCurrentItem="True"
                       ItemsSource="{Binding }" MouseDoubleClick="dtg_Bestellungen_MouseDoubleClick"
                       FontFamily="Dosis" RowBackground="Black" AlternatingRowBackground="Black" Opacity="0.8" AlternationCount="2">
 
-                <DataGrid.Resources>
-                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
-                        <Setter Property="Background" Value="Black" />
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
+                            <Setter Property="Background" Value="Black" />
                             <Setter Property="Foreground" Value="#5F9EA0" />
-                        <Setter Property="BorderBrush" Value="Transparent"/>
-                        <Setter Property="BorderThickness" Value="0 1 1 1"/>
-                        <Setter Property="Margin" Value="0,0,0,0" />
-                        <Setter Property="Height" Value="20" />
-                        <Setter Property="Width" Value="auto"/>
-                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                    </Style>
-                </DataGrid.Resources>
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0 1 1 1"/>
+                            <Setter Property="Margin" Value="0,0,0,0" />
+                            <Setter Property="Height" Value="20" />
+                            <Setter Property="Width" Value="auto"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGrid.Resources>
 
-                <DataGrid.Columns>
+                    <DataGrid.Columns>
                         <DataGridTextColumn Foreground="#5F9EA0" Header="ID" Width="0.25*" Binding="{Binding ID_Bestellung}"/>
                         <DataGridTextColumn Foreground="#5F9EA0" Header="Summe" Width="*"  Binding="{Binding Summe}"/>
                         <DataGridTextColumn Foreground="#5F9EA0" Header="Datum" Width="*"  Binding="{Binding Datum, StringFormat=d,ConverterCulture=de-DE}"/>
-                </DataGrid.Columns>
+                    </DataGrid.Columns>
 
 
-            </DataGrid>
+                </DataGrid>
             </ScrollViewer>
         </StackPanel>
 
         <!--// Stackpanel der Rechten Seite der Bestellungen //-->
         <StackPanel x:Name="stkpnl_BestDetails"
-                    Grid.Row="1" Grid.Column="1" Background="Transparent">
+                    Grid.Row="1" Grid.Column="1" Background="Black"  Opacity="0.8" Margin="0,0,0,56">
 
             <!--// Datagrid der Bestellungs-Details //-->
             <TextBlock Text="Bestell-Details" FontSize="20" Foreground="White"/>
-            <ListBox x:Name="lb_details" Background="Transparent">
+            <ListBox x:Name="lb_details" Background="White">
 
             </ListBox>
         </StackPanel>
@@ -309,7 +309,7 @@
                         Opacity="0.9"
                         FontSize="14"
                         FontWeight="Medium" 
-                        Click="btn_BestellungHinzufuegen_Click" Margin="-115,0,52,0" Height="58" HorizontalAlignment="Right" Width="370">
+                        Click="btn_BestellungHinzufuegen_Click" Margin="-50,0,52,0" Height="56" HorizontalAlignment="Right" Width="305">
                     <Button.Style>
                         <Style TargetType="{x:Type Button}">
                             <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
