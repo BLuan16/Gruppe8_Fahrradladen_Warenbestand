@@ -93,14 +93,16 @@ namespace UI_Warenbestand
                 Produkt produkt = (Produkt)collectionView.CurrentItem;
                 entities.Produkt.Remove(produkt);
                 entities.SaveChanges();
+                Window1 window = new Window1();
+                window.Show();
+                this.Close();
             }
             catch (Exception)
             {
-
+                Fehlermeldung fehlermeldung = new Fehlermeldung();
+                fehlermeldung.Show();
+                this.Close();
             }
-            Window1 window = new Window1();
-            window.Show();
-            this.Close();
         }
 
         private void btn_WarenAendern_Click(object sender, RoutedEventArgs e)

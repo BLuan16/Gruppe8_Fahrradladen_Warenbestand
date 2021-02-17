@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock
-            Foreground="Black" Text="Mist. Dieser Artikel kann nicht gelöscht werden" Margin="10,10,10,29" Grid.Row="2"/>
+            Foreground="Black" TextAlignment="Center" Text="Dieser Artikel kann nicht gelöscht werden" Margin="10,10,10,29" Grid.Row="2"/>
 
         <Image Width="98"
                        Source="Icons/error.png" RenderTransformOrigin="0.512,0.536" Margin="87,2,87,21"
@@ -35,7 +35,7 @@
             </Image.RenderTransform>
         </Image>
 
-        <Button Content="Versuche es noch einmal"
+        <Button Content="Weiter"
                         Click="Button_Click"   
                         Foreground="DarkRed"
                         FontSize="10"
@@ -57,7 +57,7 @@
             </Button.Style>
             <Button.Template>
                 <ControlTemplate TargetType="Button">
-                    <Border Width="120" Height="15"
+                    <Border Width="120" Height="25"
                                     CornerRadius="8"
                                     Background="{TemplateBinding Background}">
 
