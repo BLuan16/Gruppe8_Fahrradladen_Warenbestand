@@ -32,13 +32,26 @@ namespace UI_Warenbestand
 
         private void btn_absenden_Click(object sender, RoutedEventArgs e)
         {
+            int idProduktKategorie = 0;
+            switch (cb_kategorie.SelectedIndex)
+            {
+                case 0:
+                    idProduktKategorie = 1;
+                    break;
+                case 1:
+                    idProduktKategorie = 2;
+                    break;
+                case 3:
+                    idProduktKategorie = 3;
+                    break;
+            }
             try
             {
                 Produkt produkt = new Produkt
                 {
                     Bezeichnung = Name.Text,
                     Preis = Convert.ToDecimal(Preis.Text),
-                    ID_ProduktKategorie = Convert.ToInt32(Kategorie.Text)
+                    ID_ProduktKategorie = idProduktKategorie
                 };
                 entities.Produkt.Add(produkt);
                 entities.SaveChanges();
