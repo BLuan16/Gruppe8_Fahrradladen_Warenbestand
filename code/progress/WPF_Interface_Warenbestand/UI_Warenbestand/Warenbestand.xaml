@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI_Warenbestand"
+        xmlns:WPF="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="900"
         WindowStyle="None"
@@ -63,20 +64,16 @@
 
                     <DataGridTextColumn Foreground="#5F9EA0" Header="Kategorie" Width="*" Binding="{Binding ProduktKategorie.Bezeichnung}" />
                 </DataGrid.Columns>
-
-
             </DataGrid>
         </StackPanel>
 
-      
+
         <!--// Grid der oberen Leiste sowie alle Buttons //-->
         <Grid Background="Black"
               Opacity="0.9"
               Grid.ColumnSpan="2"  
               x:Name="top_panel"
-              MouseDown="top_panel_MouseDown"
-             >
-
+              MouseDown="top_panel_MouseDown">
 
             <!--// Spalten //-->
             <Grid.ColumnDefinitions>
@@ -245,6 +242,9 @@
             </Button>
         </Grid>
 
+        <WPF:PieChart Name="pie" Margin="10,218,200,10" Grid.Column="1"
+                      Grid.Row="1" InnerRadius="70"/>
+
         <!--// Zwei Stackpanels zur Anordnung der linken Seite //-->
         <StackPanel Grid.Row="1"
                     VerticalAlignment="Center"
@@ -285,7 +285,7 @@
                         <TranslateTransform X="-0.166"/>
                     </TransformGroup>
                 </StackPanel.RenderTransform>
-                
+
                 <!--// Button Ändern von Ware //-->
                 <Button x:Name="btn_WarenAendern" 
                         Content="Ändern"
