@@ -75,6 +75,9 @@
     <Compile Include="BestellungenAufgeben.xaml.cs">
       <DependentUpon>BestellungenAufgeben.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Fehlermeldung.xaml.cs">
+      <DependentUpon>Fehlermeldung.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Hinzufügen.xaml.cs">
       <DependentUpon>Hinzufügen.xaml</DependentUpon>
     </Compile>
@@ -110,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="BestellungenAufgeben.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fehlermeldung.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -201,6 +208,7 @@
     <Resource Include="Images\berge2.png" />
     <Resource Include="Images\berge.png" />
     <Resource Include="Images\wand.jpg" />
+    <Resource Include="Icons\error.png" />
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model.Context.cs</LastGenOutput>

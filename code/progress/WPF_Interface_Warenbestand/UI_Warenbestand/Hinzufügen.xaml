@@ -44,8 +44,18 @@
                            Foreground="White"
                            FontSize="20"
                            FontWeight="Medium"
-                           FontFamily="Fonts/#Dosis" Margin="0,4,33,58" RenderTransformOrigin="-0.009,-0.41" Grid.Row="2"/>
+                           FontFamily="Fonts/#Dosis" Margin="0,4,33,104" RenderTransformOrigin="-0.009,-0.41" Grid.Row="2"/>
         <TextBox x:Name="Kategorie" Margin="0,8,10,100" Background="Transparent" FontWeight="Black" RenderTransformOrigin="0.5,0.5" Grid.Row="2" Grid.Column="1"/>
+
+        <TextBlock Text="Auswahl '1' = Fahrräder 
+                   Auswahl '2' = Ersatzteile 
+                   Auswahl '3' = Zubehöre" 
+                   TextWrapping="Wrap" 
+                   Foreground="White" 
+                   FontSize="6"
+                   FontFamily="Fonts/#Dosis" 
+                   Height="24"
+                   VerticalAlignment="Top" Margin="24,32,55,0" Grid.Row="2" />
 
         <Button Content="Absenden"
                 Foreground="White"
