@@ -6,36 +6,137 @@
         xmlns:local="clr-namespace:UI_Warenbestand"
         mc:Ignorable="d"
         Title="BestellungenAufgeben"
-        Height="250" Width="400"
-        WindowStyle="None">
+        Height="400" Width="500"
+        WindowStyle="None"
+        Background="Black"
+        Opacity="0.9"
+        WindowStartupLocation="CenterScreen">
 
     <Grid>
+        <ListView Margin="23,34,264,118" ItemsSource="{Binding }"
+                  x:Name="lv_produkte" 
+                  MouseDoubleClick="lv_produkte_MouseDoubleClick">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+            <Run Text="{Binding Bezeichnung}"/>
+            <Run Text=" - "/>
+            <Run Text="{Binding Preis}"/>
+            <Run Text=" €" />
+                    </TextBlock>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListBox Margin="259,34,23,173" Name="lb_korb">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <Run Text="{Binding Produkt.Bezeichnung}"/>
+                        <Run Text=" - "/>
+                        <Run Text="{Binding Produkt.Preis}"/>
+                        <Run Text=" €   x" />
+                        <Run Text="{Binding Anzahl}"/>
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <TextBlock TextAlignment="Left" Text="S u m m e : " Foreground="White" Margin="259,240,111,118"></TextBlock>
+        <TextBlock TextAlignment="Right" Text="-,--" FontSize="20" Margin="259,240,28,118" Foreground="White" Name="tb_preis"/>
+        <TextBlock TextAlignment="Right" Text="€" FontSize="20" Margin="471,240,0,126" Foreground="White" HorizontalAlignment="Left" Width="13"/>
+
+
         <Grid>
-            <Grid.Background>
-                <ImageBrush ImageSource="Images/bremsscheibe.png" Opacity="0.9"/>
-            </Grid.Background>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="25"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+            <TextBlock Text="H i n w e i s : 
+                       
+                       
+                           Zum Hinzufügen bitte Doppelklick auf das gewünschte Produkt!"
+                           Foreground="White"
+                           FontSize="12"
+                           FontWeight="Normal"
+                           FontFamily="Fonts/#Dosis"
+                           TextWrapping="Wrap"
+                           Margin="23,285,30,57"/>
 
-            <StackPanel Margin="10">
-                <ComboBox IsEditable="True">
-                    <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
-                    <ComboBoxItem>ComboBox Item #2</ComboBoxItem>
-                    <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
+            <!--// Abbruch / Verwurf Button//-->
+            <Button x:Name="Abbruch" 
+                        Content="Bestellung verwerfen"
+                        Foreground="IndianRed"
+                        FontSize="14"
+                    Opacity="0.8"
+                        FontWeight="Medium" 
+                        Margin="41,326,224,0"
+                        Click="Abbruch_Click" Grid.ColumnSpan="2">
 
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="CadetBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="200" Height="25"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <!--// Absenden Button//-->
+            <Button x:Name="Absenden" 
+                        Content="Absenden"
+                        Foreground="#181735"
+                        FontSize="14"
+                        FontWeight="Medium" 
+                        Opacity="0.8"
+                        Margin="10,326,50,0"
+                        Click="Absenden_Click" Grid.Column="1">
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="CadetBlue"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="100" Height="25"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
+
+
         </Grid>
     </Grid>
 </Window>

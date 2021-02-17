@@ -52,5 +52,9 @@ namespace UI_Warenbestand
             this.Close();
         }
 
+        private void btn_verwerfen_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

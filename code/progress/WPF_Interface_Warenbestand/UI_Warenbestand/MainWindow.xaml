@@ -30,7 +30,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <!--// Grid der oberen Leiste inklusive der Buttons //-->
+        <!--// Grid der oberen Leiste sowie alle Buttons //-->
         <Grid Background="Black"
               Opacity="0.9"
               Grid.ColumnSpan="2"  
@@ -60,7 +60,7 @@
 
 
 
-
+            <!--// Fenster öffnen Home Button //-->
             <Button Content="Home"
                 Foreground="LightBlue"
                 FontSize="10"
@@ -98,7 +98,7 @@
                 </Button.Template>
             </Button>
 
-
+            <!--// Fenster öffnen Warenbestand Button//-->
             <Button Content="Warenbestand"
                         Foreground="LightBlue"
                         x:Name="warenbestand"
@@ -135,7 +135,7 @@
                 </Button.Template>
             </Button>
 
-
+            <!--// Fenster öffnen Bestellungen Button//-->
             <Button Content="Bestellungen"
                         Foreground="LightBlue"
                         FontSize="10"
@@ -173,7 +173,7 @@
             </Button>
 
 
-
+            <!--// Fenster scgließen Beenden Button//-->
             <Button Content="Beenden"
                     Click="Button_Click"
                         Foreground="DarkRed"
