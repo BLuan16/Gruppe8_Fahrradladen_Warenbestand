@@ -98,7 +98,9 @@ namespace UI_Warenbestand
             {
 
             }
-            
+            Window1 window = new Window1();
+            window.Show();
+            this.Close();
         }
 
         private void btn_WarenAendern_Click(object sender, RoutedEventArgs e)
