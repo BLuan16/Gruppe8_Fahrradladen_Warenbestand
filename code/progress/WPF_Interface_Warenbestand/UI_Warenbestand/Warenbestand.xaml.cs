@@ -63,19 +63,19 @@ namespace UI_Warenbestand
             {
                 new PieSeries
                 {
-                    Title="Fahrräder",
+                    Title="Fahrräder(Wert in €)",
                     Values= new ChartValues<int>{raeder},
                     DataLabels=true
                 },
                 new PieSeries
                 {
-                    Title="Ersatzteile",
+                    Title="Ersatzteile(Wert in €)",
                     Values= new ChartValues<int>{ersatz},
                     DataLabels=true
                 },
                 new PieSeries
                 {
-                    Title="Zubehör",
+                    Title="Zubehör(Wert in €)",
                     Values= new ChartValues<int>{zubeh},
                     DataLabels=true
                 },
