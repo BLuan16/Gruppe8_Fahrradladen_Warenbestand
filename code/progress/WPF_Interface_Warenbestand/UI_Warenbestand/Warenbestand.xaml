@@ -32,11 +32,14 @@
 
         <!--// Datagrid des Warenbestandes //-->
 
-        <StackPanel x:Name="stkpnl_Warenbestand" 
+        <DockPanel x:Name="stkpnl_Warenbestand" 
                     Grid.Row="1" Background="Transparent" Margin="60,148,109,60" >
-            <DataGrid x:Name="dtg_Warenbestand" 
+
+
+
+            <DataGrid x:Name="dtg_Warenbestand"  
                             ScrollViewer.CanContentScroll="True" 
-                            ScrollViewer.VerticalScrollBarVisibility="Auto"
+                            ScrollViewer.VerticalScrollBarVisibility="Visible"
                             ScrollViewer.HorizontalScrollBarVisibility="Auto"
                             ItemsSource="{Binding }"
                             AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True"
@@ -65,7 +68,7 @@
                     <DataGridTextColumn Foreground="#5F9EA0" Header="Kategorie" Width="*" Binding="{Binding ProduktKategorie.Bezeichnung}" />
                 </DataGrid.Columns>
             </DataGrid>
-        </StackPanel>
+        </DockPanel>
 
 
         <!--// Grid der oberen Leiste sowie alle Buttons //-->
