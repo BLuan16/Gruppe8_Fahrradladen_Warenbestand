@@ -35,9 +35,9 @@
         </Grid.ColumnDefinitions>
 
         <!--// Stackpanel der Bestellungen //-->
-        <StackPanel x:Name="stkpnl_Bestellungen" 
+        <DockPanel x:Name="stkpnl_Bestellungen" 
                     Grid.Row="1" Background="Transparent" Margin="43,202,172,41" Grid.RowSpan="2" >
-            <ScrollViewer>
+            <ScrollViewer Margin="0,0,0,65">
                 <DataGrid x:Name="dtg_Bestellungen"   AutoGenerateColumns="false" IsSynchronizedWithCurrentItem="True"
                       ItemsSource="{Binding }" MouseDoubleClick="dtg_Bestellungen_MouseDoubleClick"
                       FontFamily="Dosis" RowBackground="Black" AlternatingRowBackground="Black" Opacity="0.8" AlternationCount="2">
@@ -64,7 +64,7 @@
 
                 </DataGrid>
             </ScrollViewer>
-        </StackPanel>
+        </DockPanel>
 
         <!--// Stackpanel der Rechten Seite der Bestellungen //-->
         <StackPanel x:Name="stkpnl_BestDetails"
