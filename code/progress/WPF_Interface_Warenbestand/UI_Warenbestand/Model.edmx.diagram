@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4263d49c22004255aafc94dbc223bf48" Name="Diagram1">
-        <EntityTypeShape EntityType="FahrradladenModel.Bestellung" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FahrradladenModel.Posten" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FahrradladenModel.Produkt" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FahrradladenModel.ProduktKategorie" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+      <Diagram DiagramId="7786b9d8f2e9473abfe174b4a78d7b56" Name="Diagram1">
+        <EntityTypeShape EntityType="FahrradladenModel.Bestellung" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FahrradladenModel.Posten" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FahrradladenModel.Produkt" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="FahrradladenModel.ProduktKategorie" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <AssociationConnector Association="FahrradladenModel.fk_Produkt" ManuallyRouted="false" />
         <AssociationConnector Association="FahrradladenModel.fk_ProduktKategorie" ManuallyRouted="false" />
         <AssociationConnector Association="FahrradladenModel.BestellPosten" ManuallyRouted="false" />

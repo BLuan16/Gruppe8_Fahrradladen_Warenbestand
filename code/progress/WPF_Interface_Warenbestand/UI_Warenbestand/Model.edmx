@@ -36,6 +36,7 @@
           </Key>
           <Property Name="ID_Produkt" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Bezeichnung" Type="nvarchar" MaxLength="50" />
+          <Property Name="Anzahl" Type="int" />
           <Property Name="Preis" Type="decimal" Precision="18" Scale="0" />
           <Property Name="ID_ProduktKategorie" Type="int" />
         </EntityType>
@@ -148,6 +149,7 @@
           </Key>
           <Property Name="ID_Produkt" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Bezeichnung" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Anzahl" Type="Int32" />
           <Property Name="Preis" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="ID_ProduktKategorie" Type="Int32" />
           <NavigationProperty Name="Posten" Relationship="Self.fk_Produkt" FromRole="Produkt" ToRole="Posten" />
@@ -237,6 +239,7 @@
               <MappingFragment StoreEntitySet="Produkt">
                 <ScalarProperty Name="ID_Produkt" ColumnName="ID_Produkt" />
                 <ScalarProperty Name="Bezeichnung" ColumnName="Bezeichnung" />
+                <ScalarProperty Name="Anzahl" ColumnName="Anzahl" />
                 <ScalarProperty Name="Preis" ColumnName="Preis" />
                 <ScalarProperty Name="ID_ProduktKategorie" ColumnName="ID_ProduktKategorie" />
               </MappingFragment>

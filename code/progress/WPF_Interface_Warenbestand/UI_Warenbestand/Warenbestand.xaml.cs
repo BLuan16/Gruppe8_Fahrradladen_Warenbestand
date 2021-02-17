@@ -39,22 +39,22 @@ namespace UI_Warenbestand
             collectionView = CollectionViewSource.GetDefaultView(entities.Produkt.Local);
             stkpnl_Warenbestand.DataContext = collectionView;
 
-            int raeder = 0;
-            int ersatz = 0;
-            int zubeh = 0;
+            int raeder = 20;
+            int ersatz = 40;
+            int zubeh = 20;
 
             foreach (var produkt in entities.Produkt)
             {
                 switch (produkt.ID_ProduktKategorie)
                 {
                     case 1:
-                        raeder++;
+                        raeder+=(int)(produkt.Preis*produkt.Anzahl);
                         break;
                     case 2:
-                        ersatz++;
+                        ersatz+=(int)(produkt.Preis * produkt.Anzahl);
                         break;
                     case 3:
-                        zubeh++;
+                        zubeh+=(int)(produkt.Preis * produkt.Anzahl);
                         break;
                 }
             }

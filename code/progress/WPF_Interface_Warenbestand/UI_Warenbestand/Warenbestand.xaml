@@ -62,10 +62,9 @@
 
                 <DataGrid.Columns>
                     <DataGridTextColumn Foreground="#5F9EA0" Header="Name" FontStyle="Normal" Width="*" Binding="{Binding Bezeichnung}" />
-
                     <DataGridTextColumn Foreground="#5F9EA0" Header="Preis" Width="*" Binding="{Binding Preis}" />
-
                     <DataGridTextColumn Foreground="#5F9EA0" Header="Kategorie" Width="*" Binding="{Binding ProduktKategorie.Bezeichnung}" />
+                    <DataGridTextColumn Foreground="#5F9EA0" Header="Anzahl" Width="*" Binding="{Binding Anzahl}" />
                 </DataGrid.Columns>
             </DataGrid>
         </DockPanel>
