@@ -36,7 +36,7 @@
 
         <!--// Stackpanel der Bestellungen //-->
         <StackPanel x:Name="stkpnl_Bestellungen" 
-                    Grid.Row="1" Background="Transparent" Margin="43,202,212,41" Grid.RowSpan="2" >
+                    Grid.Row="1" Background="Transparent" Margin="43,202,172,41" Grid.RowSpan="2" >
             <ScrollViewer>
             <DataGrid x:Name="dtg_Bestellungen"   AutoGenerateColumns="false" IsSynchronizedWithCurrentItem="True"
                       ItemsSource="{Binding }" MouseDoubleClick="dtg_Bestellungen_MouseDoubleClick"
@@ -45,7 +45,7 @@
                 <DataGrid.Resources>
                     <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
                         <Setter Property="Background" Value="Black" />
-                        <Setter Property="Foreground" Value="LightBlue" />
+                            <Setter Property="Foreground" Value="#5F9EA0" />
                         <Setter Property="BorderBrush" Value="Transparent"/>
                         <Setter Property="BorderThickness" Value="0 1 1 1"/>
                         <Setter Property="Margin" Value="0,0,0,0" />
@@ -56,9 +56,9 @@
                 </DataGrid.Resources>
 
                 <DataGrid.Columns>
-                        <DataGridTextColumn Foreground="DimGray" Header="ID" Width="0.25*" Binding="{Binding ID_Bestellung}"/>
-                        <DataGridTextColumn Foreground="DimGray" Header="Summe" Width="*"  Binding="{Binding Summe}"/>
-                        <DataGridTextColumn Foreground="DimGray" Header="Datum" Width="*"  Binding="{Binding Datum, StringFormat=d,ConverterCulture=de-DE}"/>
+                        <DataGridTextColumn Foreground="#5F9EA0" Header="ID" Width="0.25*" Binding="{Binding ID_Bestellung}"/>
+                        <DataGridTextColumn Foreground="#5F9EA0" Header="Summe" Width="*"  Binding="{Binding Summe}"/>
+                        <DataGridTextColumn Foreground="#5F9EA0" Header="Datum" Width="*"  Binding="{Binding Datum, StringFormat=d,ConverterCulture=de-DE}"/>
                 </DataGrid.Columns>
 
 
