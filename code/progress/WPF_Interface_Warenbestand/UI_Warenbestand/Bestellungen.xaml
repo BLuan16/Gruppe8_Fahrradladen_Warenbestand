@@ -37,6 +37,7 @@
         <!--// Stackpanel der Bestellungen //-->
         <StackPanel x:Name="stkpnl_Bestellungen" 
                     Grid.Row="1" Background="Transparent" Margin="43,202,212,41" Grid.RowSpan="2" >
+            <ScrollViewer>
             <DataGrid x:Name="dtg_Bestellungen"   AutoGenerateColumns="false" IsSynchronizedWithCurrentItem="True"
                       ItemsSource="{Binding }" MouseDoubleClick="dtg_Bestellungen_MouseDoubleClick"
                       FontFamily="Dosis" RowBackground="Black" AlternatingRowBackground="Black" Opacity="0.8" AlternationCount="2">
@@ -44,7 +45,7 @@
                 <DataGrid.Resources>
                     <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
                         <Setter Property="Background" Value="Black" />
-                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="Foreground" Value="LightBlue" />
                         <Setter Property="BorderBrush" Value="Transparent"/>
                         <Setter Property="BorderThickness" Value="0 1 1 1"/>
                         <Setter Property="Margin" Value="0,0,0,0" />
@@ -55,13 +56,14 @@
                 </DataGrid.Resources>
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Foreground="White" Header="ID" Width="0.25*" Binding="{Binding ID_Bestellung}"/>
-                    <DataGridTextColumn Foreground="White" Header="Summe" Width="*"  Binding="{Binding Summe}"/>
-                    <DataGridTextColumn Foreground="White" Header="Datum" Width="*"  Binding="{Binding Datum, StringFormat=d,ConverterCulture=de-DE}"/>
+                        <DataGridTextColumn Foreground="DimGray" Header="ID" Width="0.25*" Binding="{Binding ID_Bestellung}"/>
+                        <DataGridTextColumn Foreground="DimGray" Header="Summe" Width="*"  Binding="{Binding Summe}"/>
+                        <DataGridTextColumn Foreground="DimGray" Header="Datum" Width="*"  Binding="{Binding Datum, StringFormat=d,ConverterCulture=de-DE}"/>
                 </DataGrid.Columns>
 
 
             </DataGrid>
+            </ScrollViewer>
         </StackPanel>
 
         <!--// Stackpanel der Rechten Seite der Bestellungen //-->

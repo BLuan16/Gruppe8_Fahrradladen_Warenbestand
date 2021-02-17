@@ -30,8 +30,10 @@
         </Grid.ColumnDefinitions>
 
         <!--// Datagrid des Warenbestandes //-->
+        
         <StackPanel x:Name="stkpnl_Warenbestand" 
                     Grid.Row="1" Background="Transparent" Margin="60,148,168,60" >
+            <ScrollViewer>
             <DataGrid x:Name="dtg_Warenbestand"   
                       ItemsSource="{Binding ''}"
                       AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True"
@@ -42,7 +44,7 @@
                     <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
                         <Setter Property="Background" Value="Black" />
                         <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis" />
-                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="Foreground" Value="LightBlue" />
                         <Setter Property="BorderBrush" Value="Transparent"/>
                         <Setter Property="BorderThickness" Value="0 1 1 1"/>
                         <Setter Property="Margin" Value="0,0,0,0" />
@@ -53,15 +55,16 @@
                 </DataGrid.Resources>
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Foreground="White" Header="Name" FontStyle="Normal" Width="*" Binding="{Binding Bezeichnung}" />
+                    <DataGridTextColumn Foreground="DimGray" Header="Name" FontStyle="Normal" Width="*" Binding="{Binding Bezeichnung}" />
 
-                    <DataGridTextColumn Foreground="AliceBlue" Header="Preis" Width="*" Binding="{Binding Preis}" />
+                    <DataGridTextColumn Foreground="DimGray" Header="Preis" Width="*" Binding="{Binding Preis}" />
 
-                    <DataGridTextColumn Foreground="White" Header="Kategorie" Width="*" Binding="{Binding ProduktKategorie.Bezeichnung}" />
+                    <DataGridTextColumn Foreground="DimGray" Header="Kategorie" Width="*" Binding="{Binding ProduktKategorie.Bezeichnung}" />
                 </DataGrid.Columns>
 
 
             </DataGrid>
+            </ScrollViewer>
         </StackPanel>
 
       
