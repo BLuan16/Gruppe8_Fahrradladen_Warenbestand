@@ -4,29 +4,29 @@ go
 insert into ProduktKategorie(Bezeichnung)
 values	('Fahrrad'),('Ersatzteil'),('Zubehör')
 
-insert into Produkt(Bezeichnung,Preis,ID_ProduktKategorie)
-values	('Nimbus-2000',169,1),
-		('Nimbus-7',120,1),
-		('Chill-Wheel',139,1),
-		('Affentempo',320,1),
-		('Heavy-Metal',219,1),
-		('Barely-One-Wheel',65,1),
-		('Dynamo',14,2),
-		('Bremslicht',14,2),
-		('Klingel',14,2),
-		('Schlauch',14,2),
-		('Frontlicht',14,2),
-		('Helm',11,3),
-		('Poncho',19,3),
-		('Flasche',9,3),
-		('Handschuhe',9,3),
-		('Kindersitz',32,3),
-		('Sattel-Fritz',89,2),
-		('SpeedoMacFly',796,1),
-		('FastAndCurious',25,3),
-		('Lenkerband Pretty Pink',42,3),
-		('Bremsscheibe 20xS',85,2),
-		('GoodGrib-SafeTrip',25,3)
+insert into Produkt(Bezeichnung,Preis,ID_ProduktKategorie, Anzahl)
+values	('Nimbus-2000',169,1, 12),
+		('Nimbus-7',120,1, 12),
+		('Chill-Wheel',139,1, 21),
+		('Affentempo',320,1,6),
+		('Heavy-Metal',219,1,12),
+		('Barely-One-Wheel',65,1,7),
+		('Dynamo',14,2,21),
+		('Bremslicht',14,2,6),
+		('Klingel',14,2,78),
+		('Schlauch',14,2,56),
+		('Frontlicht',14,2,12),
+		('Helm',11,3,56),
+		('Poncho',19,3,45),
+		('Flasche',9,3,78),
+		('Handschuhe',9,3,89),
+		('Kindersitz',32,3,23),
+		('Sattel-Fritz',89,2,56),
+		('SpeedoMacFly',796,1,17),
+		('FastAndCurious',25,3,12),
+		('Lenkerband Pretty Pink',42,3,12),
+		('Bremsscheibe 20xS',85,2,23),
+		('GoodGrib-SafeTrip',25,3,34)
 
 insert into Bestellung(Datum, Summe)
 values	('02-01-2020',148),
