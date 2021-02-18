@@ -101,9 +101,6 @@ namespace UI_Warenbestand
                 }
                 lb_details.Items.Add(detail);
             }
-            Window bestellungen = new UI_Warenbestand.Bestellungen();
-            bestellungen.Show();
-            this.Close();
         }
     }
 }
