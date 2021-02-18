@@ -47,11 +47,16 @@ namespace UI_Warenbestand
             }
             try
             {
+                if(Convert.ToInt32(Preis.Text) <0 || Convert.ToInt32(Anzahl.Text) < 0)
+                {
+                    return;
+                }
                 Produkt produkt = new Produkt
                 {
                     Bezeichnung = Name.Text,
                     Preis = Convert.ToDecimal(Preis.Text),
-                    ID_ProduktKategorie = idProduktKategorie
+                    ID_ProduktKategorie = idProduktKategorie,
+                    Anzahl = Convert.ToInt32(Anzahl.Text)
                 };
                 entities.Produkt.Add(produkt);
                 entities.SaveChanges();
@@ -59,9 +64,9 @@ namespace UI_Warenbestand
 
             catch (Exception)
             {
-
+                return;
             }
-            Window warenbestand = new UI_Warenbestand.Window1();
+            Window warenbestand = new Window1();
             warenbestand.Show();
             this.Close();
         }
