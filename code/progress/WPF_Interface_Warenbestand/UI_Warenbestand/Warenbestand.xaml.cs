@@ -39,9 +39,9 @@ namespace UI_Warenbestand
             collectionView = CollectionViewSource.GetDefaultView(entities.Produkt.Local);
             stkpnl_Warenbestand.DataContext = collectionView;
 
-            int raeder = 20;
-            int ersatz = 40;
-            int zubeh = 20;
+            int raeder = 0;
+            int ersatz = 0;
+            int zubeh = 0;
 
             foreach (var produkt in entities.Produkt)
             {
