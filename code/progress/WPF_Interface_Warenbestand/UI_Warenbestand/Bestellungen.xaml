@@ -10,8 +10,7 @@
         ResizeMode="NoResize"
         Background="#181735"
         WindowStartupLocation="CenterScreen"
-        Loaded="Window_Loaded"
-        >
+        Loaded="Window_Loaded">
     <!--// Gruppe 8 , WI19z1a //-->
 
     <!--// Maingrid der Bestellungen //-->
@@ -82,8 +81,7 @@
               Opacity="0.9"
               Grid.ColumnSpan="2"  
               x:Name="top_panel"
-              MouseDown="top_panel_MouseDown"
-             >
+              MouseDown="top_panel_MouseDown">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -110,144 +108,47 @@
                     Margin="0,0,5,0"
                     x:Name="home"
                     Click="home_Click"
-                    Grid.ColumnSpan="2">
-
-
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                        <Setter Property="Background" Value="#181735"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="Black"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Width="75" Height="15"
-                                    CornerRadius="8"
-                                    Background="{TemplateBinding Background}">
-
-                            <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
+                    Grid.ColumnSpan="2"
+                    Style="{StaticResource LeistenButton}"
+                    Template="{StaticResource LeistenButtonTemp}">
             </Button>
 
 
             <Button Content="Warenbestand"
-                        Foreground="LightBlue"
-                        x:Name="warenbestand"
-                        Click="warenbestand_Click_1"
-                        FontSize="10"
-                        FontWeight="Medium"
-                    Grid.ColumnSpan="2" Grid.Column="2" Margin="0,0,50,0">
-
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                        <Setter Property="Background" Value="#181735"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-                        
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="Black"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Width="75" Height="15"
-                                    CornerRadius="8"
-                                    Background="{TemplateBinding Background}">
-
-                            <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
+                    Foreground="LightBlue"
+                    x:Name="warenbestand"
+                    Click="warenbestand_Click_1"
+                    FontSize="10"
+                    FontWeight="Medium"
+                    Grid.ColumnSpan="2" Grid.Column="2" Margin="0,0,50,0"
+                    Style="{StaticResource LeistenButton}"
+                    Template="{StaticResource LeistenButtonTemp}">
             </Button>
 
 
             <Button Content="Bestellungen"
-                        Foreground="LightBlue"
-                        x:Name="bestellungen"
-                        Click="bestellungen_Click"
-                        FontSize="10"
-                        FontWeight="Medium" 
-                        Margin="14,0,38,0"
-                        Grid.ColumnSpan="2" 
-                        Grid.Column="3" >
-
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                        <Setter Property="Background" Value="#181735"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="Black"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Width="75" Height="15"
-                                    CornerRadius="8"
-                                    Background="{TemplateBinding Background}">
-
-                            <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
+                    Foreground="LightBlue"
+                    x:Name="bestellungen"
+                    Click="bestellungen_Click"
+                    FontSize="10"
+                    FontWeight="Medium" 
+                    Margin="14,0,38,0"
+                    Grid.ColumnSpan="2" 
+                    Grid.Column="3" 
+                    Style="{StaticResource LeistenButton}"
+                    Template="{StaticResource LeistenButtonTemp}">
             </Button>
 
             <Button Content="Beenden"
                     Click="Button_Click"
-                        Foreground="DarkRed"
-                        FontSize="10"
-                        FontWeight="Medium" 
-                       Margin="19,0,0,0"
+                    Foreground="DarkRed"
+                    FontSize="10"
+                    FontWeight="Medium" 
+                    Margin="19,0,0,0"
                     Grid.Column="12"
-                    Grid.ColumnSpan="2" RenderTransformOrigin="-0.094,0.44">
-
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                        <Setter Property="Background" Value="IndianRed"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="PaleVioletRed"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Width="75" Height="15"
-                                    CornerRadius="8"
-                                    Background="{TemplateBinding Background}">
-
-                            <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
+                    Grid.ColumnSpan="2" RenderTransformOrigin="-0.094,0.44"
+                    Style="{StaticResource AbbruchButton}"
+                    Template="{StaticResource AbbruchButtonTemp}">
             </Button>
 
         </Grid>
@@ -274,7 +175,7 @@
                         </TransformGroup>
                     </Image.RenderTransform>
                 </Image>
-                
+
                 <TextBlock Text="Bikes n'Vibes          Bestellungen"
                            Foreground="White"
                            FontSize="20"
@@ -282,7 +183,6 @@
                            VerticalAlignment="Center"
                            FontFamily="Fonts/#Dosis" Margin="10,37,10,10" Width="161"
                            TextWrapping="Wrap" Height="79"/>
-
             </StackPanel>
 
             <!--// Stackpanel fuer den Text der Linken Seite //-->
@@ -295,7 +195,6 @@
                            FontFamily="Fonts/#Dosis" Margin="0,5,3,90"
                            TextWrapping="Wrap" Height="24"/>
             </StackPanel>
-
         </StackPanel>
         
         <!--// Stackpanel zum Aufgeben neuer Bestellungen inklusive Button //-->
@@ -308,34 +207,13 @@
                         Opacity="0.9"
                         FontSize="14"
                         FontWeight="Medium" 
-                        Click="btn_BestellungHinzufuegen_Click" Margin="-50,0,52,0" Height="56" HorizontalAlignment="Right" Width="305">
-                    <Button.Style>
-                        <Style TargetType="{x:Type Button}">
-                            <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                            <Setter Property="Background" Value="Black"/>
-                            <Setter Property="Cursor" Value="Hand"/>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="CadetBlue"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                    
-                    <Button.Template>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <Border Width="200" Height="35"
-                                    CornerRadius="12"
-                                    Background="{TemplateBinding Background}">
-                                <ContentPresenter VerticalAlignment="Center"  HorizontalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-
+                        Click="btn_BestellungHinzufuegen_Click" Margin="-50,0,52,0" 
+                        Height="30" 
+                        Width="250"
+                        Style="{StaticResource AktionsButton}"
+                        Template="{StaticResource AktionsButtonTemp}">
                 </Button>
             </StackPanel>
-
         </StackPanel>
-
     </Grid>
 </Window>

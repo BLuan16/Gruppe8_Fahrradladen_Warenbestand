@@ -66,80 +66,35 @@
         <!--// Buttons Absenden und Verwerfen //-->
         <Button Content="Absenden"
                 Foreground="White"
-
                 FontSize="15"
                 x:Name="btn_absenden"
                 Click="btn_absenden_Click"
                 FontWeight="Medium"
-                Margin="62,56,0,20"
+                Margin="0,45,0,20"
                 Opacity="0.9"
-                Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="145" Height="60" Grid.Row="2">
-
-            <Button.Style>
-                <Style TargetType="Button">
-                    <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                    <Setter Property="Background" Value="Black"/>
-                    <Setter Property="Cursor" Value="Hand"/>
-
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#383660"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-            
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Width="95" Height="25"
-                                    CornerRadius="8"
-                                    Background="{TemplateBinding Background}">
-
-                        <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
+                Grid.ColumnSpan="2"
+                Grid.Row="2"
+                HorizontalAlignment="Center"
+                Width="95"
+                Height="20"
+                Style="{StaticResource AktionsButton}"
+                Template="{StaticResource AktionsButtonTemp}">
         </Button>
 
         <Button Content="Verwerfen"
                 Foreground="IndianRed"
-
                 FontSize="15"
                 x:Name="btn_verwerfen"
                 Click="btn_verwerfen_Click"
                 FontWeight="Medium"
-                Margin="62,105,0,0"
+                Margin="0,90,0,20"
                 Opacity="0.9"
-                Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="145" Grid.Row="2">
-
-
-
-            <Button.Style>
-                <Style TargetType="Button">
-                    <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                    <Setter Property="Background" Value="Black"/>
-                    <Setter Property="Cursor" Value="Hand"/>
-
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#383660"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-            
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Width="95" Height="25"
-                                    CornerRadius="8"
-                                    Background="{TemplateBinding Background}">
-
-                        <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
+                Grid.ColumnSpan="2" HorizontalAlignment="Center" 
+                Grid.Row="2"
+                Width="95"
+                Height="20"
+                Style="{StaticResource AktionsButton}"
+                Template="{StaticResource AktionsButtonTemp}">
         </Button>
 
         <Image
@@ -154,5 +109,6 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
+        
     </Grid>
 </Window>

@@ -4,6 +4,69 @@
              xmlns:local="clr-namespace:UI_Warenbestand"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+
+            <Style x:Key="AbbruchButton" TargetType="Button">
+                <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
+                <Setter Property="Background" Value="IndianRed"/>
+                <Setter Property="Cursor" Value="Hand"/>
+
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="PaleVioletRed"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <ControlTemplate x:Key="AbbruchButtonTemp" TargetType="Button">
+                <Border Width="75" Height="15"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+
+                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Border>
+            </ControlTemplate>
+
+            <Style x:Key="LeistenButton" TargetType="Button">
+                <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
+                <Setter Property="Background" Value="#181735"/>
+                <Setter Property="Cursor" Value="Hand"/>
+
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="Black"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <ControlTemplate x:Key="LeistenButtonTemp" TargetType="Button">
+                <Border Width="75" Height="15"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+
+                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Border>
+            </ControlTemplate>
+
+            <Style x:Key="AktionsButton" TargetType="Button">
+                <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
+                <Setter Property="Background" Value="Black"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="CadetBlue"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <ControlTemplate x:Key="AktionsButtonTemp" TargetType="Button">
+                <Border  CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                    <ContentPresenter VerticalAlignment="Center"  HorizontalAlignment="Center"/>
+                </Border>
+            </ControlTemplate>
+
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

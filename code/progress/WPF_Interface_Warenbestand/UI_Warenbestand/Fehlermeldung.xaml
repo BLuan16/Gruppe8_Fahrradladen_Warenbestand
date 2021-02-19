@@ -16,6 +16,7 @@
     <!--// Maingrid der Fehlermeldung //-->
     <!--// Zweck ist zur Information daher nur ein Weiter Button benötigt //-->
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -40,38 +41,15 @@
             </Image.RenderTransform>
         </Image>
 
+        <!--// Button zur einzigen Funktionalitaet //-->
         <Button Content="Weiter"
-                        Click="Button_Click"   
-                        Foreground="DarkRed"
-                        FontSize="10"
-                        FontWeight="Medium" 
-                       Margin="10,0,10,10" RenderTransformOrigin="-0.094,0.44" Grid.Row="3">
-
-            <Button.Style>
-                <Style TargetType="Button">
-                    <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                    <Setter Property="Background" Value="IndianRed"/>
-                    <Setter Property="Cursor" Value="Hand"/>
-
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="PaleVioletRed"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-            
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Width="120" Height="25"
-                                    CornerRadius="8"
-                                    Background="{TemplateBinding Background}">
-
-                        <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
+                Click="Button_Click"   
+                Foreground="DarkRed"
+                FontSize="10"
+                FontWeight="Medium" 
+                Margin="10,0,10,10" RenderTransformOrigin="-0.094,0.44" Grid.Row="3"
+                Style="{StaticResource AbbruchButton}"
+                Template="{StaticResource AbbruchButtonTemp}">
         </Button>
 
     </Grid>
