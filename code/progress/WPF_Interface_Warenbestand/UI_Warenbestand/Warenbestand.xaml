@@ -33,7 +33,7 @@
         <!--// Datagrid des Warenbestandes //-->
 
         <DockPanel x:Name="stkpnl_Warenbestand" 
-                    Grid.Row="1" Background="Transparent" Margin="60,148,109,60" >
+                    Grid.Row="1" Background="Transparent" Margin="60,148,60,60" >
 
 
 
@@ -44,7 +44,7 @@
                             ItemsSource="{Binding }"
                             AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True"
                             FontFamily="Dosis" RowBackground="Black" AlternatingRowBackground="Black" Opacity="0.9" AlternationCount="2"
-                            CanUserAddRows="False" CanUserDeleteRows="False">
+                            CanUserAddRows="False" CanUserDeleteRows="False" Width="359">
 
                 <DataGrid.Resources>
                     <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
