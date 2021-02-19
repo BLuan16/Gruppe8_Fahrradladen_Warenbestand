@@ -42,6 +42,7 @@ CREATE TABLE ProduktKategorie (
 CREATE TABLE Produkt (
   ID_Produkt INT IDENTITY PRIMARY KEY, 
   Bezeichnung nvarchar(50),
+  Anzahl int,
   Preis decimal,
   ID_ProduktKategorie int,
   constraint fk_ProduktKategorie foreign key(ID_ProduktKategorie)

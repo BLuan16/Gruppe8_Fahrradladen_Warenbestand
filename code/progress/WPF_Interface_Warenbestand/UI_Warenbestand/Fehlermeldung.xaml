@@ -1,0 +1,72 @@
+﻿<Window x:Class="UI_Warenbestand.Fehlermeldung"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI_Warenbestand"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="White"       
+        WindowStartupLocation="CenterScreen"
+        Title="Fehlermeldung" 
+        Height="220" Width="271.562">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Foreground="Black" TextAlignment="Center" Text="Dieser Artikel kann nicht gelöscht werden" Margin="10,10,10,29" Grid.Row="2"/>
+
+        <Image Width="98"
+                       Source="Icons/error.png" RenderTransformOrigin="0.512,0.536" Margin="87,2,87,21"
+                       RenderOptions.BitmapScalingMode="Fant" Grid.Row="1">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.191"/>
+                    <TranslateTransform X="-0.019" Y="0.002"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <Button Content="Weiter"
+                        Click="Button_Click"   
+                        Foreground="DarkRed"
+                        FontSize="10"
+                        FontWeight="Medium" 
+                       Margin="10,0,10,10" RenderTransformOrigin="-0.094,0.44" Grid.Row="3">
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
+                    <Setter Property="Background" Value="IndianRed"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="PaleVioletRed"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="120" Height="25"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+
+                        <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+    </Grid>
+</Window>

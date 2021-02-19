@@ -46,6 +46,8 @@ namespace UI_Warenbestand
             Bestellung.Summe = preisBestellung;
             entities.Bestellung.Add(Bestellung);
             entities.SaveChanges();
+            Window bestellungen = new UI_Warenbestand.Bestellungen();
+            bestellungen.Show();
             this.Close();
         }
 

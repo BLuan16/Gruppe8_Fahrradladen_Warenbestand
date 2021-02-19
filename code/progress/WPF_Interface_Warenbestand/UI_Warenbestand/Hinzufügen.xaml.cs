@@ -32,13 +32,31 @@ namespace UI_Warenbestand
 
         private void btn_absenden_Click(object sender, RoutedEventArgs e)
         {
+            int idProduktKategorie = 0;
+            switch (cb_kategorie.SelectedIndex)
+            {
+                case 0:
+                    idProduktKategorie = 1;
+                    break;
+                case 1:
+                    idProduktKategorie = 2;
+                    break;
+                case 3:
+                    idProduktKategorie = 3;
+                    break;
+            }
             try
             {
+                if(Convert.ToInt32(Preis.Text) <0 || Convert.ToInt32(Anzahl.Text) < 0)
+                {
+                    return;
+                }
                 Produkt produkt = new Produkt
                 {
                     Bezeichnung = Name.Text,
                     Preis = Convert.ToDecimal(Preis.Text),
-                    ID_ProduktKategorie = Convert.ToInt32(Kategorie.Text)
+                    ID_ProduktKategorie = idProduktKategorie,
+                    Anzahl = Convert.ToInt32(Anzahl.Text)
                 };
                 entities.Produkt.Add(produkt);
                 entities.SaveChanges();
@@ -46,11 +64,13 @@ namespace UI_Warenbestand
 
             catch (Exception)
             {
-
+                return;
             }
-
+            Window warenbestand = new Window1();
+            warenbestand.Show();
             this.Close();
         }
+    
 
         private void btn_verwerfen_Click(object sender, RoutedEventArgs e)
         {

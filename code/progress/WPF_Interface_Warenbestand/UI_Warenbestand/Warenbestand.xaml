@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI_Warenbestand"
+        xmlns:WPF="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="900"
         WindowStyle="None"
@@ -30,21 +31,26 @@
         </Grid.ColumnDefinitions>
 
         <!--// Datagrid des Warenbestandes //-->
-        
-        <StackPanel x:Name="stkpnl_Warenbestand" 
-                    Grid.Row="1" Background="Transparent" Margin="60,148,168,60" >
-            <ScrollViewer>
-            <DataGrid x:Name="dtg_Warenbestand"   
-                      ItemsSource="{Binding ''}"
-                      AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True"
-                      FontFamily="Dosis" RowBackground="Black" AlternatingRowBackground="Black" Opacity="0.9" AlternationCount="2"
-                      CanUserAddRows="False" CanUserDeleteRows="False">
+
+        <DockPanel x:Name="stkpnl_Warenbestand" 
+                    Grid.Row="1" Background="Transparent" Margin="60,148,109,60" >
+
+
+
+            <DataGrid x:Name="dtg_Warenbestand"  
+                            ScrollViewer.CanContentScroll="True" 
+                            ScrollViewer.VerticalScrollBarVisibility="Visible"
+                            ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                            ItemsSource="{Binding }"
+                            AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True"
+                            FontFamily="Dosis" RowBackground="Black" AlternatingRowBackground="Black" Opacity="0.9" AlternationCount="2"
+                            CanUserAddRows="False" CanUserDeleteRows="False">
 
                 <DataGrid.Resources>
                     <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
                         <Setter Property="Background" Value="Black" />
                         <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis" />
-                        <Setter Property="Foreground" Value="LightBlue" />
+                        <Setter Property="Foreground" Value="#5F9EA0" />
                         <Setter Property="BorderBrush" Value="Transparent"/>
                         <Setter Property="BorderThickness" Value="0 1 1 1"/>
                         <Setter Property="Margin" Value="0,0,0,0" />
@@ -55,27 +61,21 @@
                 </DataGrid.Resources>
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Foreground="DimGray" Header="Name" FontStyle="Normal" Width="*" Binding="{Binding Bezeichnung}" />
-
-                    <DataGridTextColumn Foreground="DimGray" Header="Preis" Width="*" Binding="{Binding Preis}" />
-
-                    <DataGridTextColumn Foreground="DimGray" Header="Kategorie" Width="*" Binding="{Binding ProduktKategorie.Bezeichnung}" />
+                    <DataGridTextColumn Foreground="#5F9EA0" Header="Name" FontStyle="Normal" Width="*" Binding="{Binding Bezeichnung}" />
+                    <DataGridTextColumn Foreground="#5F9EA0" Header="Preis" Width="*" Binding="{Binding Preis}" />
+                    <DataGridTextColumn Foreground="#5F9EA0" Header="Kategorie" Width="*" Binding="{Binding ProduktKategorie.Bezeichnung}" />
+                    <DataGridTextColumn Foreground="#5F9EA0" Header="Anzahl" Width="*" Binding="{Binding Anzahl}" />
                 </DataGrid.Columns>
-
-
             </DataGrid>
-            </ScrollViewer>
-        </StackPanel>
+        </DockPanel>
 
-      
+
         <!--// Grid der oberen Leiste sowie alle Buttons //-->
         <Grid Background="Black"
               Opacity="0.9"
               Grid.ColumnSpan="2"  
               x:Name="top_panel"
-              MouseDown="top_panel_MouseDown"
-             >
-
+              MouseDown="top_panel_MouseDown">
 
             <!--// Spalten //-->
             <Grid.ColumnDefinitions>
@@ -244,6 +244,9 @@
             </Button>
         </Grid>
 
+        <WPF:PieChart Name="pie" Margin="10,218,200,10" Grid.Column="1"
+                      Grid.Row="1" InnerRadius="70"/>
+
         <!--// Zwei Stackpanels zur Anordnung der linken Seite //-->
         <StackPanel Grid.Row="1"
                     VerticalAlignment="Center"
@@ -284,7 +287,7 @@
                         <TranslateTransform X="-0.166"/>
                     </TransformGroup>
                 </StackPanel.RenderTransform>
-                
+
                 <!--// Button Ändern von Ware //-->
                 <Button x:Name="btn_WarenAendern" 
                         Content="Ändern"

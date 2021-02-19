@@ -22,6 +22,7 @@ namespace UI_Warenbestand
     
         public int ID_Produkt { get; set; }
         public string Bezeichnung { get; set; }
+        public Nullable<int> Anzahl { get; set; }
         public Nullable<decimal> Preis { get; set; }
         public Nullable<int> ID_ProduktKategorie { get; set; }
     

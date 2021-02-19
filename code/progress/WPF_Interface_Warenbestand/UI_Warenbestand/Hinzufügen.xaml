@@ -37,16 +37,26 @@
                            Foreground="White"
                            FontSize="20"
                            FontWeight="Medium"
-                           FontFamily="Fonts/#Dosis" Margin="0,15,42,114" RenderTransformOrigin="-0.009,-0.41"  Grid.RowSpan="2" Grid.Row="1"/>
-        <TextBox x:Name="Preis" Margin="0,25,10,10" Background="Transparent" FontWeight="Black"   Grid.Row="1" Grid.Column="1"/>
+                           FontFamily="Fonts/#Dosis" Margin="0,15,42,20" RenderTransformOrigin="-0.009,-0.41" Grid.Row="1"/>
+        <TextBox x:Name="Preis" Margin="0,15,10,20" Background="Transparent" FontWeight="Black"   Grid.Row="1" Grid.Column="1"/>
 
         <TextBlock Text="Kategorie :"
                            Foreground="White"
                            FontSize="20"
                            FontWeight="Medium"
-                           FontFamily="Fonts/#Dosis" Margin="0,4,33,58" RenderTransformOrigin="-0.009,-0.41" Grid.Row="2"/>
-        <TextBox x:Name="Kategorie" Margin="0,8,10,100" Background="Transparent" FontWeight="Black" RenderTransformOrigin="0.5,0.5" Grid.Row="2" Grid.Column="1"/>
+                           FontFamily="Fonts/#Dosis" Margin="0,57,33,115" RenderTransformOrigin="-0.009,-0.41" Grid.Row="1" Grid.RowSpan="2"/>
+        <ComboBox Grid.Column="1" Margin="0,57,10,115" Grid.Row="1" Name="cb_kategorie" Grid.RowSpan="2">
+            <ComboBoxItem>Fahrrad</ComboBoxItem>
+            <ComboBoxItem>Ersatzteil</ComboBoxItem>
+            <ComboBoxItem>Zubehör</ComboBoxItem>
+        </ComboBox>
 
+        <TextBlock Text="Anzahl :"
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Medium"
+                           FontFamily="Fonts/#Dosis" Margin="0,37,33,70" RenderTransformOrigin="-0.009,-0.41" Grid.Row="2"/>
+        <TextBox x:Name="Anzahl" Margin="0,37,10,70" Background="Transparent" FontWeight="Black"   Grid.Row="2" Grid.Column="1"/>
         <Button Content="Absenden"
                 Foreground="White"
 

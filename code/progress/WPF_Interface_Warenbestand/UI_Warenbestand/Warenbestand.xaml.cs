@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LiveCharts;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Entity;
@@ -13,17 +14,18 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using LiveCharts.Wpf;
+using LiveCharts.Defaults;
 
 namespace UI_Warenbestand
 {
-    /// <summary>
-    /// Interaktionslogik für Window1.xaml
-    /// </summary>
     public partial class Window1 : Window
     {
         private ICollectionView collectionView;
 
         private FahrradladenEntities entities = new FahrradladenEntities();
+
+        public SeriesCollection series { get; set; }
 
         public Window1()
         {
@@ -36,6 +38,53 @@ namespace UI_Warenbestand
             entities.ProduktKategorie.Load();
             collectionView = CollectionViewSource.GetDefaultView(entities.Produkt.Local);
             stkpnl_Warenbestand.DataContext = collectionView;
+
+            int raeder = 0;
+            int ersatz = 0;
+            int zubeh = 0;
+
+            foreach (var produkt in entities.Produkt)
+            {
+                switch (produkt.ID_ProduktKategorie)
+                {
+                    case 1:
+                        raeder+=(int)(produkt.Preis*produkt.Anzahl);
+                        break;
+                    case 2:
+                        ersatz+=(int)(produkt.Preis * produkt.Anzahl);
+                        break;
+                    case 3:
+                        zubeh+=(int)(produkt.Preis * produkt.Anzahl);
+                        break;
+                }
+            }
+
+            series = new SeriesCollection
+            {
+                new PieSeries
+                {
+                    Title="Fahrräder(Wert in €)",
+                    Values= new ChartValues<int>{raeder},
+                    DataLabels=true
+                },
+                new PieSeries
+                {
+                    Title="Ersatzteile(Wert in €)",
+                    Values= new ChartValues<int>{ersatz},
+                    DataLabels=true
+                },
+                new PieSeries
+                {
+                    Title="Zubehör(Wert in €)",
+                    Values= new ChartValues<int>{zubeh},
+                    DataLabels=true
+                },
+            };
+
+            foreach (PieSeries ps in series)
+            {
+                pie.Series.Add(ps);
+            }
         }
 
         private void home_Click(object sender, RoutedEventArgs e)
@@ -44,7 +93,6 @@ namespace UI_Warenbestand
             home.Show();
             this.Close();
         }
-
         
         private void warenbestand_Click(object sender, RoutedEventArgs e)
         {
@@ -53,7 +101,6 @@ namespace UI_Warenbestand
             this.Close();
         }
 
-
         private void bestellungen_Click(object sender, RoutedEventArgs e)
         {
             Window bestellungen = new UI_Warenbestand.Bestellungen();
@@ -61,29 +108,15 @@ namespace UI_Warenbestand
             this.Close();
         }
      
-        // Exit Button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        // Die Click Events fuer die Warenbestand Buttons
-        // Wuerde gerne Rueckmeldung zur Implementierung haben
-        // Sie zu clicken fuert zumindest zu keinem Crash daher vorerst kein Auskommentieren noetig
-
-        //Aufruf Methode mit WPF Element als Parameter (PopUp)
-
-
         private void btn_WarenHinzufuegen_Click(object sender, RoutedEventArgs e)
         {
-            // Der Button Soll es NUR erlauben das Hinzuzufuegen da im Default die "CanUser" statements zu "false" gesetzt sind damit man nicht ausversehen aenderungen vornimmt
-
             Window Hinzufügen = new UI_Warenbestand.Hinzufügen();
-            Hinzufügen.Show();
-           
-            // Offline row hinzufuegen zum DataGrid fuer Testzwecke (und da die Datenbank nicht so recht klappt)
-            // Da es nur offline ist werden diese beim wechseln der Ansichten nicht gespeichert!!!
-            //dtg_Warenbestand.Items.Add(new { ID = "Test1", Name = "Test2", Preis = "Test3" });
+            Hinzufügen.Show();          
         }
 
         private void btn_WarenLoeschen_Click(object sender, RoutedEventArgs e)
@@ -93,12 +126,16 @@ namespace UI_Warenbestand
                 Produkt produkt = (Produkt)collectionView.CurrentItem;
                 entities.Produkt.Remove(produkt);
                 entities.SaveChanges();
+                Window1 window = new Window1();
+                window.Show();
+                this.Close();
             }
             catch (Exception)
             {
-
+                Fehlermeldung fehlermeldung = new Fehlermeldung();
+                fehlermeldung.Show();
+                this.Close();
             }
-            
         }
 
         private void btn_WarenAendern_Click(object sender, RoutedEventArgs e)
@@ -110,7 +147,8 @@ namespace UI_Warenbestand
         {
             DragMove();
         }
-    }
 
+
+    }
 }
 
