@@ -11,8 +11,12 @@
         Background="Black"
         Opacity="0.9"
         WindowStartupLocation="CenterScreen">
+    <!--// Gruppe 8 , WI19z1a //-->
 
+    <!--// Maingrid dieses Windows //-->
     <Grid>
+        
+        
         <ListView Margin="23,34,264,118" ItemsSource="{Binding }"
                   x:Name="lv_produkte" 
                   MouseDoubleClick="lv_produkte_MouseDoubleClick">
@@ -27,6 +31,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        
         <ListBox Margin="259,34,23,173" Name="lb_korb">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -45,7 +50,7 @@
         <TextBlock TextAlignment="Right" Text="-,--" FontSize="20" Margin="259,240,28,118" Foreground="White" Name="tb_preis"/>
         <TextBlock TextAlignment="Right" Text="€" FontSize="20" Margin="471,240,0,126" Foreground="White" HorizontalAlignment="Left" Width="13"/>
 
-
+        <!--// Grid zur genaueren Anordnung dieses Fensters //-->
         <Grid>
             <TextBlock Text="H i n w e i s : 
                        
@@ -58,7 +63,7 @@
                            TextWrapping="Wrap"
                            Margin="23,285,30,57"/>
 
-            <!--// Abbruch / Verwurf Button//-->
+            <!--// Abbruch / Verwurf Button //-->
             <Button x:Name="Abbruch" 
                         Content="Bestellung verwerfen"
                         Foreground="IndianRed"
@@ -81,6 +86,7 @@
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
+                
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border Width="200" Height="25"
@@ -94,7 +100,7 @@
                 </Button.Template>
             </Button>
 
-            <!--// Absenden Button//-->
+            <!--// Absenden Button //-->
             <Button x:Name="Absenden" 
                         Content="Absenden"
                         Foreground="#181735"
@@ -117,6 +123,7 @@
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
+                
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Border Width="100" Height="25"
@@ -135,7 +142,6 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
 
         </Grid>
     </Grid>

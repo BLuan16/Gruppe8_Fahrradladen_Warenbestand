@@ -17,9 +17,11 @@
 
     <!--// Maingrid des Warenbestandes //-->
     <Grid>
+        
         <Grid.Background>
             <ImageBrush ImageSource="Images/tour.png" Opacity="0.9"/>
         </Grid.Background>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition/>
@@ -30,8 +32,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <!--// Datagrid des Warenbestandes //-->
-
+        <!--// Datagrid des Warenbestandes mitsamt DockPanel //-->
         <DockPanel x:Name="stkpnl_Warenbestand" 
                     Grid.Row="1" Background="Transparent" Margin="60,148,109,60" >
 
@@ -66,6 +67,7 @@
                     <DataGridTextColumn Foreground="#5F9EA0" Header="Kategorie" Width="*" Binding="{Binding ProduktKategorie.Bezeichnung}" />
                     <DataGridTextColumn Foreground="#5F9EA0" Header="Anzahl" Width="*" Binding="{Binding Anzahl}" />
                 </DataGrid.Columns>
+                
             </DataGrid>
         </DockPanel>
 
@@ -105,7 +107,6 @@
                         Click="home_Click"  
                         Grid.ColumnSpan="2">
 
-
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
@@ -119,6 +120,7 @@
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
+                
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Width="75" Height="15"
@@ -141,8 +143,6 @@
                         FontWeight="Medium"
                         Grid.ColumnSpan="2" Grid.Column="2" Margin="0,0,50,0">
 
-
-
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
@@ -156,6 +156,7 @@
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
+                
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Width="75" Height="15"
@@ -193,6 +194,7 @@
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
+                
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Width="75" Height="15"
@@ -230,6 +232,7 @@
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
+
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Width="75" Height="15"
@@ -242,6 +245,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+            
         </Grid>
 
         <WPF:PieChart Name="pie" Margin="10,218,200,10" Grid.Column="1"
@@ -255,6 +259,7 @@
         <StackPanel Grid.Row="1" Margin="43,5,28,0">
             <StackPanel Orientation="Horizontal"
                         Margin="0,0,0,20" Height="126">
+                
                 <Image Width="98" Height="137"
                        Source="Images/bike3.png" RenderTransformOrigin="0.512,0.536" Margin="0,0,0,-11"
                        RenderOptions.BitmapScalingMode="Fant">
@@ -267,15 +272,16 @@
                         </TransformGroup>
                     </Image.RenderTransform>
                 </Image>
+                
                 <TextBlock Text="Bikes n'Vibes      Warenbestand"
                            Foreground="White"
                            FontSize="20"
                            FontWeight="Medium"
-                           VerticalAlignment="Center"
-                          
+                           VerticalAlignment="Center"                          
                            FontFamily="Fonts/#Dosis" Margin="10,38,10,0" Width="161"
                            TextWrapping="Wrap" Height="88"/>
             </StackPanel>
+            
             <StackPanel Orientation="Horizontal"
                         
                         Margin="4,50,75,0" Height="272" Width="299">
@@ -311,6 +317,7 @@
                             </Style.Triggers>
                         </Style>
                     </Button.Style>
+                    
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border Width="85" Height="25"
@@ -323,6 +330,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
+                
                 <!--// Button Hinzufügen von Ware //-->
                 <Button x:Name="btn_WarenHinzufuegen" 
                         Content="Hinzufügen"
@@ -343,6 +351,7 @@
                             </Style.Triggers>
                         </Style>
                     </Button.Style>
+
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border Width="85" Height="25"
@@ -352,8 +361,8 @@
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
-
                 </Button>
+                
                 <!--// Button Löschen von Ware //-->
                 <Button x:Name="btn_WarenLoeschen" 
                         Content="Löschen"
@@ -377,6 +386,7 @@
                             </Style.Triggers>
                         </Style>
                     </Button.Style>
+                    
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border Width="85" Height="25"
@@ -389,6 +399,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
+                
             </StackPanel>
         </StackPanel>
 
@@ -446,6 +457,7 @@
                             CornerRadius="20"/>
                 </StackPanel>
             </StackPanel>
+            
             <Image Height="137"
                        Source="Images/bike2.png" RenderTransformOrigin="0.895,0.528" Margin="408,152,401,491"
                        RenderOptions.BitmapScalingMode="Fant">
@@ -458,6 +470,7 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
+            
         </Grid>
 
     </Grid>

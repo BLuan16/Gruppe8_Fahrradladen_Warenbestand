@@ -11,15 +11,16 @@
         Background="#181735"
         WindowStartupLocation="CenterScreen"
         >
-
     <!--// Gruppe 8 , WI19z1a //-->
 
-
     <!--// Maingrid des MainWindows //-->
+    <!--// Mainwindow zur Information sowie als Vorlage des Projektstiels //-->
     <Grid>
+        
         <Grid.Background>
             <ImageBrush ImageSource="Images/tour.png" Opacity="0.9"/>
         </Grid.Background>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition/>
@@ -55,11 +56,6 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-
-
-
-
-
             <!--// Fenster öffnen Home Button //-->
             <Button Content="Home"
                 Foreground="LightBlue"
@@ -70,8 +66,6 @@
                 x:Name="home"
                 Click="home_Click">
 
-
-
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
@@ -85,6 +79,7 @@
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
+                
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Width="75" Height="15"
@@ -98,7 +93,7 @@
                 </Button.Template>
             </Button>
 
-            <!--// Fenster öffnen Warenbestand Button//-->
+            <!--// Fenster oeffnen Warenbestand Button //-->
             <Button Content="Warenbestand"
                         Foreground="LightBlue"
                         x:Name="warenbestand"
@@ -107,8 +102,6 @@
                         FontWeight="Medium"
                     Grid.ColumnSpan="2" Grid.Column="2" Margin="0,0,50,0">
 
-
-
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
@@ -122,6 +115,7 @@
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
+                
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Width="75" Height="15"
@@ -135,7 +129,7 @@
                 </Button.Template>
             </Button>
 
-            <!--// Fenster öffnen Bestellungen Button//-->
+            <!--// Fenster oeffnen Bestellungen Button //-->
             <Button Content="Bestellungen"
                         Foreground="LightBlue"
                         FontSize="10"
@@ -157,8 +151,10 @@
                                 <Setter Property="Background" Value="#383660"/>
                             </Trigger>
                         </Style.Triggers>
+                        
                     </Style>
                 </Button.Style>
+                
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Width="75" Height="15"
@@ -172,8 +168,7 @@
                 </Button.Template>
             </Button>
 
-
-            <!--// Fenster scgließen Beenden Button//-->
+            <!--// Fenster schließen Beenden Button //-->
             <Button Content="Beenden"
                     Click="Button_Click"
                         Foreground="DarkRed"
@@ -196,6 +191,7 @@
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
+                
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Width="75" Height="15"
@@ -221,6 +217,7 @@
                 <Image Width="98" Height="137"
                        Source="Images/bike3.png" RenderTransformOrigin="0.512,0.536" Margin="0,0,0,-11"
                        RenderOptions.BitmapScalingMode="Fant">
+                    
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -229,7 +226,9 @@
                             <TranslateTransform X="-0.019" Y="0.002"/>
                         </TransformGroup>
                     </Image.RenderTransform>
+                    
                 </Image>
+                
                 <TextBlock Text="Bikes n'Vibes"
                            Foreground="White"
                            FontSize="20"
@@ -239,6 +238,7 @@
             </StackPanel>
 
             <!--// Stackpanel fuer den Text der Linken Seite //-->
+            <!--// Enthaelt großteils Textelemente //-->
             <StackPanel Height="312">
 
                 <TextBlock Text="Customize"
@@ -247,6 +247,7 @@
                            FontWeight="Normal"
                            FontFamily="Fonts/#Dosis" Height="37" HorizontalAlignment="Left" Width="378" RenderTransformOrigin="0.5,0.5"
                            >
+                    
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -333,9 +334,11 @@
                             CornerRadius="20"/>
                 </StackPanel>
             </StackPanel>
+            
             <Image Height="137"
                        Source="Images/bike2.png" RenderTransformOrigin="0.895,0.528" Margin="408,152,401,491"
                        RenderOptions.BitmapScalingMode="Fant">
+                
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -344,8 +347,8 @@
                         <TranslateTransform X="-0.018" Y="0.119"/>
                     </TransformGroup>
                 </Image.RenderTransform>
+                
             </Image>
-
 
         </Grid>
 

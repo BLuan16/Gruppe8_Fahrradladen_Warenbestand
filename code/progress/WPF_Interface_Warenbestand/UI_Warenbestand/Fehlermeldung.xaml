@@ -11,6 +11,10 @@
         WindowStartupLocation="CenterScreen"
         Title="Fehlermeldung" 
         Height="220" Width="271.562">
+    <!--// Gruppe 8 , WI19z1a //-->
+
+    <!--// Maingrid der Fehlermeldung //-->
+    <!--// Zweck ist zur Information daher nur ein Weiter Button benötigt //-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -25,6 +29,7 @@
         <Image Width="98"
                        Source="Icons/error.png" RenderTransformOrigin="0.512,0.536" Margin="87,2,87,21"
                        RenderOptions.BitmapScalingMode="Fant" Grid.Row="1">
+            
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -55,6 +60,7 @@
                     </Style.Triggers>
                 </Style>
             </Button.Style>
+            
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Width="120" Height="25"
