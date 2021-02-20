@@ -147,8 +147,8 @@
             </Button>
         </Grid>
 
-        <!--<WPF:PieChart Name="pie" Margin="10,218,200,10" Grid.Column="1"
-                      Grid.Row="1" InnerRadius="70"/>-->
+        <WPF:PieChart Name="pie" Margin="10,218,200,10" Grid.Column="1"
+                      Grid.Row="1" InnerRadius="70"/>
 
         <!--// Zwei Stackpanels zur Anordnung der linken Seite //-->
         <StackPanel Grid.Row="1"
