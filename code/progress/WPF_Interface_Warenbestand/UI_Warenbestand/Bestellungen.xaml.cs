@@ -63,7 +63,7 @@ namespace UI_Warenbestand
         // Exit Button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
