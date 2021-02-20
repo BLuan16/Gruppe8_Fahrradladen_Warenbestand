@@ -97,7 +97,7 @@ namespace UI_Warenbestand
                 Bestellung Bestellung = (Bestellung)dtg_Bestellungen.SelectedItem;
                 foreach (var posten in Bestellung.Posten)
                 {
-                    detail += posten.Produkt.Bezeichnung+"("+posten.Anzahl+"): "+posten.Produkt.Preis*posten.Anzahl+"\n";
+                    detail += posten.Produkt.Bezeichnung+"("+posten.Anzahl+"): "+posten.Produkt.Preis*posten.Anzahl+" €\n";
                 }
                 lb_details.Items.Add(detail);
             }

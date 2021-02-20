@@ -36,7 +36,7 @@
                            FontSize="20"
                            FontWeight="Medium"
                            FontFamily="Fonts/#Dosis" Margin="0,24,42,60" Height="30" RenderTransformOrigin="-0.009,-0.41" Grid.RowSpan="2"/>
-        <TextBox x:Name="Name" Margin="0,24,10,60" Grid.RowSpan="2" FontWeight="Black"  Background="Transparent" Grid.Column="1"/>
+        <TextBox x:Name="tb_Name" Margin="0,24,10,60" Grid.RowSpan="2" FontWeight="Black"  Background="Transparent" Grid.Column="1"/>
 
         <TextBlock Text="Preis :"
                            Foreground="White"

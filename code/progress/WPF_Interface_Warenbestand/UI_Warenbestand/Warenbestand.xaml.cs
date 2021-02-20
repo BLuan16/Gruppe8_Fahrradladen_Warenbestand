@@ -141,6 +141,9 @@ namespace UI_Warenbestand
         private void btn_WarenAendern_Click(object sender, RoutedEventArgs e)
         {
             entities.SaveChanges();
+            Window1 window = new Window1();
+            window.Show();
+            this.Close();
         }
 
         private void top_panel_MouseDown(object sender, MouseButtonEventArgs e)

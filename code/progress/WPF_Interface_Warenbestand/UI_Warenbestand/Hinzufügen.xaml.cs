@@ -41,7 +41,7 @@ namespace UI_Warenbestand
                 case 1:
                     idProduktKategorie = 2;
                     break;
-                case 3:
+                case 2:
                     idProduktKategorie = 3;
                     break;
             }
@@ -53,7 +53,7 @@ namespace UI_Warenbestand
                 }
                 Produkt produkt = new Produkt
                 {
-                    Bezeichnung = Name.Text,
+                    Bezeichnung = tb_Name.Text,
                     Preis = Convert.ToDecimal(Preis.Text),
                     ID_ProduktKategorie = idProduktKategorie,
                     Anzahl = Convert.ToInt32(Anzahl.Text)
