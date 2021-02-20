@@ -11,8 +11,11 @@
         Background="Black"
         Opacity="0.9"
         WindowStartupLocation="CenterScreen">
+    <!--// Gruppe 8 , WI19z1a //-->
 
+    <!--// Maingrid dieses Windows //-->
     <Grid>
+              
         <ListView Margin="23,34,264,118" ItemsSource="{Binding }"
                   x:Name="lv_produkte" 
                   MouseDoubleClick="lv_produkte_MouseDoubleClick">
@@ -27,6 +30,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        
         <ListBox Margin="259,34,23,173" Name="lb_korb">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -45,8 +49,14 @@
         <TextBlock TextAlignment="Right" Text="-,--" FontSize="20" Margin="259,240,28,118" Foreground="White" Name="tb_preis"/>
         <TextBlock TextAlignment="Right" Text="€" FontSize="20" Margin="471,240,0,126" Foreground="White" HorizontalAlignment="Left" Width="13"/>
 
-
+        <!--// Grid zur genaueren Anordnung dieses Fensters //-->
         <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
             <TextBlock Text="H i n w e i s : 
                        
                        
@@ -58,7 +68,7 @@
                            TextWrapping="Wrap"
                            Margin="23,285,30,57"/>
 
-            <!--// Abbruch / Verwurf Button//-->
+            <!--// Abbruch / Verwurf Button //-->
             <Button x:Name="Abbruch" 
                         Content="Bestellung verwerfen"
                         Foreground="IndianRed"
@@ -66,77 +76,30 @@
                     Opacity="0.8"
                         FontWeight="Medium" 
                         Margin="41,326,224,0"
-                        Click="Abbruch_Click" Grid.ColumnSpan="2">
-
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                        <Setter Property="Background" Value="White"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="CadetBlue"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Template>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Width="200" Height="25"
-                                    CornerRadius="12"
-                                    Background="{TemplateBinding Background}">
-
-                            <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
+                        Click="Abbruch_Click" Grid.ColumnSpan="2"
+                    Background="White"
+                    Width="200"
+                    Height="25"
+                    Style="{StaticResource AktionsButton}"
+                    Template="{StaticResource AktionsButtonTemp}">
             </Button>
 
-            <!--// Absenden Button//-->
+            <!--// Absenden Button //-->
             <Button x:Name="Absenden" 
-                        Content="Absenden"
-                        Foreground="#181735"
-                        FontSize="14"
-                        FontWeight="Medium" 
-                        Opacity="0.8"
-                        Margin="10,326,50,0"
-                        Click="Absenden_Click" Grid.Column="1">
-
-                <Button.Style>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                        <Setter Property="Background" Value="White"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="CadetBlue"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Template>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Width="100" Height="25"
-                                    CornerRadius="12"
-                                    Background="{TemplateBinding Background}">
-
-                            <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
+                    Content="Absenden"
+                    Foreground="#181735"
+                    FontSize="14"
+                    FontWeight="Medium" 
+                    Opacity="0.8"
+                    Margin="10,326,50,0"
+                    Click="Absenden_Click" Grid.Column="1"
+                    Background="White"
+                    Width="100"
+                    Height="25"
+                    Style="{StaticResource AktionsButton}"
+                    Template="{StaticResource AktionsButtonTemp}">
             </Button>
-
-            <Grid.ColumnDefinitions>
-
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-
         </Grid>
+        
     </Grid>
 </Window>

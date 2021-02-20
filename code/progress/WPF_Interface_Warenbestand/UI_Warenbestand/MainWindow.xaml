@@ -9,17 +9,17 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="#181735"
-        WindowStartupLocation="CenterScreen"
-        >
-
+        WindowStartupLocation="CenterScreen">
     <!--// Gruppe 8 , WI19z1a //-->
 
-
     <!--// Maingrid des MainWindows //-->
+    <!--// Mainwindow zur Information sowie als Vorlage des Projektstiels //-->
     <Grid>
+        
         <Grid.Background>
             <ImageBrush ImageSource="Images/tour.png" Opacity="0.9"/>
         </Grid.Background>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition/>
@@ -35,8 +35,7 @@
               Opacity="0.9"
               Grid.ColumnSpan="2"  
               x:Name="top_panel"
-              MouseDown="top_panel_MouseDown"
-             >
+              MouseDown="top_panel_MouseDown">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -55,158 +54,59 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-
-
-
-
-
             <!--// Fenster öffnen Home Button //-->
             <Button Content="Home"
-                Foreground="LightBlue"
-                FontSize="10"
-                FontWeight="Medium" 
-                Margin="0,0,5,0"
-                Grid.ColumnSpan="2"
-                x:Name="home"
-                Click="home_Click">
-
-
-
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                        <Setter Property="Background" Value="#181735"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#383660"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Width="75" Height="15"
-                                    CornerRadius="8"
-                                    Background="{TemplateBinding Background}">
-
-                            <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
+                    Foreground="LightBlue"
+                    FontSize="10"
+                    FontWeight="Medium" 
+                    Margin="0,0,5,0"
+                    Grid.ColumnSpan="2"
+                    x:Name="home"
+                    Click="home_Click"
+                    Style="{StaticResource LeistenButton}"
+                    Template="{StaticResource LeistenButtonTemp}">
             </Button>
 
-            <!--// Fenster öffnen Warenbestand Button//-->
+            <!--// Fenster oeffnen Warenbestand Button //-->
             <Button Content="Warenbestand"
-                        Foreground="LightBlue"
-                        x:Name="warenbestand"
-                        Click="warenbestand_Click"
-                        FontSize="10"
-                        FontWeight="Medium"
-                    Grid.ColumnSpan="2" Grid.Column="2" Margin="0,0,50,0">
-
-
-
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                        <Setter Property="Background" Value="#181735"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#383660"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Width="75" Height="15"
-                                    CornerRadius="8"
-                                    Background="{TemplateBinding Background}">
-
-                            <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
+                    Foreground="LightBlue"
+                    x:Name="warenbestand"
+                    Click="warenbestand_Click"
+                    FontSize="10"
+                    FontWeight="Medium"
+                    Grid.ColumnSpan="2" 
+                    Grid.Column="2" 
+                    Margin="0,0,50,0"
+                    Style="{StaticResource LeistenButton}"
+                    Template="{StaticResource LeistenButtonTemp}">
             </Button>
 
-            <!--// Fenster öffnen Bestellungen Button//-->
+            <!--// Fenster oeffnen Bestellungen Button //-->
             <Button Content="Bestellungen"
-                        Foreground="LightBlue"
-                        FontSize="10"
-                        FontWeight="Medium" 
-                        Margin="14,0,38,0"
-                        x:Name="bestellungen"
-                        Click="bestellungen_Click"
-                        Grid.ColumnSpan="2" 
-                        Grid.Column="3" >
-
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                        <Setter Property="Background" Value="#181735"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#383660"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Width="75" Height="15"
-                                    CornerRadius="8"
-                                    Background="{TemplateBinding Background}">
-
-                            <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
+                    Foreground="LightBlue"
+                    FontSize="10"
+                    FontWeight="Medium" 
+                    Margin="14,0,38,0"
+                    x:Name="bestellungen"
+                    Click="bestellungen_Click"
+                    Grid.ColumnSpan="2" 
+                    Grid.Column="3"
+                    Style="{StaticResource LeistenButton}"
+                    Template="{StaticResource LeistenButtonTemp}">
             </Button>
 
-
-            <!--// Fenster scgließen Beenden Button//-->
+            <!--// Fenster schließen Beenden Button //-->
             <Button Content="Beenden"
                     Click="Button_Click"
-                        Foreground="DarkRed"
-                        FontSize="10"
-                        FontWeight="Medium" 
-                       Margin="19,0,0,0"
+                    Foreground="DarkRed"
+                    FontSize="10"
+                    FontWeight="Medium" 
+                    Margin="19,0,0,0"
                     Grid.Column="12"
-                    Grid.ColumnSpan="2" RenderTransformOrigin="-0.094,0.44">
-
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                        <Setter Property="Background" Value="IndianRed"/>
-                        <Setter Property="Cursor" Value="Hand"/>
-
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="PaleVioletRed"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Width="75" Height="15"
-                                    CornerRadius="8"
-                                    Background="{TemplateBinding Background}">
-
-                            <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
+                    Grid.ColumnSpan="2" 
+                    RenderTransformOrigin="-0.094,0.44"
+                    Style="{StaticResource AbbruchButton}"
+                    Template="{StaticResource AbbruchButtonTemp}">
             </Button>
         </Grid>
 
@@ -216,11 +116,14 @@
                     Margin="60"/>
 
         <StackPanel Grid.Row="1" Margin="43,0,29,0">
+            
             <StackPanel Orientation="Horizontal"
                         Margin="0,0,0,20" Height="126">
+                
                 <Image Width="98" Height="137"
                        Source="Images/bike3.png" RenderTransformOrigin="0.512,0.536" Margin="0,0,0,-11"
                        RenderOptions.BitmapScalingMode="Fant">
+
                     <Image.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -230,6 +133,7 @@
                         </TransformGroup>
                     </Image.RenderTransform>
                 </Image>
+                
                 <TextBlock Text="Bikes n'Vibes"
                            Foreground="White"
                            FontSize="20"
@@ -239,14 +143,15 @@
             </StackPanel>
 
             <!--// Stackpanel fuer den Text der Linken Seite //-->
+            <!--// Enthaelt großteils Textelemente //-->
             <StackPanel Height="312">
 
                 <TextBlock Text="Customize"
                            Foreground="White"
                            FontSize="25"
                            FontWeight="Normal"
-                           FontFamily="Fonts/#Dosis" Height="37" HorizontalAlignment="Left" Width="378" RenderTransformOrigin="0.5,0.5"
-                           >
+                           FontFamily="Fonts/#Dosis" Height="37" HorizontalAlignment="Left" Width="378" RenderTransformOrigin="0.5,0.5">
+                    
                     <TextBlock.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -268,6 +173,7 @@
                            FontSize="25"
                            FontWeight="Normal"
                            FontFamily="Fonts/#Dosis" Margin="65,0,0,0"/>
+                
                 <TextBlock Text="Goldene Bremsscheiben - Carbon Sattel - oder lieber lilane Bremsbänder aus echtem Leder.                                                                                                                           'Bikes n' Vibes' Deutschlands Nummer Eins im Fahrrad Waren Handel. Was nicht auf Lager ist, kann im Handumdrehen über unser Weltweit ausgearbeitetes Lieferanten Netzwerk organisiert werden."
                            Foreground="White"
                            FontSize="12"
@@ -333,9 +239,11 @@
                             CornerRadius="20"/>
                 </StackPanel>
             </StackPanel>
+            
             <Image Height="137"
                        Source="Images/bike2.png" RenderTransformOrigin="0.895,0.528" Margin="408,152,401,491"
                        RenderOptions.BitmapScalingMode="Fant">
+
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -345,7 +253,6 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
-
 
         </Grid>
 

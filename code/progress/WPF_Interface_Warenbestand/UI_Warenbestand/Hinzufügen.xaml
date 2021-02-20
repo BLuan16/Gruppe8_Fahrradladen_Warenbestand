@@ -10,7 +10,10 @@
         ResizeMode="NoResize"
         Background="IndianRed"       
         WindowStartupLocation="CenterScreen">
-
+    <!--// Gruppe 8 , WI19z1a //-->    
+    
+    <!--// Maingrid des Fensters zum Hinzufuegen //-->
+    <!--// Enthaelt 2 Buttons sowie 3 Eintrags- und 1 Auswahlsfeld //-->
     <Grid>
 
         <Grid.RowDefinitions>
@@ -18,9 +21,11 @@
             <RowDefinition Height="61*"/>
             <RowDefinition Height="136*"/>
         </Grid.RowDefinitions>
+        
         <Grid.Background>
             <ImageBrush ImageSource="Images/berge.png" Opacity="0.9"/>
         </Grid.Background>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -57,86 +62,40 @@
                            FontWeight="Medium"
                            FontFamily="Fonts/#Dosis" Margin="0,37,33,70" RenderTransformOrigin="-0.009,-0.41" Grid.Row="2"/>
         <TextBox x:Name="Anzahl" Margin="0,37,10,70" Background="Transparent" FontWeight="Black"   Grid.Row="2" Grid.Column="1"/>
+        
+        <!--// Buttons Absenden und Verwerfen //-->
         <Button Content="Absenden"
                 Foreground="White"
-
                 FontSize="15"
                 x:Name="btn_absenden"
                 Click="btn_absenden_Click"
                 FontWeight="Medium"
-                Margin="62,56,0,20"
+                Margin="0,45,0,20"
                 Opacity="0.9"
-                Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="145" Height="60" Grid.Row="2">
-
-
-
-            <Button.Style>
-                <Style TargetType="Button">
-                    <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                    <Setter Property="Background" Value="Black"/>
-                    <Setter Property="Cursor" Value="Hand"/>
-
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#383660"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Width="95" Height="25"
-                                    CornerRadius="8"
-                                    Background="{TemplateBinding Background}">
-
-                        <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
+                Grid.ColumnSpan="2"
+                Grid.Row="2"
+                HorizontalAlignment="Center"
+                Width="95"
+                Height="20"
+                Style="{StaticResource AktionsButton}"
+                Template="{StaticResource AktionsButtonTemp}">
         </Button>
-
-
 
         <Button Content="Verwerfen"
                 Foreground="IndianRed"
-
                 FontSize="15"
                 x:Name="btn_verwerfen"
                 Click="btn_verwerfen_Click"
                 FontWeight="Medium"
-                Margin="62,105,0,0"
+                Margin="0,90,0,20"
                 Opacity="0.9"
-                Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="145" Grid.Row="2">
-
-
-
-            <Button.Style>
-                <Style TargetType="Button">
-                    <Setter Property="TextElement.FontFamily"  Value="Font/#Dosis"/>
-                    <Setter Property="Background" Value="Black"/>
-                    <Setter Property="Cursor" Value="Hand"/>
-
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#383660"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Width="95" Height="25"
-                                    CornerRadius="8"
-                                    Background="{TemplateBinding Background}">
-
-                        <ContentPresenter VerticalAlignment="Center"
-                                                  HorizontalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
+                Grid.ColumnSpan="2" HorizontalAlignment="Center" 
+                Grid.Row="2"
+                Width="95"
+                Height="20"
+                Style="{StaticResource AktionsButton}"
+                Template="{StaticResource AktionsButtonTemp}">
         </Button>
-
 
         <Image
                        Source="Images/bike2.png" RenderTransformOrigin="0.895,0.528" Margin="120,67,67,-12"
@@ -150,5 +109,6 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
+        
     </Grid>
 </Window>
